@@ -1,0 +1,333 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.pcplanner"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
+10
+11    <permission
+11-->[androidx.core:core:1.9.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/9811bf6e0ea8002748e1a5d1e9eb40bd/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+12        android:name="com.example.pcplanner.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.9.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/9811bf6e0ea8002748e1a5d1e9eb40bd/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.9.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/9811bf6e0ea8002748e1a5d1e9eb40bd/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.example.pcplanner.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.9.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/9811bf6e0ea8002748e1a5d1e9eb40bd/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.9.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/9811bf6e0ea8002748e1a5d1e9eb40bd/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:5:5-141:19
+18        android:allowBackup="true"
+18-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:6:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.9.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/9811bf6e0ea8002748e1a5d1e9eb40bd/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+20        android:dataExtractionRules="@xml/data_extraction_rules"
+20-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:7:9-65
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:fullBackupContent="@xml/backup_rules"
+23-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:8:9-54
+24        android:icon="@mipmap/ic_launcher"
+24-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:9:9-43
+25        android:label="@string/app_name"
+25-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:10:9-41
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:11:9-54
+27        android:supportsRtl="true"
+27-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:12:9-35
+28        android:testOnly="true"
+29        android:theme="@style/Theme.PCPlanner" >
+29-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:13:9-47
+30        <activity
+30-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:15:9-27:20
+31            android:name="MainMenu.MainActivity"
+31-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:16:13-49
+32            android:exported="true" >
+32-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:17:13-36
+33            <intent-filter>
+33-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:18:13-22:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:19:17-69
+34-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:19:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:21:17-77
+36-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:21:27-74
+37            </intent-filter>
+38
+39            <meta-data
+39-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:24:13-26:36
+40                android:name="android.app.lib_name"
+40-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:25:17-52
+41                android:value="" />
+41-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:26:17-33
+42        </activity>
+43        <activity
+43-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:28:9-35:20
+44            android:name="MainMenu.ComparisonActivity"
+44-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:29:13-55
+45            android:exported="true" >
+45-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:30:13-36
+46            <intent-filter>
+46-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:31:13-34:29
+47                <action android:name="com.example.pcplanner.COMPARISON_ACTIVITY" />
+47-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:32:17-84
+47-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:32:25-81
+48
+49                <category android:name="android.intent.category.DEFAULT" />
+49-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+49-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+50            </intent-filter>
+51        </activity>
+52        <activity
+52-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:36:9-43:20
+53            android:name="MainMenu.ConfigurationActivity"
+53-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:37:13-58
+54            android:exported="true" >
+54-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:38:13-36
+55            <intent-filter>
+55-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+56                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+56-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+56-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+57
+58                <category android:name="android.intent.category.DEFAULT" />
+58-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+58-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+59            </intent-filter>
+60        </activity>
+61        <activity
+61-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:44:9-51:20
+62            android:name="com.example.pcplanner.CoolerActivity"
+62-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:45:13-43
+63            android:exported="true" >
+63-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:46:13-36
+64            <intent-filter>
+64-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+65                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+65-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+65-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+66
+67                <category android:name="android.intent.category.DEFAULT" />
+67-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+67-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+68            </intent-filter>
+69        </activity>
+70        <activity
+70-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:52:9-59:20
+71            android:name="com.example.pcplanner.StorageActivity"
+71-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:53:13-44
+72            android:exported="true" >
+72-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:54:13-36
+73            <intent-filter>
+73-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+74                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+74-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+74-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+75
+76                <category android:name="android.intent.category.DEFAULT" />
+76-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+76-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+77            </intent-filter>
+78        </activity>
+79        <activity
+79-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:60:9-67:20
+80            android:name="com.example.pcplanner.PsuActivity"
+80-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:61:13-40
+81            android:exported="true" >
+81-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:62:13-36
+82            <intent-filter>
+82-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+83                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+83-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+83-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+84
+85                <category android:name="android.intent.category.DEFAULT" />
+85-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+85-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+86            </intent-filter>
+87        </activity>
+88        <activity
+88-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:68:9-75:20
+89            android:name="com.example.pcplanner.MotherboardActivity"
+89-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:69:13-48
+90            android:exported="true" >
+90-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:70:13-36
+91            <intent-filter>
+91-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+92                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+92-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+92-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+93
+94                <category android:name="android.intent.category.DEFAULT" />
+94-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+94-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+95            </intent-filter>
+96        </activity>
+97        <activity
+97-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:76:9-83:20
+98            android:name="com.example.pcplanner.RamActivity"
+98-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:77:13-40
+99            android:exported="true" >
+99-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:78:13-36
+100            <intent-filter>
+100-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+101                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+101-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+101-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+102
+103                <category android:name="android.intent.category.DEFAULT" />
+103-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+103-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+104            </intent-filter>
+105        </activity>
+106        <activity
+106-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:84:9-91:20
+107            android:name="com.example.pcplanner.CpuActivity.CpuActivity"
+107-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:85:13-52
+108            android:exported="true" >
+108-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:86:13-36
+109            <intent-filter>
+109-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+110                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+110-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+110-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+111
+112                <category android:name="android.intent.category.DEFAULT" />
+112-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+112-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+113            </intent-filter>
+114        </activity>
+115        <activity
+115-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:92:9-99:20
+116            android:name="com.example.pcplanner.GpuActivity.GpuActivity"
+116-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:93:13-52
+117            android:exported="true" >
+117-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:94:13-36
+118            <intent-filter>
+118-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+119                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+119-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+119-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+120
+121                <category android:name="android.intent.category.DEFAULT" />
+121-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+121-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+122            </intent-filter>
+123        </activity>
+124        <activity
+124-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:100:9-107:20
+125            android:name="com.example.pcplanner.CpuActivity.IntelActivity"
+125-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:101:13-54
+126            android:exported="true" >
+126-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:102:13-36
+127            <intent-filter>
+127-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+128                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+128-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+128-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+129
+130                <category android:name="android.intent.category.DEFAULT" />
+130-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+130-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+131            </intent-filter>
+132        </activity>
+133        <activity
+133-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:108:9-115:20
+134            android:name="com.example.pcplanner.CpuActivity.AmdActivity"
+134-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:109:13-52
+135            android:exported="true" >
+135-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:110:13-36
+136            <intent-filter>
+136-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+137                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+137-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+137-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+138
+139                <category android:name="android.intent.category.DEFAULT" />
+139-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+139-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+140            </intent-filter>
+141        </activity>
+142        <activity
+142-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:116:9-123:20
+143            android:name="com.example.pcplanner.GpuActivity.AmdRadeonActivity"
+143-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:117:13-58
+144            android:exported="true" >
+144-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:118:13-36
+145            <intent-filter>
+145-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+146                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+146-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+146-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+147
+148                <category android:name="android.intent.category.DEFAULT" />
+148-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+148-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+149            </intent-filter>
+150        </activity>
+151        <activity
+151-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:124:9-131:20
+152            android:name="com.example.pcplanner.GpuActivity.IntelArcActivity"
+152-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:125:13-57
+153            android:exported="true" >
+153-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:126:13-36
+154            <intent-filter>
+154-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+155                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+155-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+155-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+156
+157                <category android:name="android.intent.category.DEFAULT" />
+157-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+157-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+158            </intent-filter>
+159        </activity>
+160        <activity
+160-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:132:9-139:20
+161            android:name="com.example.pcplanner.GpuActivity.NvidiaActivity"
+161-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:133:13-55
+162            android:exported="true" >
+162-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:134:13-36
+163            <intent-filter>
+163-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:39:13-42:29
+164                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+164-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:17-87
+164-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:40:25-84
+165
+166                <category android:name="android.intent.category.DEFAULT" />
+166-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:17-76
+166-->/Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:33:27-73
+167            </intent-filter>
+168        </activity>
+169
+170        <provider
+170-->[androidx.emoji2:emoji2:1.2.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+171            android:name="androidx.startup.InitializationProvider"
+171-->[androidx.emoji2:emoji2:1.2.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+172            android:authorities="com.example.pcplanner.androidx-startup"
+172-->[androidx.emoji2:emoji2:1.2.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+173            android:exported="false" >
+173-->[androidx.emoji2:emoji2:1.2.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+174            <meta-data
+174-->[androidx.emoji2:emoji2:1.2.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+175                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+175-->[androidx.emoji2:emoji2:1.2.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+176                android:value="androidx.startup" />
+176-->[androidx.emoji2:emoji2:1.2.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+177            <meta-data
+177-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+178                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+178-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+179                android:value="androidx.startup" />
+179-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+180        </provider>
+181    </application>
+182
+183</manifest>

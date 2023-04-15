@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PCPlanner</string>
+    <string name="language_button_text_en">English</string>
+    <string name="language_button_text_ru">Русский</string>
+    <string name="current_language_text_en">Current Language: English</string>
+    <string name="current_language_text_ru">Current Language: RUSSIAN</string>
+    <string name="current_language_text">Current Language</string>
+</resources>
