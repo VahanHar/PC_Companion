@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,10 +13,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PCPlanner"
+        android:theme="@style/Theme.Material3.Light"
         tools:targetApi="31">
         <activity
-            android:name="MainMenu.MainActivity"
+            android:name=".MainMenu.Register"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainMenu.Login"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,18 +38,33 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="MainMenu.ComparisonActivity"
+            android:name=".MainMenu.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainMenu.ComparisonActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.COMPARISON_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="MainMenu.ConfigurationActivity"
+            android:name=".MainMenu.ConfigurationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -46,6 +73,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -54,6 +82,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -62,6 +91,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -70,6 +100,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -78,6 +109,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -86,6 +118,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -94,6 +127,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -102,6 +136,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -110,6 +145,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -118,6 +154,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -126,6 +163,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -134,10 +172,10 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
