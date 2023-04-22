@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -21,7 +25,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
+
     TextInputEditText editTextEmail, editTextPassword;
+
     Button buttonLogin;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
@@ -38,8 +44,10 @@ public class Login extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -55,8 +63,22 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Register.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
+        });
+
+
+        TextInputEditText editTextPassword = findViewById(R.id.password);
+        editTextPassword.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                new Handler().postDelayed(() -> {
+                    Button buttonLogin = findViewById(R.id.btn_login);
+                    buttonLogin.performClick();
+                }, 100);
+                return true;
+            }
+            return false;
         });
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -69,13 +91,13 @@ public class Login extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(Login.this, "Enter email",Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                     return;
                 }
 
-
-
                 if(TextUtils.isEmpty(password)){
                     Toast.makeText(Login.this, "Enter password",Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                     return;
                 }
 
@@ -85,21 +107,39 @@ public class Login extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                        Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                        startActivity(intent);
-                                        finish();
+
+
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    if (user != null) {
+                                        if (user.getEmail().equals("admin@gmail.com")) {
+                                            // Redirect the user to the admin activity
+                                            Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        } else {
+                                            // Redirect the user to the main activity
+                                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    }
+                                    Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
+
+
 
                                 } else {
+                                    Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                }
 
-                                    Toast.makeText(Login.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-
+                                // Hide keyboard after login button is clicked
+                                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                if (imm != null) {
+                                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                                 }
                             }
                         });
-
             }
         });
+
     }
 }

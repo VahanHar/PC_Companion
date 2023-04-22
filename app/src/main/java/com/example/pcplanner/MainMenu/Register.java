@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -57,10 +60,21 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 finish();
             }
         });
-
+        TextInputEditText editTextPassword = findViewById(R.id.password);
+        editTextPassword.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                new Handler().postDelayed(() -> {
+                    Button buttonReg = findViewById(R.id.btn_register);
+                    buttonReg.performClick();
+                }, 100);
+                return true;
+            }
+            return false;
+        });
 
 
         buttonReg.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +87,7 @@ public class Register extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(Register.this, "Enter email",Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                     return;
                 }
 
@@ -80,6 +95,7 @@ public class Register extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(password)){
                     Toast.makeText(Register.this, "Enter password",Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                     return;
                 }
 
@@ -102,6 +118,12 @@ public class Register extends AppCompatActivity {
                                     Toast.makeText(Register.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
 
+                                }
+
+                                // Hide keyboard after login button is clicked
+                                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                if (imm != null) {
+                                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                                 }
                             }
                         });

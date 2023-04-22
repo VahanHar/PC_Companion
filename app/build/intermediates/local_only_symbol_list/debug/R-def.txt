@@ -1,5 +1,9 @@
 R_DEF: Internal format may change without notice
 local
+anim slide_in_left
+anim slide_in_right
+anim slide_out_left
+anim slide_out_right
 color black
 color purple_200
 color purple_500
@@ -8,22 +12,29 @@ color teal_200
 color teal_700
 color white
 drawable background_image
+drawable bg_rounded_edittext
+drawable btn1
 drawable comparison_icon
 drawable configuration_icon
 drawable english_icon
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_password
 drawable my_button_background
 drawable russian_icon
 drawable search_icon
+id admin_panel_text
 id amd_button
 id amdradeon_button
 id btn_login
 id btn_register
+id button_addItem
 id comparison_button
 id configuration_button
 id cooler_button
 id cpu_button
+id editText_itemName
+id editText_itemPrice
 id email
 id gpu_button
 id intel_button
@@ -39,8 +50,11 @@ id ram_button
 id registerNow
 id search_view
 id storage_button
+id textInput_itemName
+id textInput_itemPrice
 id user_details
 id welcome_text
+layout activity_admin
 layout activity_comparison
 layout activity_configuration
 layout activity_cpu
@@ -65,7 +79,6 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string language_button_text_en
 string language_button_text_ru
-string login
 string logout
 string password
 string project_id

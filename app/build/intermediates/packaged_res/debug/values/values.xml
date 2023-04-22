@@ -22,12 +22,11 @@
     <string name="google_storage_bucket" translatable="false">pcplanner-56b76.appspot.com</string>
     <string name="language_button_text_en">English</string>
     <string name="language_button_text_ru">Русский</string>
-    <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="password">Password</string>
     <string name="project_id" translatable="false">pcplanner-56b76</string>
     <string name="register">Register</string>
-    <style name="Theme.PCPlanner" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.PCPlanner" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">#211637</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
