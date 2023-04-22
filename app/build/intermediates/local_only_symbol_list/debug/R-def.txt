@@ -26,9 +26,11 @@ drawable search_icon
 id admin_panel_text
 id amd_button
 id amdradeon_button
+id btn_guest
 id btn_login
 id btn_register
 id button_addItem
+id collection_name
 id comparison_button
 id configuration_button
 id cooler_button
@@ -62,6 +64,7 @@ layout activity_gpu
 layout activity_login
 layout activity_main
 layout activity_register
+layout collection_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

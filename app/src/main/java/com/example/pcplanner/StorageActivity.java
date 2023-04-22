@@ -25,7 +25,6 @@ public class StorageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // enable back button
 
         // Find buttons by ID and set onClickListeners for each
         cpuButton = findViewById(R.id.cpu_button);

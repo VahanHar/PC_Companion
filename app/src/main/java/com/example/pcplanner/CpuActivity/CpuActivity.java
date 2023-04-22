@@ -21,7 +21,6 @@ public class CpuActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_cpu);
 
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true); // enable back button
 
             // Find buttons by ID and set onClickListeners for each
             Intel = findViewById(R.id.intel_button);

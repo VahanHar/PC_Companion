@@ -22,7 +22,6 @@ public class GpuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gpu);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // enable back button
 
         // Find buttons by ID and set onClickListeners for each
         Nvidia = findViewById(R.id.nvidia_button);

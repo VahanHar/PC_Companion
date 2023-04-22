@@ -81,6 +81,32 @@ public class Login extends AppCompatActivity {
             return false;
         });
 
+
+        Button buttonGuest = findViewById(R.id.btn_guest);
+        buttonGuest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
+                mAuth.signInAnonymously().addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            if (user != null) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                            Toast.makeText(getApplicationContext(),"Login as guest Successful",Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                        }
+                        progressBar.setVisibility(View.GONE);
+                    }
+                });
+            }
+        });
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

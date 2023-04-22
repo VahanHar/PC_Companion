@@ -2969,6 +2969,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btn_guest
 id btn_login
 id btn_register
 id buttonPanel
@@ -2995,6 +2996,7 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id collection_name
 id comparison_button
 id compress
 id configuration_button
@@ -3512,6 +3514,7 @@ layout activity_main
 layout activity_register
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout collection_item
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

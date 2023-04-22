@@ -54,9 +54,8 @@ public class ConfigurationActivity extends AppCompatActivity {
             }
         });
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // enable back button
 
-        // Find buttons by ID and set onClickListeners for each
+
         cpuButton = findViewById(R.id.cpu_button);
         gpuButton = findViewById(R.id.gpu_button);
         ramButton = findViewById(R.id.ram_button);

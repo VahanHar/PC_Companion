@@ -84,6 +84,10 @@
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-36:/anim/slide_out_left.xml"
     },
     {
+        "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-34:/layout_collection_item.xml.flat",
+        "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-36:/layout/collection_item.xml"
+    },
+    {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-34:/drawable_configuration_icon.png.flat",
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-36:/drawable/configuration_icon.png"
     },
