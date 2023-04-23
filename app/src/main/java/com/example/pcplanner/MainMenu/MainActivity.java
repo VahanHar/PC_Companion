@@ -41,9 +41,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
         if(user == null){
-            Intent intent = new Intent(getApplicationContext(), Login.class);
-            startActivity(intent);
-            finish();
+            textView.setText("(OFFLINE MODE)");
         }
         else{
             textView.setText(user.getEmail());

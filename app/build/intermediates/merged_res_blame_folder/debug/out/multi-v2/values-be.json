@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.pcplanner.app-mergeDebugResources-32:/values-be/values-be.xml",
+            "outputFile": "com.example.pcplanner.app-mergeDebugResources-33:/values-be/values-be.xml",
             "map": [
                 {
                     "source": "/Users/vahanharutyunyan/.gradle/caches/transforms-3/e2be6c5495a727b53141a8928c63c238/transformed/appcompat-1.6.1/res/values-be/values-be.xml",

@@ -26,6 +26,8 @@ drawable search_icon
 id admin_panel_text
 id amd_button
 id amdradeon_button
+id animationView1
+id animationView2
 id btn_guest
 id btn_login
 id btn_register
@@ -51,6 +53,7 @@ id psu_button
 id ram_button
 id registerNow
 id search_view
+id splash_screen
 id storage_button
 id textInput_itemName
 id textInput_itemPrice
@@ -65,8 +68,12 @@ layout activity_login
 layout activity_main
 layout activity_register
 layout collection_item
+layout splash_screen
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw buttonlogreg
+raw logopc
+raw splash_an
 string app_name
 string click_to_login
 string click_to_register

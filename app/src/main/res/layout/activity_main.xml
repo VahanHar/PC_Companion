@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F0A1A">
+    >
 
 
 
@@ -22,10 +22,11 @@
             />
 
         <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Comparison"
-    android:textColor="@color/white"
+        android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+        android:text="Comparison"
+            android:textStyle="bold"
+    android:textColor="#346736"
     android:textSize="30sp"
     />
         <ImageView
@@ -41,7 +42,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Configuration"
-            android:textColor="@color/white"
+            android:textColor="#346736"
+            android:textStyle="bold"
             android:layout_marginBottom="10dp"
             android:textSize="30sp"
             />
@@ -57,7 +59,8 @@
         <TextView
             android:id="@+id/user_details"
             android:text="Hello world!"
-            android:textColor="@color/white"
+            android:textColor="#346736"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
