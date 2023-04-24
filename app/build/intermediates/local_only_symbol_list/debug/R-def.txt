@@ -1,9 +1,13 @@
 R_DEF: Internal format may change without notice
 local
+anim fade_in
+anim fade_in_zoom
+anim nothing
 anim slide_in_left
 anim slide_in_right
 anim slide_out_left
 anim slide_out_right
+anim zoom_out
 color black
 color purple_200
 color purple_500
@@ -14,6 +18,7 @@ color white
 drawable background_image
 drawable bg_rounded_edittext
 drawable btn1
+drawable button_logout
 drawable comparison_icon
 drawable configuration_icon
 drawable english_icon
@@ -53,6 +58,7 @@ id psu_button
 id ram_button
 id registerNow
 id search_view
+id splash_admin
 id splash_screen
 id storage_button
 id textInput_itemName
@@ -68,9 +74,12 @@ layout activity_login
 layout activity_main
 layout activity_register
 layout collection_item
+layout splash2_screen
+layout splash_admin
 layout splash_screen
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw admin_an
 raw buttonlogreg
 raw logopc
 raw splash_an

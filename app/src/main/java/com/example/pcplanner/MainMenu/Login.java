@@ -3,7 +3,9 @@ package com.example.pcplanner.MainMenu;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -33,20 +35,45 @@ public class Login extends AppCompatActivity {
     ProgressBar progressBar;
     TextView textView;
 
+
+        Handler handler = new Handler();
+        private boolean isNetworkConnected() {
+            ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
+        }
+
     @Override
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
+        if (currentUser != null) {
+            progressBar.setVisibility(View.VISIBLE);
+            if (currentUser.getEmail().equals("admin@gmail.com")) {
+                Intent intent = new Intent(getApplicationContext(), SplashAdmin.class);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
+                startActivity(intent);
+            }
             finish();
         }
     }
 
+//            if (currentUser != null) {
+//                progressBar.setVisibility(View.VISIBLE);
+//                Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
+//                startActivity(intent);
+//                finish();
+//            } else {
+//                progressBar.setVisibility(View.GONE);
+//            }
+//        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (!isNetworkConnected()) {
+                Toast.makeText(this, "No internet connection. Running in offline mode.", Toast.LENGTH_SHORT).show();
+            }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -82,47 +109,58 @@ public class Login extends AppCompatActivity {
         });
 
 
+
         Button buttonGuest = findViewById(R.id.btn_guest);
-        buttonGuest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
-                mAuth.signInAnonymously().addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            if (user != null) {
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(intent);
-                                finish();
+               buttonGuest.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    progressBar.setVisibility(View.VISIBLE);
+
+                    if (!isNetworkConnected()) {
+                        // No internet connection, go to MainActivity directly
+                        Intent intent = new Intent(Login.this, Splash2Activity.class);
+                        startActivity(intent);
+                        finish();
+
+                    } else {
+                        mAuth.signInAnonymously().addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
+                                if (task.isSuccessful()) {
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    if (user != null) {
+                                        Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                    Toast.makeText(getApplicationContext(),"Login as guest Successful",Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                }
+                                progressBar.setVisibility(View.GONE);
                             }
-                            Toast.makeText(getApplicationContext(),"Login as guest Successful",Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                        }
-                        progressBar.setVisibility(View.GONE);
+                        });
                     }
-                });
-            }
-        });
+                }
+            });
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
-                String email,password;
+                String email, password;
                 email = String.valueOf(editTextEmail.getText());
                 password = String.valueOf(editTextPassword.getText());
 
-                if(TextUtils.isEmpty(email)){
-                    Toast.makeText(Login.this, "Enter email",Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(Login.this, "Enter email", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)){
-                    Toast.makeText(Login.this, "Enter password",Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(Login.this, "Enter password", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                     return;
                 }
@@ -139,18 +177,17 @@ public class Login extends AppCompatActivity {
                                     if (user != null) {
                                         if (user.getEmail().equals("admin@gmail.com")) {
                                             // Redirect the user to the admin activity
-                                            Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                                            Intent intent = new Intent(getApplicationContext(), SplashAdmin.class);
                                             startActivity(intent);
                                             finish();
                                         } else {
                                             // Redirect the user to the main activity
-                                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                            Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
                                             startActivity(intent);
                                             finish();
                                         }
                                     }
-                                    Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
-
+                                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
 
 
                                 } else {
@@ -169,3 +206,7 @@ public class Login extends AppCompatActivity {
 
     }
 }
+
+
+
+
