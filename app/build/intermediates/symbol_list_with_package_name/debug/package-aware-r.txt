@@ -3154,6 +3154,7 @@ id line1
 id line3
 id linear
 id listMode
+id listView
 id list_item
 id loginNow
 id logout
@@ -3381,6 +3382,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3544,6 +3546,7 @@ layout activity_comparison
 layout activity_configuration
 layout activity_cpu
 layout activity_gpu
+layout activity_intel
 layout activity_login
 layout activity_main
 layout activity_register
@@ -3566,6 +3569,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout list_item
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3634,6 +3638,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 raw admin_an
+raw background7
 raw buttonlogreg
 raw firebase_common_keep
 raw logopc

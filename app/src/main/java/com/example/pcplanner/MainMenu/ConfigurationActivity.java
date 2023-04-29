@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
 import com.example.pcplanner.CoolerActivity;
 import com.example.pcplanner.CpuActivity.CpuActivity;
 import com.example.pcplanner.GpuActivity.GpuActivity;
@@ -36,6 +38,8 @@ public class ConfigurationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration);
+
+
         SearchView searchView = findViewById(R.id.search_view);
         EditText searchEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
         searchEditText.setTextColor(ContextCompat.getColor(this, R.color.white));
@@ -53,7 +57,6 @@ public class ConfigurationActivity extends AppCompatActivity {
                 return false;
             }
         });
-
 
 
         cpuButton = findViewById(R.id.cpu_button);
