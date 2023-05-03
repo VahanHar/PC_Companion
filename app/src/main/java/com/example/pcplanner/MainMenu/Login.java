@@ -41,6 +41,7 @@ public class Login extends AppCompatActivity {
             return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
         }
 
+
     @Override
     public void onStart() {
         super.onStart();
@@ -58,15 +59,6 @@ public class Login extends AppCompatActivity {
         }
     }
 
-//            if (currentUser != null) {
-//                progressBar.setVisibility(View.VISIBLE);
-//                Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
-//                startActivity(intent);
-//                finish();
-//            } else {
-//                progressBar.setVisibility(View.GONE);
-//            }
-//        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +94,11 @@ public class Login extends AppCompatActivity {
                     Button buttonLogin = findViewById(R.id.btn_login);
                     buttonLogin.performClick();
                 }, 100);
+                // Hide keyboard after login button is clicked
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
                 return true;
             }
             return false;
@@ -126,6 +123,11 @@ public class Login extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
+                                // Hide keyboard after login button is clicked
+                                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                if (imm != null) {
+                                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                                }
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     if (user != null) {
@@ -155,12 +157,22 @@ public class Login extends AppCompatActivity {
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(Login.this, "Enter email", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
+                    // Hide keyboard after login button is clicked
+                    InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
                     Toast.makeText(Login.this, "Enter password", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
+                    // Hide keyboard after login button is clicked
+                    InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
                     return;
                 }
 
@@ -169,6 +181,11 @@ public class Login extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
+                                // Hide keyboard after login button is clicked
+                                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                if (imm != null) {
+                                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                                }
                                 if (task.isSuccessful()) {
 
 
@@ -176,6 +193,11 @@ public class Login extends AppCompatActivity {
                                     if (user != null) {
                                         if (user.getEmail().equals("admin@gmail.com")) {
                                             // Redirect the user to the admin activity
+                                            // Hide keyboard after login button is clicked
+                                            InputMethodManager imm2 = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                            if (imm2 != null) {
+                                                imm2.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                                            }
                                             Intent intent = new Intent(getApplicationContext(), SplashAdmin.class);
                                             startActivity(intent);
                                             finish();
@@ -194,9 +216,9 @@ public class Login extends AppCompatActivity {
                                 }
 
                                 // Hide keyboard after login button is clicked
-                                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                                if (imm != null) {
-                                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                                InputMethodManager imm1 = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                if (imm1 != null) {
+                                    imm1.hideSoftInputFromWindow(view.getWindowToken(), 0);
                                 }
                             }
                         });

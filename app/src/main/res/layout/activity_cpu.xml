@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#0F0A1A">
+        android:gravity="center"
+        android:orientation="vertical"
+        >
         <Button
             android:text="Intel"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:background="#211637"
+            android:background="#1F4914"
             android:id="@+id/intel_button"
             android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"
@@ -23,11 +25,11 @@
             android:gravity="center" />
         <Button
             android:text="AMD"
+            android:layout_below="@id/intel_button"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:background="#211637"
+            android:background="#1F4914"
             android:id="@+id/amd_button"
-            android:layout_below="@id/intel_button"
             android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"
             android:paddingLeft="50dp"
@@ -37,5 +39,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center" />
-    </RelativeLayout>
-</ScrollView>
+    </LinearLayout>
+</LinearLayout>

@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +18,7 @@ import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieListener;
 import com.airbnb.lottie.LottieTask;
 import com.airbnb.lottie.LottieCompositionFactory;
+import com.example.pcplanner.MainMenu.Admin.AdminActivity;
 import com.example.pcplanner.R;
 
 public class SplashAdmin extends AppCompatActivity {

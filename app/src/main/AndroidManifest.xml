@@ -187,9 +187,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.AdminActivity"
+            android:name=".MainMenu.Admin.AdminActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -220,9 +221,110 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.MyListAdapter"
+            android:name=".MainMenu.DescriptionActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu.Admin.ModifyActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu.Admin.AddActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu.Admin.IntelAdmin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu.Admin.AmdAdmin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu.Admin.CpuAdmin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu.Admin.Cpu2Admin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu.Admin.Intel2Admin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu.Admin.Amd2Admin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
 
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />

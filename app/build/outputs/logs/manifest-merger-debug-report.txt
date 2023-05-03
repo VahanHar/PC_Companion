@@ -1,44 +1,48 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
 MERGED from [com.google.android.material:material:1.8.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/95950d354b84d5d91cbfde9f6f44b692/transformed/material-1.8.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4fdbead62801f6c959c95d643aa636bd/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [com.airbnb.android:lottie:6.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e200fb07cd87a00147820b2a03953ffb/transformed/lottie-6.0.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/17a1842c47d9133c836cc43809dde9fe/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e2be6c5495a727b53141a8928c63c238/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:firebase-core:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0177d9e1b63787c846cc1c3c16fd0436/transformed/firebase-core-20.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-core:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/44b90902f2633c27824d496cc68efb3c/transformed/firebase-core-21.1.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f081addcd637f585570bb8e838b33a13/transformed/firebase-firestore-24.5.0/AndroidManifest.xml:2:1-25:12
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:17:1-75:12
+MERGED from [io.grpc:grpc-android:1.52.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e0838ccf585fdb832cdbbb98b2d4a3da/transformed/grpc-android-1.52.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:2:1-24:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3121e867fd9c392afac2e307bb3096aa/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fbc5b09b3c127ceb7f0409f776cf2a36/transformed/firebase-appcheck-interop-16.1.1/AndroidManifest.xml:15:1-25:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/7e185ddda60e80c9168dfa27e0e57d2f/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.firebase:firebase-analytics:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/98407d2af4ab63e891d98175793899a3/transformed/firebase-analytics-20.0.0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:17:1-36:12
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.firebase:firebase-analytics:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/8beadd3c5ee6f0968a7d844197548aa4/transformed/firebase-analytics-21.1.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.firebase:firebase-common:20.3.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/16d83a30a978f4f7f41975121e484ac8/transformed/firebase-common-20.3.1/AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/682ddfe0fe8ca29c9e2f5eba530d2481/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/905499adc58164324df39538f8728847/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/27b99ed0553b4ba6525c48ed75b4311b/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a9e9c558253cb6ad624a6aa2af7cbe67/transformed/firebase-iid-interop-17.0.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0c90dee2369b4b74eaad8ea3e28e419d/transformed/play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.recaptcha:recaptcha:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fe30ce723ee5df18c33e90601ffc4d50/transformed/recaptcha-18.0.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.play:integrity:1.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/194915b302011a9981844f984f42848f/transformed/integrity-1.0.1/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.firebase:firebase-installations-interop:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ecaf0cc0a73837706921b57f3dfb786f/transformed/firebase-installations-interop-17.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/53f97be4b51e3173473021c95357a399/transformed/firebase-installations-interop-17.0.1/AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f8d968d76ce309bc78e9e12b54b44a47/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:17:1-46:12
-MERGED from [com.google.android.gms:play-services-measurement-sdk:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d08524e81a222e97fa4fb3022d859d4d/transformed/play-services-measurement-sdk-20.0.0/AndroidManifest.xml:17:1-25:12
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:17:1-31:12
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c40de3d6169cc737b1dde209d14f9221/transformed/play-services-stats-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c2e895f833af4f28a725e236c8dcee95/transformed/play-services-measurement-sdk-21.1.1/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d1d7145c609ade6b5982127b31b60192/transformed/play-services-stats-17.0.2/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b3549cc96f26b29c993c217e2c691ca4/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/364106ab6daf6d34095d29f26fb611a8/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/12e7def03022618dc0819d6ed37b7a1d/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/531aa012377d707314b24b393333f258/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ab604e51ad8aab3f28104f233a2e82ff/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/026b3d77c49b22b78bb801a41fd1cfb2/transformed/play-services-ads-identifier-17.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4780025ff2e456c242ab26a70ff5009e/transformed/play-services-measurement-sdk-api-20.0.0/AndroidManifest.xml:17:1-27:12
-MERGED from [com.google.android.gms:play-services-measurement-base:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ef2eb9f91c4eb2a7f03b9023cd6f78da/transformed/play-services-measurement-base-20.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/1cb0f9f542269e5ad40dacf78bb501fb/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c89b1c91724aef7c4fb11ad2e0aeb8aa/transformed/play-services-measurement-base-21.1.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6ce4d5d407e79e7f8aa8225fb0897373/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d783b131d093ddc395c9a60a0a8c75e0/transformed/play-services-basement-18.1.0/AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0a735ad2b19954d1c76409adcafcff5d/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
@@ -73,24 +77,23 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/vahanharutyunyan/.
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e76ad481dac6746f1256a09cabc5d768/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/98b6ddbdd44cacbe3df29468ee0e04ad/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6aa5cdca630ead1c07a911e911c3ed92/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
-MERGED from [io.grpc:grpc-android:1.52.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e0838ccf585fdb832cdbbb98b2d4a3da/transformed/grpc-android-1.52.1/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/59cd6c38072658aa0875a221549c571a/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
 	package
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-235:12
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-337:12
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:11-69
@@ -100,16 +103,20 @@ MERGED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyun
 MERGED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f081addcd637f585570bb8e838b33a13/transformed/firebase-firestore-24.5.0/AndroidManifest.xml:13:5-67
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:25:5-67
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:11:5-67
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:11:5-67
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4780025ff2e456c242ab26a70ff5009e/transformed/play-services-measurement-sdk-api-20.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4780025ff2e456c242ab26a70ff5009e/transformed/play-services-measurement-sdk-api-20.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:12:5-67
+MERGED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:12:5-67
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
@@ -118,68 +125,76 @@ MERGED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyun
 MERGED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f081addcd637f585570bb8e838b33a13/transformed/firebase-firestore-24.5.0/AndroidManifest.xml:12:5-79
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:10:5-79
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:10:5-79
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4780025ff2e456c242ab26a70ff5009e/transformed/play-services-measurement-sdk-api-20.0.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4780025ff2e456c242ab26a70ff5009e/transformed/play-services-measurement-sdk-api-20.0.0/AndroidManifest.xml:24:5-79
 MERGED from [io.grpc:grpc-android:1.52.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e0838ccf585fdb832cdbbb98b2d4a3da/transformed/grpc-android-1.52.1/AndroidManifest.xml:9:5-79
 MERGED from [io.grpc:grpc-android:1.52.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e0838ccf585fdb832cdbbb98b2d4a3da/transformed/grpc-android-1.52.1/AndroidManifest.xml:9:5-79
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:24:5-79
 	android:name
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:6:22-76
 application
-ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:8:5-233:19
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:8:5-335:19
 MERGED from [com.google.android.material:material:1.8.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/95950d354b84d5d91cbfde9f6f44b692/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.8.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/95950d354b84d5d91cbfde9f6f44b692/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4fdbead62801f6c959c95d643aa636bd/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4fdbead62801f6c959c95d643aa636bd/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [com.airbnb.android:lottie:6.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e200fb07cd87a00147820b2a03953ffb/transformed/lottie-6.0.0/AndroidManifest.xml:9:5-20
 MERGED from [com.airbnb.android:lottie:6.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e200fb07cd87a00147820b2a03953ffb/transformed/lottie-6.0.0/AndroidManifest.xml:9:5-20
-MERGED from [com.google.firebase:firebase-core:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0177d9e1b63787c846cc1c3c16fd0436/transformed/firebase-core-20.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-core:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0177d9e1b63787c846cc1c3c16fd0436/transformed/firebase-core-20.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-core:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/44b90902f2633c27824d496cc68efb3c/transformed/firebase-core-21.1.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-core:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/44b90902f2633c27824d496cc68efb3c/transformed/firebase-core-21.1.1/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f081addcd637f585570bb8e838b33a13/transformed/firebase-firestore-24.5.0/AndroidManifest.xml:15:5-23:19
 MERGED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f081addcd637f585570bb8e838b33a13/transformed/firebase-firestore-24.5.0/AndroidManifest.xml:15:5-23:19
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:14:5-22:19
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fbc5b09b3c127ceb7f0409f776cf2a36/transformed/firebase-appcheck-interop-16.1.1/AndroidManifest.xml:23:5-20
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fbc5b09b3c127ceb7f0409f776cf2a36/transformed/firebase-appcheck-interop-16.1.1/AndroidManifest.xml:23:5-20
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/7e185ddda60e80c9168dfa27e0e57d2f/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/7e185ddda60e80c9168dfa27e0e57d2f/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-analytics:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/98407d2af4ab63e891d98175793899a3/transformed/firebase-analytics-20.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-analytics:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/98407d2af4ab63e891d98175793899a3/transformed/firebase-analytics-20.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:26:5-34:19
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:26:5-34:19
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:14:5-22:19
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-analytics:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/8beadd3c5ee6f0968a7d844197548aa4/transformed/firebase-analytics-21.1.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/8beadd3c5ee6f0968a7d844197548aa4/transformed/firebase-analytics-21.1.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:14:5-22:19
 MERGED from [com.google.firebase:firebase-common:20.3.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/16d83a30a978f4f7f41975121e484ac8/transformed/firebase-common-20.3.1/AndroidManifest.xml:24:5-37:19
 MERGED from [com.google.firebase:firebase-common:20.3.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/16d83a30a978f4f7f41975121e484ac8/transformed/firebase-common-20.3.1/AndroidManifest.xml:24:5-37:19
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/27b99ed0553b4ba6525c48ed75b4311b/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/27b99ed0553b4ba6525c48ed75b4311b/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a9e9c558253cb6ad624a6aa2af7cbe67/transformed/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a9e9c558253cb6ad624a6aa2af7cbe67/transformed/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0c90dee2369b4b74eaad8ea3e28e419d/transformed/play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0c90dee2369b4b74eaad8ea3e28e419d/transformed/play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.recaptcha:recaptcha:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fe30ce723ee5df18c33e90601ffc4d50/transformed/recaptcha-18.0.1/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.recaptcha:recaptcha:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fe30ce723ee5df18c33e90601ffc4d50/transformed/recaptcha-18.0.1/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.play:integrity:1.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/194915b302011a9981844f984f42848f/transformed/integrity-1.0.1/AndroidManifest.xml:5:5-6:19
 MERGED from [com.google.android.play:integrity:1.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/194915b302011a9981844f984f42848f/transformed/integrity-1.0.1/AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:28:5-44:19
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:28:5-44:19
-MERGED from [com.google.android.gms:play-services-measurement-sdk:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d08524e81a222e97fa4fb3022d859d4d/transformed/play-services-measurement-sdk-20.0.0/AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.android.gms:play-services-measurement-sdk:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d08524e81a222e97fa4fb3022d859d4d/transformed/play-services-measurement-sdk-20.0.0/AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:28:5-29:19
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:28:5-29:19
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c40de3d6169cc737b1dde209d14f9221/transformed/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c40de3d6169cc737b1dde209d14f9221/transformed/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c2e895f833af4f28a725e236c8dcee95/transformed/play-services-measurement-sdk-21.1.1/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c2e895f833af4f28a725e236c8dcee95/transformed/play-services-measurement-sdk-21.1.1/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d1d7145c609ade6b5982127b31b60192/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d1d7145c609ade6b5982127b31b60192/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ab604e51ad8aab3f28104f233a2e82ff/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ab604e51ad8aab3f28104f233a2e82ff/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/026b3d77c49b22b78bb801a41fd1cfb2/transformed/play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/026b3d77c49b22b78bb801a41fd1cfb2/transformed/play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-measurement-base:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ef2eb9f91c4eb2a7f03b9023cd6f78da/transformed/play-services-measurement-base-20.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-measurement-base:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ef2eb9f91c4eb2a7f03b9023cd6f78da/transformed/play-services-measurement-base-20.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/1cb0f9f542269e5ad40dacf78bb501fb/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/1cb0f9f542269e5ad40dacf78bb501fb/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c89b1c91724aef7c4fb11ad2e0aeb8aa/transformed/play-services-measurement-base-21.1.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c89b1c91724aef7c4fb11ad2e0aeb8aa/transformed/play-services-measurement-base-21.1.1/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6ce4d5d407e79e7f8aa8225fb0897373/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6ce4d5d407e79e7f8aa8225fb0897373/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d783b131d093ddc395c9a60a0a8c75e0/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
@@ -366,38 +381,120 @@ ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManif
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:182:13-36
 	android:name
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:181:13-55
-activity#com.example.pcplanner.MainMenu.AdminActivity
-ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:189:9-199:20
+activity#com.example.pcplanner.MainMenu.Admin.AdminActivity
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:189:9-200:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:193:13-49
 	android:exported
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:191:13-36
 	android:theme
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:192:13-69
 	android:name
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:190:13-51
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:190:13-57
 activity#com.example.pcplanner.MainMenu.Splash2Activity
-ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:200:9-210:20
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:201:9-211:20
 	android:exported
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:202:13-36
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:203:13-36
 	android:theme
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:203:13-69
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:204:13-69
 	android:name
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:201:13-53
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:202:13-53
 activity#com.example.pcplanner.MainMenu.SplashAdmin
-ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:211:9-221:20
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:212:9-222:20
 	android:exported
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:213:13-36
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:214:13-36
 	android:theme
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:214:13-69
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:215:13-69
 	android:name
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:212:13-49
-activity#com.example.pcplanner.MainMenu.MyListAdapter
-ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:222:9-232:20
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:213:13-49
+activity#com.example.pcplanner.MainMenu.DescriptionActivity
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:223:9-233:20
 	android:exported
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:224:13-36
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:225:13-36
 	android:theme
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:225:13-69
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:226:13-69
 	android:name
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:223:13-51
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:224:13-57
+activity#com.example.pcplanner.MainMenu.Admin.ModifyActivity
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:234:9-245:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:238:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:236:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:237:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:235:13-58
+activity#com.example.pcplanner.MainMenu.Admin.AddActivity
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:246:9-257:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:250:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:248:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:249:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:247:13-55
+activity#com.example.pcplanner.MainMenu.Admin.IntelAdmin
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:258:9-269:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:262:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:260:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:261:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:259:13-54
+activity#com.example.pcplanner.MainMenu.Admin.AmdAdmin
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:270:9-282:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:274:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:272:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:273:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:271:13-52
+activity#com.example.pcplanner.MainMenu.Admin.CpuAdmin
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:283:9-295:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:287:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:285:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:286:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:284:13-52
+activity#com.example.pcplanner.MainMenu.Admin.Cpu2Admin
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:296:9-308:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:300:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:298:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:299:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:297:13-53
+activity#com.example.pcplanner.MainMenu.Admin.Intel2Admin
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:309:9-321:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:313:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:311:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:312:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:310:13-55
+activity#com.example.pcplanner.MainMenu.Admin.Amd2Admin
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:322:9-334:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:326:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:324:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:325:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:323:13-53
 uses-sdk
 INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
@@ -412,24 +509,30 @@ MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/vahanharutyuny
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/17a1842c47d9133c836cc43809dde9fe/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e2be6c5495a727b53141a8928c63c238/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e2be6c5495a727b53141a8928c63c238/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-core:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0177d9e1b63787c846cc1c3c16fd0436/transformed/firebase-core-20.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-core:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0177d9e1b63787c846cc1c3c16fd0436/transformed/firebase-core-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-core:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/44b90902f2633c27824d496cc68efb3c/transformed/firebase-core-21.1.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-core:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/44b90902f2633c27824d496cc68efb3c/transformed/firebase-core-21.1.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f081addcd637f585570bb8e838b33a13/transformed/firebase-firestore-24.5.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f081addcd637f585570bb8e838b33a13/transformed/firebase-firestore-24.5.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:21:5-23:64
+MERGED from [io.grpc:grpc-android:1.52.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e0838ccf585fdb832cdbbb98b2d4a3da/transformed/grpc-android-1.52.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.grpc:grpc-android:1.52.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e0838ccf585fdb832cdbbb98b2d4a3da/transformed/grpc-android-1.52.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3121e867fd9c392afac2e307bb3096aa/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3121e867fd9c392afac2e307bb3096aa/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fbc5b09b3c127ceb7f0409f776cf2a36/transformed/firebase-appcheck-interop-16.1.1/AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fbc5b09b3c127ceb7f0409f776cf2a36/transformed/firebase-appcheck-interop-16.1.1/AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/7e185ddda60e80c9168dfa27e0e57d2f/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/7e185ddda60e80c9168dfa27e0e57d2f/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-analytics:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/98407d2af4ab63e891d98175793899a3/transformed/firebase-analytics-20.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-analytics:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/98407d2af4ab63e891d98175793899a3/transformed/firebase-analytics-20.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:6:5-8:41
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/8beadd3c5ee6f0968a7d844197548aa4/transformed/firebase-analytics-21.1.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/8beadd3c5ee6f0968a7d844197548aa4/transformed/firebase-analytics-21.1.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-common:20.3.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/16d83a30a978f4f7f41975121e484ac8/transformed/firebase-common-20.3.1/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-common:20.3.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/16d83a30a978f4f7f41975121e484ac8/transformed/firebase-common-20.3.1/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/682ddfe0fe8ca29c9e2f5eba530d2481/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
@@ -438,24 +541,26 @@ MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/905499adc58164324df39538f8728847/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/27b99ed0553b4ba6525c48ed75b4311b/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/27b99ed0553b4ba6525c48ed75b4311b/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a9e9c558253cb6ad624a6aa2af7cbe67/transformed/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a9e9c558253cb6ad624a6aa2af7cbe67/transformed/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0c90dee2369b4b74eaad8ea3e28e419d/transformed/play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0c90dee2369b4b74eaad8ea3e28e419d/transformed/play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.recaptcha:recaptcha:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fe30ce723ee5df18c33e90601ffc4d50/transformed/recaptcha-18.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.recaptcha:recaptcha:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fe30ce723ee5df18c33e90601ffc4d50/transformed/recaptcha-18.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.play:integrity:1.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/194915b302011a9981844f984f42848f/transformed/integrity-1.0.1/AndroidManifest.xml:4:5-44
 MERGED from [com.google.android.play:integrity:1.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/194915b302011a9981844f984f42848f/transformed/integrity-1.0.1/AndroidManifest.xml:4:5-44
-MERGED from [com.google.firebase:firebase-installations-interop:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ecaf0cc0a73837706921b57f3dfb786f/transformed/firebase-installations-interop-17.0.0/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-installations-interop:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ecaf0cc0a73837706921b57f3dfb786f/transformed/firebase-installations-interop-17.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/53f97be4b51e3173473021c95357a399/transformed/firebase-installations-interop-17.0.1/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/53f97be4b51e3173473021c95357a399/transformed/firebase-installations-interop-17.0.1/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f8d968d76ce309bc78e9e12b54b44a47/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f8d968d76ce309bc78e9e12b54b44a47/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d08524e81a222e97fa4fb3022d859d4d/transformed/play-services-measurement-sdk-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d08524e81a222e97fa4fb3022d859d4d/transformed/play-services-measurement-sdk-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c40de3d6169cc737b1dde209d14f9221/transformed/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c40de3d6169cc737b1dde209d14f9221/transformed/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c2e895f833af4f28a725e236c8dcee95/transformed/play-services-measurement-sdk-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c2e895f833af4f28a725e236c8dcee95/transformed/play-services-measurement-sdk-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d1d7145c609ade6b5982127b31b60192/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d1d7145c609ade6b5982127b31b60192/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b3549cc96f26b29c993c217e2c691ca4/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b3549cc96f26b29c993c217e2c691ca4/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/364106ab6daf6d34095d29f26fb611a8/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
@@ -466,12 +571,12 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/vah
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/531aa012377d707314b24b393333f258/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ab604e51ad8aab3f28104f233a2e82ff/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ab604e51ad8aab3f28104f233a2e82ff/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/026b3d77c49b22b78bb801a41fd1cfb2/transformed/play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/026b3d77c49b22b78bb801a41fd1cfb2/transformed/play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4780025ff2e456c242ab26a70ff5009e/transformed/play-services-measurement-sdk-api-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4780025ff2e456c242ab26a70ff5009e/transformed/play-services-measurement-sdk-api-20.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-base:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ef2eb9f91c4eb2a7f03b9023cd6f78da/transformed/play-services-measurement-base-20.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-measurement-base:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/ef2eb9f91c4eb2a7f03b9023cd6f78da/transformed/play-services-measurement-base-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/1cb0f9f542269e5ad40dacf78bb501fb/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/1cb0f9f542269e5ad40dacf78bb501fb/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c89b1c91724aef7c4fb11ad2e0aeb8aa/transformed/play-services-measurement-base-21.1.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/c89b1c91724aef7c4fb11ad2e0aeb8aa/transformed/play-services-measurement-base-21.1.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6ce4d5d407e79e7f8aa8225fb0897373/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6ce4d5d407e79e7f8aa8225fb0897373/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d783b131d093ddc395c9a60a0a8c75e0/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
@@ -540,8 +645,6 @@ MERGED from [androidx.print:print:1.0.0] /Users/vahanharutyunyan/.gradle/caches/
 MERGED from [androidx.print:print:1.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/98b6ddbdd44cacbe3df29468ee0e04ad/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6aa5cdca630ead1c07a911e911c3ed92/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6aa5cdca630ead1c07a911e911c3ed92/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
-MERGED from [io.grpc:grpc-android:1.52.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e0838ccf585fdb832cdbbb98b2d4a3da/transformed/grpc-android-1.52.1/AndroidManifest.xml:5:5-7:41
-MERGED from [io.grpc:grpc-android:1.52.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/e0838ccf585fdb832cdbbb98b2d4a3da/transformed/grpc-android-1.52.1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/59cd6c38072658aa0875a221549c571a/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/59cd6c38072658aa0875a221549c571a/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
 INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
@@ -560,10 +663,14 @@ service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-firestore:24.5.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/f081addcd637f585570bb8e838b33a13/transformed/firebase-firestore-24.5.0/AndroidManifest.xml:16:9-22:19
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:66:9-72:19
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:66:9-72:19
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:27:9-33:19
-MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:27:9-33:19
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:15:9-21:19
-MERGED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:15:9-21:19
 MERGED from [com.google.firebase:firebase-common:20.3.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/16d83a30a978f4f7f41975121e484ac8/transformed/firebase-common-20.3.1/AndroidManifest.xml:32:9-36:35
 MERGED from [com.google.firebase:firebase-common:20.3.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/16d83a30a978f4f7f41975121e484ac8/transformed/firebase-common-20.3.1/AndroidManifest.xml:32:9-36:35
 	android:exported
@@ -630,28 +737,70 @@ ADDED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.g
 		ADDED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:71:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:21.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bb645d27f7a1b3559cf10ade57c7a905/transformed/firebase-auth-21.3.0/AndroidManifest.xml:70:17-109
+meta-data#com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar
+ADDED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-functions:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/72349092a1036dc7252f38ed2cf78a6a/transformed/firebase-functions-19.0.0/AndroidManifest.xml:19:17-111
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4780025ff2e456c242ab26a70ff5009e/transformed/play-services-measurement-sdk-api-20.0.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4780025ff2e456c242ab26a70ff5009e/transformed/play-services-measurement-sdk-api-20.0.0/AndroidManifest.xml:25:5-68
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:25:5-68
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:24:22-65
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:24:22-65
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:26:22-79
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:40:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/462c4f936192b6a6c629139b7f99ccbd/transformed/firebase-iid-19.0.0/AndroidManifest.xml:42:25-78
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/1cb0f9f542269e5ad40dacf78bb501fb/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/1cb0f9f542269e5ad40dacf78bb501fb/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b7d243e21a8f8eb26dfb6ab56e15cf56/transformed/play-services-measurement-sdk-api-21.1.1/AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:25:22-76
 meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
-ADDED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:30:13-32:85
+ADDED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:31:13-33:85
 	android:value
-		ADDED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:32:17-82
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:33:17-82
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3d903913646412a36d54bc30c91a4d21/transformed/play-services-measurement-api-20.0.0/AndroidManifest.xml:31:17-139
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6f5d49389733ce60be5477bee0a81dde/transformed/play-services-measurement-api-21.1.1/AndroidManifest.xml:32:17-139
 meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
-ADDED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:18:13-20:85
+ADDED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:18:13-20:85
 	android:value
-		ADDED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
+		ADDED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:20:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-installations:17.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/fd9635311e595066c904f032e203fda5/transformed/firebase-installations-17.0.0/AndroidManifest.xml:19:17-127
+		ADDED from [com.google.firebase:firebase-installations:17.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/18924c318cef1c330d0f776adfc6de96/transformed/firebase-installations-17.0.1/AndroidManifest.xml:19:17-127
 provider#com.google.firebase.provider.FirebaseInitProvider
 ADDED from [com.google.firebase:firebase-common:20.3.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/16d83a30a978f4f7f41975121e484ac8/transformed/firebase-common-20.3.1/AndroidManifest.xml:25:9-30:39
 	android:authorities
@@ -673,37 +822,37 @@ ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/vahanharuty
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/0c90dee2369b4b74eaad8ea3e28e419d/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
 uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
-ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:26:5-110
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:26:5-110
-MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/bfbd99931059a77d87ccc4ef1bff84e7/transformed/play-services-measurement-impl-20.0.0/AndroidManifest.xml:26:5-110
+ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/a0ff4e34985cfd45c451ceb9363c8736/transformed/play-services-measurement-impl-21.1.1/AndroidManifest.xml:26:5-110
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:26:22-107
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:26:22-107
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:29:9-33:20
+ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:29:9-33:20
 	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:31:13-35
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:31:13-35
 	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:32:13-37
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:30:13-85
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:30:13-85
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:35:9-38:40
+ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:35:9-38:40
 	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:37:13-35
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:37:13-35
 	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:38:13-37
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:38:13-37
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:36:13-84
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:36:13-84
 service#com.google.android.gms.measurement.AppMeasurementJobService
-ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:39:9-43:72
+ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:39:9-43:72
 	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:41:13-35
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:41:13-35
 	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:42:13-37
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:42:13-37
 	android:permission
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:43:13-69
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:43:13-69
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:20.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/cc4962b0b04d3f9704bd77c151ecaac3/transformed/play-services-measurement-20.0.0/AndroidManifest.xml:40:13-87
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.1] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4ffaec22891f020d596e3e4859284f38/transformed/play-services-measurement-21.1.1/AndroidManifest.xml:40:13-87
 meta-data#com.google.android.gms.version
 ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/d783b131d093ddc395c9a60a0a8c75e0/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
 	android:value

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search"
+            android:iconifiedByDefault="false"
+            app:searchIcon="@drawable/search_icon"
+            android:textColor="@color/white"
+            />
+        <Button
+            android:text="CPU"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/btn2"
+            android:id="@+id/cpu_button"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            />
+
+        <Button
+            android:text="GPU"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/btn2"
+            android:id="@+id/gpu_button"
+            android:layout_below="@id/cpu_button"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <Button
+            android:text="RAM"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/btn2"
+            android:id="@+id/ram_button"
+            android:layout_below="@id/gpu_button"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <Button
+            android:text="Motherboard"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/btn2"
+            android:id="@+id/motherboard_button"
+            android:layout_below="@id/ram_button"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <Button
+            android:text="PSU"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/btn2"
+            android:id="@+id/psu_button"
+            android:layout_below="@id/motherboard_button"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+        <Button
+            android:text="Storage"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/btn2"
+            android:id="@+id/storage_button"
+            android:layout_below="@id/psu_button"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+        <Button
+            android:text="Cooler"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/btn2"
+            android:id="@+id/cooler_button"
+            android:layout_below="@id/storage_button"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+
+
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/modify_panel_text"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="60dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:layout_marginTop="25dp"-->
+    <!--        android:text="MODIFY"-->
+    <!--        android:textSize="40sp"-->
+    <!--        android:textColor="#5DAA60"-->
+    <!--        android:textStyle="bold" />-->
+
+    <!--    &lt;!&ndash; Item Name &ndash;&gt;-->
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/textInput_itemName"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="16dp">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/editText_itemName"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:hint="Item Name" />-->
+
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    &lt;!&ndash; Item Price &ndash;&gt;-->
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/textInput_itemPrice"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="16dp">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/editText_itemPrice"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:hint="Item Price" />-->
+
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/button_modfyItem"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/textInput_itemPrice"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:text="Modify Item" />-->
+
+
+

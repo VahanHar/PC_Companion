@@ -1,53 +1,51 @@
 package com.example.pcplanner;
 
-import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.util.Log;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+
 public class PsuActivity extends AppCompatActivity {
 
-    private Button saveButton;
-    private Button cpuButton;
-    private Button gpuButton;
-    private Button ramButton;
-    private Button motherboardButton;
-    private Button psuButton;
-    private Button storageButton;
-    private Button coolerButton;
+    private TextView priceTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_configuration);
+        setContentView(R.layout.activity_psu);
 
+        priceTextView = findViewById(R.id.priceTextView);
 
-        // Find buttons by ID and set onClickListeners for each
-        cpuButton = findViewById(R.id.cpu_button);
-        gpuButton = findViewById(R.id.gpu_button);
-        ramButton = findViewById(R.id.ram_button);
-        motherboardButton = findViewById(R.id.motherboard_button);
-        psuButton = findViewById(R.id.psu_button);
-        storageButton = findViewById(R.id.storage_button);
-        coolerButton = findViewById(R.id.cooler_button);
-
-
+        new GetPriceTask().execute("https://www.amazon.de/DJI-CP-PT-000498-Mavic-Drohne-grau/dp/B01M0AVO1P/");
     }
-    // Handle back button press
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
+    private class GetPriceTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... urls) {
+            String url = urls[0];
+            Document document = null;
+            try {
+                document = Jsoup.connect(url).userAgent("Mozilla/49.0").get();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Elements question = document.select("#priceblock_ourprice");
+            return question.html();
         }
 
-        return super.onOptionsItemSelected(item);
+        @Override
+        protected void onPostExecute(String price) {
+            priceTextView.setText("Price is " + price);
+        }
     }
 }
 

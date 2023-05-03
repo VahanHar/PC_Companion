@@ -30,6 +30,15 @@ public class Register extends AppCompatActivity {
     ProgressBar progressBar;
     TextView textView;
 
+    private boolean isValidEmail(CharSequence email) {
+        if (TextUtils.isEmpty(email)) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+        }
+    }
+
+
     @Override
     public void onStart() {
         super.onStart();
@@ -71,6 +80,11 @@ public class Register extends AppCompatActivity {
                     Button buttonReg = findViewById(R.id.btn_register);
                     buttonReg.performClick();
                 }, 100);
+                // Hide keyboard after login button is clicked
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
                 return true;
             }
             return false;
@@ -85,9 +99,29 @@ public class Register extends AppCompatActivity {
                 email = String.valueOf(editTextEmail.getText());
                 password = String.valueOf(editTextPassword.getText());
 
+
+
+                // Check if email is valid
+                if(!isValidEmail(email)){
+                    Toast.makeText(Register.this, "Invalid email address",Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                    // Hide keyboard after login button is clicked
+                    InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
+                    return;
+                }
+
+
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(Register.this, "Enter email",Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
+                    // Hide keyboard after login button is clicked
+                    InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
                     return;
                 }
 
@@ -96,6 +130,11 @@ public class Register extends AppCompatActivity {
                 if(TextUtils.isEmpty(password)){
                     Toast.makeText(Register.this, "Enter password",Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
+                    // Hide keyboard after login button is clicked
+                    InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
                     return;
                 }
 
@@ -114,6 +153,7 @@ public class Register extends AppCompatActivity {
                                     startActivity(intent);
                                     finish();
                                 } else {
+
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(Register.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();

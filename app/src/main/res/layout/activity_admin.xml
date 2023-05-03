@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
     <TextView
         android:layout_gravity="center"
         android:id="@+id/user_details"
@@ -25,55 +26,97 @@
         android:textColor="#5DAA60"
         android:textStyle="bold" />
 
-    <!-- Item Name -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInput_itemName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText_itemName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Item Name" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Item Price -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInput_itemPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText_itemPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Item Price" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button_addItem"
-        android:layout_width="match_parent"
+        android:text="ADD ITEM"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@drawable/btn1"
+        android:id="@+id/add_button"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:paddingBottom="20dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textInput_itemPrice"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Add Item" />
+        android:gravity="center" />
+
+    <Button
+        android:text="MODIFY ITEM"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@drawable/btn1"
+        android:id="@+id/modify_button"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:paddingBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
     <Button
         android:text="@string/logout"
-        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="30dp"
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_logout"
         />
 
 </LinearLayout>
+
+
+
+
+    <!--    &lt;!&ndash; Item Name &ndash;&gt;-->
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/textInput_itemName"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="16dp">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/editText_itemName"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:hint="Item Name" />-->
+
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    &lt;!&ndash; Item Price &ndash;&gt;-->
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/textInput_itemPrice"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="16dp">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/editText_itemPrice"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:hint="Item Price" />-->
+
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/button_addItem"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/textInput_itemPrice"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:text="Add Item" />-->
