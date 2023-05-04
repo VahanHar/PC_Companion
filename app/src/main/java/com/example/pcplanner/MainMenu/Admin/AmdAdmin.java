@@ -31,7 +31,7 @@ import java.util.List;
 
 public class AmdAdmin extends AddActivity {
 
-    TextInputEditText newSubcollectionEditText;
+    TextInputEditText newSubdocumentEditText;
     Button addItemButton;
     FirebaseFirestore firestore;
     ListView documentListView;
@@ -46,7 +46,7 @@ public class AmdAdmin extends AddActivity {
         setContentView(R.layout.activity_admin_cpu);
 
         firestore = FirebaseFirestore.getInstance();
-        newSubcollectionEditText = findViewById(R.id.editText_itemName);
+        newSubdocumentEditText = findViewById(R.id.editText_itemName);
         addItemButton = findViewById(R.id.button_addItem);
         documentListView = findViewById(R.id.document_list_view);
 
@@ -96,23 +96,23 @@ public class AmdAdmin extends AddActivity {
             addItemButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String newSubcollectionName = newSubcollectionEditText.getText().toString();
+                    String newSubdocumentName = newSubdocumentEditText.getText().toString();
 
-                    if (newSubcollectionName.isEmpty()) {
-                        Toast.makeText(getApplicationContext(), "Please enter collection name", Toast.LENGTH_SHORT).show();
+                    if (newSubdocumentName.isEmpty()) {
+                        Toast.makeText(getApplicationContext(), "Please enter generation of processor ", Toast.LENGTH_SHORT).show();
                     } else {
-                        subDocumentRef.collection(newSubcollectionName).document().set(new HashMap<String, Object>())
+                        subDocumentRef.collection("sub").document(newSubdocumentName).set(new HashMap<String, Object>())
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
-                                        Toast.makeText(getApplicationContext(), "Collection added successfully", Toast.LENGTH_SHORT).show();
-                                        newSubcollectionEditText.setText("");
+                                        Toast.makeText(getApplicationContext(), "generation added successfully", Toast.LENGTH_SHORT).show();
+                                        newSubdocumentEditText.setText("");
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(getApplicationContext(), "Error adding collection", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Error adding generation", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                     }
@@ -120,6 +120,7 @@ public class AmdAdmin extends AddActivity {
             });
 
         });
+
 
     }
 }

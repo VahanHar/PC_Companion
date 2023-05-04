@@ -1,58 +1,82 @@
 package com.example.pcplanner.MainMenu;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pcplanner.CpuActivity.IntelActivity;
 import com.example.pcplanner.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescriptionActivity extends AppCompatActivity {
 
     private FirebaseFirestore firestore;
+    private String documentId;
+    private String collectionPath;
+    private ListView subdocumentListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
-
         firestore = FirebaseFirestore.getInstance();
+        subdocumentListView = findViewById(R.id.subdocument_listview);
 
-        String documentId = getIntent().getStringExtra("documentId");
 
-        DocumentReference documentRef = firestore.collection("PC Components").document("CPU").collection("INTEL").document(documentId);
+        documentId = getIntent().getStringExtra("documentId");
+        collectionPath = getIntent().getStringExtra("collectionPath");
 
-        documentRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        CollectionReference documentRef = firestore.collection(collectionPath).document(documentId).collection("sub");
+
+
+        documentRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-
-                        //String #### = document.getString("NAME OF FIELD");
-                        String name = document.getString("name");
-
-
-
-
-                        TextView textView = findViewById(R.id.textView);
-
-
-
-                        //textView.setText(HERE WRITE NAME)
-                        textView.setText(name);
+                    List<DocumentSnapshot> documents = task.getResult().getDocuments();
+                    List<String> subdocumentList = new ArrayList<>();
+                    for (DocumentSnapshot document : documents) {
+                        subdocumentList.add(document.getId());
                     }
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(DescriptionActivity.this, android.R.layout.simple_list_item_1, subdocumentList);
+                    subdocumentListView.setAdapter(adapter);
+
+                    // Add item click listener to open sub-collection documents
+                    subdocumentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                            String subdocumentId = subdocumentList.get(position);
+                            Intent intent = new Intent(DescriptionActivity.this, MoreDescriptionActivity.class);
+                            intent.putExtra("subdocumentId", subdocumentId);
+                            intent.putExtra("documentId", documentId);
+                            intent.putExtra("collectionPath",collectionPath);
+                            intent.putExtra("collectionpath", "PC Components/CPU/INTEL" + "/"+documentId + "/sub/");
+                            startActivity(intent);
+                        }
+                    });
                 } else {
                     // Handle error
                 }
             }
         });
+
     }
 }
-

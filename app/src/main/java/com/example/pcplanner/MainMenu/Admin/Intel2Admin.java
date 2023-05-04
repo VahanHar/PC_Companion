@@ -23,7 +23,7 @@ import java.util.Map;
 public class Intel2Admin extends AppCompatActivity {
 
 
-    TextInputEditText brandEditText, modelEditText, characteristicsEditText, itemNameEditText, itemPriceEditText;
+    TextInputEditText brandEditText, modelEditText, characteristicsEditText, detailsEditText, itemNameEditText, itemPriceEditText;
     Button modifyItemButton;
     FirebaseFirestore firestore;
 
@@ -46,6 +46,10 @@ public class Intel2Admin extends AppCompatActivity {
         characteristicsEditText.setSingleLine(true);
         characteristicsEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
 
+        detailsEditText = findViewById(R.id.textInput_details);
+        detailsEditText.setSingleLine(true);
+        detailsEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
         itemNameEditText = findViewById(R.id.editText_itemName);
         itemNameEditText.setSingleLine(true);
         itemNameEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
@@ -66,14 +70,19 @@ public class Intel2Admin extends AppCompatActivity {
                     brand = brand.substring(0, 1).toUpperCase() + brand.substring(1).toLowerCase();
                 }
 
-                String model = modelEditText.getText().toString().trim();
-                if (!model.isEmpty()) {
-                    model = model.substring(0, 1).toUpperCase() + model.substring(1).toLowerCase();
+                String generation = modelEditText.getText().toString().trim();
+                if (!generation.isEmpty()) {
+                    generation = generation.substring(0, 1).toUpperCase() + generation.substring(1).toLowerCase();
                 }
 
                 String characteristics = characteristicsEditText.getText().toString().trim();
                 if (!characteristics.isEmpty()) {
                     characteristics = characteristics.substring(0, 1).toUpperCase() + characteristics.substring(1).toLowerCase();
+                }
+
+                String details = detailsEditText.getText().toString().trim();
+                if (!details.isEmpty()) {
+                    details = details.substring(0, 1).toUpperCase() + details.substring(1).toLowerCase();
                 }
 
                 String itemName = itemNameEditText.getText().toString().trim();
@@ -92,7 +101,7 @@ public class Intel2Admin extends AppCompatActivity {
 
 
 
-                if (brand.isEmpty() || model.isEmpty() || characteristics.isEmpty() || itemName.isEmpty() || priceStr.isEmpty()) {
+                if (brand.isEmpty() || generation.isEmpty() || characteristics.isEmpty() || details.isEmpty() || itemName.isEmpty() || priceStr.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Please fill out all fields", Toast.LENGTH_SHORT).show();
 
                 } else {
@@ -105,9 +114,10 @@ public class Intel2Admin extends AppCompatActivity {
                     DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
                     CollectionReference amdCollectionRef = cpuDocRef.collection("INTEL");
                     DocumentReference brandDocRef = amdCollectionRef.document(brand);
-                    CollectionReference modelCollectionRef = brandDocRef.collection(model);
-                    DocumentReference characteristicsDocRef = modelCollectionRef.document(characteristics);
-
+                    CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
+                    DocumentReference modelCollectionRef = subsubCollectionRef.document(generation);
+                    CollectionReference detailscoleRef = modelCollectionRef.collection(details);
+                    DocumentReference characteristicsDocRef = detailscoleRef.document(characteristics) ;
 
                     characteristicsDocRef.set(item)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -117,6 +127,7 @@ public class Intel2Admin extends AppCompatActivity {
                                     brandEditText.setText("");
                                     modelEditText.setText("");
                                     characteristicsEditText.setText("");
+                                    detailsEditText.setText("");
                                     itemNameEditText.setText("");
                                     itemPriceEditText.setText("");
                                 }
