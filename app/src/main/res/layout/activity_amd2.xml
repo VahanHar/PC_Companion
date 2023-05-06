@@ -79,7 +79,7 @@
             android:layout_marginTop="12dp"
             android:text="Details"
             android:textSize="20sp"
-            android:textColor="#529A54"
+            android:textColor="#568C57"
             android:textStyle="bold"
             android:gravity="center"
             />
@@ -157,7 +157,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Item Price"
+            android:text="Number of cores"
             android:textSize="20sp"
             android:textColor="#529A54"
             android:textStyle="bold"
@@ -173,10 +173,10 @@
             android:layout_marginEnd="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editText_itemPrice"
+                android:id="@+id/editText_cores"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Item Price" />
+                android:hint="Number of cores" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

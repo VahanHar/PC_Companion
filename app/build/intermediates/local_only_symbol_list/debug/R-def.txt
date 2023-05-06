@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+anim animation1
 anim fade_in
 anim fade_in_zoom
 anim nothing
@@ -9,6 +10,8 @@ anim slide_out_left
 anim slide_out_right
 anim zoom_out
 color black
+color gray
+color light_gray
 color purple_200
 color purple_500
 color purple_700
@@ -38,6 +41,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_notifications_black_24dp
 drawable ic_password
+drawable list_item_selector
 drawable my_button_background
 drawable russian_icon
 drawable search_icon
@@ -66,17 +70,20 @@ id collection_name
 id comparison_button
 id configuration_button
 id cooler_button
+id cores_text_view
 id cpu_button
 id discount_price_text_view
 id document_list_view
 id editTextTextPersonName
+id editText_cores
+id editText_intel
 id editText_itemName
-id editText_itemPrice
 id email
 id field_list_layout
 id gpu_button
 id intel_button
 id intelarc_button
+id link_button
 id link_image_amazon_image_view
 id listView
 id loginNow
@@ -113,16 +120,19 @@ id welcome_text
 layout activity_add
 layout activity_admin
 layout activity_admin_cpu
+layout activity_amd
 layout activity_amd2
 layout activity_amd_sub_collection
 layout activity_amd_subcollection
 layout activity_comparison
 layout activity_configuration
 layout activity_cpu
+layout activity_cpu3
 layout activity_description
 layout activity_gpu
 layout activity_intel
 layout activity_intel2
+layout activity_link
 layout activity_login
 layout activity_main
 layout activity_modify
@@ -237,6 +247,7 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string hintAmazonLink
 string logout
+string no_items_message
 string page_title
 string password
 string project_id

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
 MERGED from [androidx.navigation:navigation-ui:2.4.2] /Users/vahanharutyunyan/.gradle/caches/transforms-3/3f6d1b1a1ec6db3fe5dab65e5a35ed6c/transformed/navigation-ui-2.4.2/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.8.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/95950d354b84d5d91cbfde9f6f44b692/transformed/material-1.8.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4fdbead62801f6c959c95d643aa636bd/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
@@ -93,22 +93,22 @@ MERGED from [androidx.print:print:1.0.0] /Users/vahanharutyunyan/.gradle/caches/
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/6aa5cdca630ead1c07a911e911c3ed92/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/59cd6c38072658aa0875a221549c571a/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:exifinterface:27.1.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/b41abcc5981e8d3208e8efc8fe270638/transformed/exifinterface-27.1.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
-INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
+INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
 	package
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
-		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-357:12
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:1-385:12
 		INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:2:11-69
@@ -157,7 +157,7 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.1] /U
 	android:name
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:6:22-76
 application
-ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:8:5-355:19
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:8:5-383:19
 MERGED from [com.google.android.material:material:1.8.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/95950d354b84d5d91cbfde9f6f44b692/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.8.0] /Users/vahanharutyunyan/.gradle/caches/transforms-3/95950d354b84d5d91cbfde9f6f44b692/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/vahanharutyunyan/.gradle/caches/transforms-3/4fdbead62801f6c959c95d643aa636bd/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -524,6 +524,26 @@ ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManif
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:338:13-69
 	android:name
 		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:336:13-61
+activity#com.example.pcplanner.MainMenu.Admin.Cpu3Admin
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:349:9-361:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:353:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:351:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:352:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:350:13-53
+activity#com.example.pcplanner.MainMenu.Admin.LinkActivity
+ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:363:9-375:20
+	android:screenOrientation
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:367:13-49
+	android:exported
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:365:13-36
+	android:theme
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:366:13-69
+	android:name
+		ADDED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml:364:13-56
 uses-sdk
 INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/vahanharutyunyan/Downloads/PCPlanner/app/src/main/AndroidManifest.xml

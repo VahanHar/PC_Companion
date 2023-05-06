@@ -173,10 +173,10 @@
         android:layout_marginEnd="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText_itemPrice"
+            android:id="@+id/editText_cores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Item Price" />
+            android:hint="Number of cores" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

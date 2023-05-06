@@ -23,7 +23,7 @@ import java.util.Map;
 public class Amd2Admin extends AppCompatActivity {
 
 
-    TextInputEditText brandEditText, modelEditText, characteristicsEditText, detailsEditText, itemNameEditText, itemPriceEditText;
+    TextInputEditText brandEditText, modelEditText, characteristicsEditText, detailsEditText, itemNameEditText, CoresEditText;
     Button modifyItemButton;
     FirebaseFirestore firestore;
 
@@ -54,9 +54,9 @@ public class Amd2Admin extends AppCompatActivity {
         itemNameEditText.setSingleLine(true);
         itemNameEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
 
-        itemPriceEditText = findViewById(R.id.editText_itemPrice);
-        itemPriceEditText.setSingleLine(true);
-        itemPriceEditText.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        CoresEditText = findViewById(R.id.editText_cores);
+        CoresEditText.setSingleLine(true);
+        CoresEditText.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
         modifyItemButton = findViewById(R.id.button_modfyItem);
 
@@ -90,11 +90,11 @@ public class Amd2Admin extends AppCompatActivity {
                     itemName = itemName.substring(0, 1).toUpperCase() + itemName.substring(1).toLowerCase();
                 }
 
-                String priceStr = itemPriceEditText.getText().toString().trim();
-                int itemPrice = 0;
+                String priceStr = CoresEditText.getText().toString().trim();
+                int Cores = 0;
 
                 if (!priceStr.isEmpty()) {
-                    itemPrice = Integer.parseInt(priceStr);
+                    Cores = Integer.parseInt(priceStr);
                 } else {
                     Toast.makeText(getApplicationContext(), "Please enter a price", Toast.LENGTH_SHORT).show();
                 }
@@ -107,7 +107,7 @@ public class Amd2Admin extends AppCompatActivity {
                 } else {
                     Map<String, Object> item = new HashMap<>();
                     item.put("name", itemName);
-                    item.put("price", itemPrice);
+                    item.put("number of cores: ", Cores);
 
 
                     CollectionReference parentCollectionRef = firestore.collection("PC Components");
@@ -119,6 +119,9 @@ public class Amd2Admin extends AppCompatActivity {
                     CollectionReference detailscoleRef = modelCollectionRef.collection(details);
                     DocumentReference characteristicsDocRef = detailscoleRef.document(characteristics) ;
 
+
+
+
                     characteristicsDocRef.set(item)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -127,8 +130,9 @@ public class Amd2Admin extends AppCompatActivity {
                                     brandEditText.setText("");
                                     modelEditText.setText("");
                                     characteristicsEditText.setText("");
+                                    detailsEditText.setText("");
                                     itemNameEditText.setText("");
-                                    itemPriceEditText.setText("");
+                                    CoresEditText.setText("");
                                 }
 
                             })

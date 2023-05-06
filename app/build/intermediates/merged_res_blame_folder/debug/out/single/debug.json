@@ -8,16 +8,20 @@
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/anim/slide_in_right.xml"
     },
     {
-        "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/mipmap-xxhdpi/ic_launcher.webp"
-    },
-    {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/font_roboto.ttf.flat",
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/font/roboto.ttf"
     },
     {
+        "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/drawable_bg_rounded_edittext.xml.flat",
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/drawable/bg_rounded_edittext.xml"
+    },
+    {
+        "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/layout_activity_cpu3.xml.flat",
+        "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/layout/activity_cpu3.xml"
     },
     {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/layout_activity_intel2.xml.flat",
@@ -212,6 +216,10 @@
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/drawable-v24/baseline_delete_24.xml"
     },
     {
+        "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/layout_activity_link.xml.flat",
+        "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/layout/activity_link.xml"
+    },
+    {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/drawable_configuration_icon.png.flat",
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/drawable/configuration_icon.png"
     },
@@ -222,10 +230,6 @@
     {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/mipmap-mdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.example.pcplanner.app-merged_res-49:/layout_activity_moredescription.xml.flat",
-        "source": "com.example.pcplanner.app-main-51:/layout/activity_moredescription.xml"
     },
     {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/anim_slide_in_left.xml.flat",
@@ -246,6 +250,10 @@
     {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/drawable_my_button_background.xml.flat",
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/drawable/my_button_background.xml"
+    },
+    {
+        "merged": "com.example.pcplanner.app-merged_res-49:/anim_animation1.xml.flat",
+        "source": "com.example.pcplanner.app-main-51:/anim/animation1.xml"
     },
     {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/mipmap-xhdpi_ic_launcher.webp.flat",
@@ -288,6 +296,10 @@
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/drawable-v24/ic_launcher_foreground.xml"
     },
     {
+        "merged": "com.example.pcplanner.app-merged_res-49:/layout_activity_intel.xml.flat",
+        "source": "com.example.pcplanner.app-main-51:/layout/activity_intel.xml"
+    },
+    {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/layout_activity_admin.xml.flat",
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/layout/activity_admin.xml"
     },
@@ -316,8 +328,16 @@
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/layout/activity_admin_cpu.xml"
     },
     {
+        "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/layout_activity_amd.xml.flat",
+        "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/layout/activity_amd.xml"
+    },
+    {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/drawable-v24_changelog.webp.flat",
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/drawable-v24/changelog.webp"
+    },
+    {
+        "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/drawable_list_item_selector.xml.flat",
+        "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/drawable/list_item_selector.xml"
     },
     {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/drawable_ic_launcher_background.xml.flat",

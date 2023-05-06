@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="gray">#919191</color>
+    <color name="light_gray">#B5B5B5</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -97,6 +99,7 @@
     <string name="google_storage_bucket" translatable="false">pcplanner-56b76.appspot.com</string>
     <string name="hintAmazonLink">Amazon Link</string>
     <string name="logout">Logout</string>
+    <string name="no_items_message">NO ITEM</string>
     <string name="page_title">iNoobOffre</string>
     <string name="password">Password</string>
     <string name="project_id" translatable="false">pcplanner-56b76</string>

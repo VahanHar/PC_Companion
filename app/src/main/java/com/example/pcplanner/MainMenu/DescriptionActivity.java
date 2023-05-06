@@ -68,7 +68,7 @@ public class DescriptionActivity extends AppCompatActivity {
                             intent.putExtra("subdocumentId", subdocumentId);
                             intent.putExtra("documentId", documentId);
                             intent.putExtra("collectionPath",collectionPath);
-                            intent.putExtra("collectionpath", "PC Components/CPU/INTEL" + "/"+documentId + "/sub/");
+                            intent.putExtra("collectionpath", collectionPath + "/"+documentId + "/sub/");
                             startActivity(intent);
                         }
                     });

@@ -26,7 +26,7 @@ public class AdminActivity extends AppCompatActivity {
     FirebaseUser user;
     private Button Add;
     private Button Modify;
-
+    private Button link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,10 @@ public class AdminActivity extends AppCompatActivity {
         logoutButton = findViewById(R.id.logout);
         textView = findViewById(R.id.user_details);
         Add = findViewById(R.id.add_button);
+        link = findViewById(R.id.link_button);
         Modify = findViewById(R.id.modify_button);
+
+
 
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +58,13 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminActivity.this, AddActivity.class));
+            }
+        });
+
+        link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminActivity.this, LinkActivity.class));
             }
         });
 
