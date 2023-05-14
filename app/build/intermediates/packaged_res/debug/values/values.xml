@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="gray">#919191</color>
+    <color name="light_gray">#B5B5B5</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="About">About</string>
+    <string name="AccessToken" translatable="false">Access Token</string>
+    <string name="AmazonConnection">Reading Amazon webpage...</string>
+    <string name="AmazonPageDescription">If the product is displayed correctly, click on Continue. Otherwise, click to Cancel and change the link (or do the captcha)</string>
+    <string name="AmazonPageLoading">Amazon Web Page</string>
+    <string name="BitlyDescription">Create shortened links with Bitly. It\'s necessary to obtain an account token, that will permit to create new links.</string>
+    <string name="BitlyIntegration">Bitly integration</string>
+    <string name="BitlyLink">Use Bitly for generating links</string>
+    <string name="BitlyNegative">An error occurred while connecting to Bitly</string>
+    <string name="BitlyPositive">Connection to Bitly API established successfully</string>
+    <string name="Cancel">Cancel</string>
+    <string name="ChangeReferral">Change referral link</string>
+    <string name="ChangeReferralDescription">Write your referral code in the textbox</string>
+    <string name="ChangeReferralTitle">Change referral link</string>
+    <string name="ChangeTemplate">Change template</string>
+    <string name="ChangelogIntro">From now on, you\'ll see a changelog every time the app is updated. You can close this popup by clicking everywhere else on the screen. Here is the current one:</string>
+    <string name="ClipboardInfo">The text will be copied into system\'s clipboard, so it can be copied easily.</string>
+    <string name="Close">Close</string>
+    <string name="Continue">Continue</string>
+    <string name="CopyIntoClipboard">Copy the text into the clipboard</string>
+    <string name="CreateTemplate">Create your template</string>
+    <string name="CustomTemplate">Custom template</string>
+    <string name="Dark">Dark</string>
+    <string name="DarkDescription">Select if iNoobOffre should follow device settings for the application theme; or force dark/light mode</string>
+    <string name="DarkMode">Edit theme settings</string>
+    <string name="DarkTitle">Select application theme</string>
+    <string name="DeletedInput">Link deleted from the textbox</string>
+    <string name="DiscountedText">Text for discounted items</string>
+    <string name="DownloadProductPhoto">Download the product\'s photo into a selectable folder in external storage</string>
+    <string name="DownloadingPhoto">Downloading...</string>
+    <string name="DownloadingWebpageInfo">Amazon webpage is loading. Please wait.</string>
+    <string name="Edit">Edit</string>
+    <string name="End">End</string>
+    <string name="EndShort">End</string>
+    <string name="EndText">Text to attach at the bottom</string>
+    <string name="ExitCase1">Photo downloaded. Text copied into clipboard</string>
+    <string name="ExitCase2">Done.</string>
+    <string name="Experimental">Experimental</string>
+    <string name="ForceRead">Force read</string>
+    <string name="GetText">Get text</string>
+    <string name="Help">Help</string>
+    <string name="Ignore">Ignore</string>
+    <string name="InstructionWeb">Instruction opened in the web browser</string>
+    <string name="Introduction">Introduction</string>
+    <string name="IntroductionText">Introduction Text</string>
+    <string name="Libraries">Libraries</string>
+    <string name="Light">Light</string>
+    <string name="Link" translatable="false">Link</string>
+    <string name="No" translatable="false">No</string>
+    <string name="NotDiscounted">This product isn\'t discounted</string>
+    <string name="NotDiscountedText">Text for non-discounted items</string>
+    <string name="NotSupportedCharacters">The following symbols aren\'t supported: ↺ ↻</string>
+    <string name="ObtainToken">Obtain token</string>
+    <string name="OldProductDownload">Download the product\'s photo into the Download folder</string>
+    <string name="OpenSourceDescription">Do you want to see the open source libraries or the source code of this app?</string>
+    <string name="OpenSourceLicense">Open source</string>
+    <string name="Output" translatable="false">Output</string>
+    <string name="Photo">Photo</string>
+    <string name="Price">Price</string>
+    <string name="ProductPicture">Product picture</string>
+    <string name="ReferralCode">Referral code</string>
+    <string name="RestoreScript">Restore default script</string>
+    <string name="Save">Save</string>
+    <string name="SaveDebugPage">Save the webpage on local drive, for debug purposes</string>
+    <string name="SendToTelegram">Send the picture and the text to Telegram</string>
+    <string name="Settings">Settings</string>
+    <string name="ShareWithTelegram">Share with Telegram</string>
+    <string name="Software">Software</string>
+    <string name="SourceCode">Source code</string>
+    <string name="SystemSettigns">Device settings</string>
+    <string name="TemplateDescription">Personalize the text to paste on Telegram</string>
+    <string name="TemplateHint">You can obtain all the usable variables by clicking the + button, then ?</string>
+    <string name="Undo">Undo</string>
+    <string name="UnsavableScript">Cannot save this script</string>
+    <string name="Update">Update available</string>
+    <string name="UpdateDescription">A new update of iNoobOffre is available</string>
+    <string name="UpdatePositive">Update</string>
+    <string name="Yes">Yes</string>
+    <string name="app_name">PCPlanner</string>
+    <string name="click_to_login">Click to login</string>
+    <string name="click_to_register">Click to register</string>
+    <string name="compare_button_label">COMPARE</string>
+    <string name="default_web_client_id" translatable="false">8675260260-hon5s3ecsk9f639g9iuv724asq6p0480.apps.googleusercontent.com</string>
+    <string name="email">Email</string>
+    <string name="gcm_defaultSenderId" translatable="false">8675260260</string>
+    <string name="google_api_key" translatable="false">AIzaSyCgsFk4h1U5C7m8MWxPDuGVUPbvl6sDkrA</string>
+    <string name="google_app_id" translatable="false">1:8675260260:android:0a69ede95b421c3f46ac71</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCgsFk4h1U5C7m8MWxPDuGVUPbvl6sDkrA</string>
+    <string name="google_storage_bucket" translatable="false">pcplanner-56b76.appspot.com</string>
+    <string name="hintAmazonLink">Amazon Link</string>
+    <string name="logout">Logout</string>
+    <string name="no_items_message">NO ITEM</string>
+    <string name="page_title">iNoobOffre</string>
+    <string name="password">Password</string>
+    <string name="project_id" translatable="false">pcplanner-56b76</string>
+    <string name="register">Register</string>
+    <string name="select_document_prompt">select document</string>
+    <string name="startinstruction">Paste a link from Amazon</string>
+    <style name="Theme.PCPlanner" parent="Theme.AppCompat.Light.NoActionBar">
+        
+        <item name="colorPrimary">#211637</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+    </style>
+</resources>

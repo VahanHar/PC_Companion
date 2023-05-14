@@ -1,5 +1,6 @@
 package com.example.pcplanner.MainMenu.Admin;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import android.Manifest;
@@ -12,10 +13,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.jsoup.nodes.Document;
 
 import com.example.pcplanner.PsuActivity;
 import com.example.pcplanner.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -337,6 +342,7 @@ public class Cpu3Admin extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+
                     CollectionReference parentCollectionRef = firestore.collection("PC Components");
                     DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
                     CollectionReference intelCollectionRef = cpuDocRef.collection("INTEL");
@@ -349,17 +355,38 @@ public class Cpu3Admin extends AppCompatActivity {
                     CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
                     DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics") ;
 
+                    //ADDING GENERATION BY LINK
+                    brandDocRef.collection("sub").document(p2).set(new HashMap<String, Object>())
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(getApplicationContext(), "generation added successfully", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getApplicationContext(), "Error adding generation", Toast.LENGTH_SHORT).show();
+                                }
+                            });
 
+                    //ADDING FIELDS OF THAT GENERATION PROCESSOR
                     characteristicsDocRef.set(new HashMap<String, Object>() {{
-                        put("Processor Number", processorNumber);
-                        put("Number of Cores", coreNumber);
-                        put("Number of Threads", threadNumber);
-                        put("Maximum Frequency", maxFrequency);
-                        put("Base Frequency", baseFrequency);
-                        put("Maximum Power usage", maxPower);
-                        put("Launch Date", launchDate);
-                        put("Maximum RAM", maxRam);
+                        put("1.Processor Number", processorNumber);
+                        put("2.Launch Date", launchDate);
+                        put("3.Number of Cores", coreNumber);
+                        put("4.Number of Threads", threadNumber);
+                        put("5.Base Frequency", baseFrequency);
+                        put("6.Maximum Frequency", maxFrequency);
+                        put("7.Maximum Power usage", maxPower);
+                        put("8.Maximum RAM", maxRam);
                     }});
+
+
+
+
+
+
 
                     String displayText = "Processor Number: " + processorNumber + "\nNumber of Cores: " + coreNumber + "\nNumber of Threads: " + threadNumber + "\nMaximum Frequency: " + maxFrequency+ "\nBase Frequency: " + baseFrequency+ "\nMaximum Power usage: " + maxPower+ "\nLaunch Date: " + launchDate+ "\nMaximum RAM: " + maxRam;
                     itemNameTextView.setText(displayText);

@@ -92,6 +92,7 @@
     <string name="DarkDescription">Select if iNoobOffre should follow device settings for the application theme; or force dark/light mode</string>
     <string name="select_document_prompt">select document</string>
     <string name="no_items_message">NO ITEM</string>
+    <string name="compare_button_label">COMPARE</string>
 
 
 </resources>

@@ -1,12 +1,17 @@
 package com.example.pcplanner.MainMenu;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,39 +24,154 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class MoreDescriptionActivity extends AppCompatActivity {
 
     private FirebaseFirestore firestore;
     private String collectionPath;
+    private String documentId;
+    private String collectionpath;
     private String subdocumentId;
     private RecyclerView fieldListRecyclerView;
+    private TextView subdocumentCountTextView;
     private List<Map<String, Object>> subdocuments;
+    private List<String> subdocumentIdList = new ArrayList<>();
+    private List<String> documentIdList = new ArrayList<>();
+
+    private SharedPreferences sharedPreferences;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moredescription);
 
+        // Get shared preferences
+        sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+
         firestore = FirebaseFirestore.getInstance();
         fieldListRecyclerView = findViewById(R.id.field_list_recyclerview);
 
-        collectionPath = getIntent().getStringExtra("collectionpath");
-        subdocumentId = getIntent().getStringExtra("subdocumentId");
+        subdocumentCountTextView = findViewById(R.id.subdocument_count_tv);
 
-        CollectionReference documentRef = firestore.collection(collectionPath).document(subdocumentId).collection("Characteristics");
+        collectionpath = getIntent().getStringExtra("collectionpath");
+        subdocumentId = getIntent().getStringExtra("subdocumentId");
+        documentId = getIntent().getStringExtra("documentId");
+        collectionPath = getIntent().getStringExtra("collectionPath");
+
+        // Load subdocumentIdList/documentIdList from shared preferences
+        Set<String> subdocumentIdSet = sharedPreferences.getStringSet("subdocumentIdList", null);
+        Set<String> documentIdSet = sharedPreferences.getStringSet("documentIdList",null);
+
+        if (subdocumentIdSet != null) {
+            subdocumentIdList = new ArrayList<>(subdocumentIdSet);
+        }
+        if (documentIdSet != null) {
+            documentIdList = new ArrayList<>(documentIdSet);
+        }
+
+        Button deleteListButton = findViewById(R.id.delete_list_button);
+        deleteListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onDeleteListButtonClick(v);
+            }
+        });
+
+        // Inside onCreate method of MoreDescriptionActivity
+        Button addToSubdocumentIdListButton = findViewById(R.id.add_to_list_button);
+        addToSubdocumentIdListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(subdocumentIdList.size() < 2) {
+                    documentIdList.add(documentId);
+                    subdocumentIdList.add(subdocumentId);
+
+                    // Save the updated subdocumentIdList to SharedPreferences
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putStringSet("subdocumentIdList", new HashSet<>(subdocumentIdList));
+                    editor.putStringSet("documentIdList", new HashSet<>(documentIdList));
+                    editor.apply();
+
+                    Toast.makeText(MoreDescriptionActivity.this, "Item added", Toast.LENGTH_SHORT).show();
+
+                    // Update the subdocument count TextView
+                    subdocumentCountTextView.setText("ITEMS IN THE COMPARISON LIST: " + String.valueOf(subdocumentIdList.size() + "/2"));
+                }
+                else{
+                    subdocumentCountTextView.setText("THERE ARE ALREADY " + String.valueOf(subdocumentIdList.size() + "/2 ITEMS TO COMPARE!" + "\n\nCLICK 'DELETE LIST' BUTTON!"));
+
+                }
+            }
+        });
+        Button compareButton = findViewById(R.id.compare_button);
+        compareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (subdocumentIdList.size() >= 2 || documentIdList.size()>=2) {
+                    String subdocumentId1 = subdocumentIdList.get(0);
+                    String subdocumentId2 = subdocumentIdList.get(1);
+                    String documentId1 = documentIdList.get(0);
+                    String documentId2 = documentIdList.get(1);
+
+                    // Create the intent
+                    Intent intent = new Intent(MoreDescriptionActivity.this, CompareActivity.class);
+                    intent.putExtra("subdocumentId", subdocumentId);
+                    intent.putExtra("collectionpath", collectionpath);
+                    intent.putExtra("subdocumentId1", subdocumentId1);
+                    intent.putExtra("subdocumentId2", subdocumentId2);
+                    intent.putExtra("documentId1", documentId1);
+                    intent.putExtra("documentId2", documentId2);
+                    intent.putExtra("documentId", documentId);
+                    intent.putExtra("collectionPath", collectionPath);
+                    startActivity(intent);
+                } else {
+                    // Handle the case where the list has less than 2 elements
+                    // For example, display an error message or disable the compare button
+                }
+            }
+        });
+
+
+
+        CollectionReference documentRef = firestore.collection(collectionPath).document(documentId).collection("sub").document(subdocumentId).collection("Characteristics");
 
         documentRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 subdocuments = new ArrayList<>();
                 for (DocumentSnapshot document : task.getResult().getDocuments()) {
                     Map<String, Object> fields = document.getData();
-                    subdocuments.add(fields);
+
+                    // Sort the fields by name in ascending order
+                    List<Map.Entry<String, Object>> sortedFields = new ArrayList<>(fields.entrySet());
+                    Collections.sort(sortedFields, new Comparator<Map.Entry<String, Object>>() {
+                        @Override
+                        public int compare(Map.Entry<String, Object> o1, Map.Entry<String, Object> o2) {
+                            return o1.getKey().compareTo(o2.getKey());
+                        }
+                    });
+
+                    // Convert the sorted List of Map.Entry objects back to a Map object
+                    LinkedHashMap<String, Object> sortedFieldsMap = new LinkedHashMap<>();
+                    for (Map.Entry<String, Object> entry : sortedFields) {
+                        String fieldName = entry.getKey();
+                        Object fieldValue = entry.getValue();
+                        sortedFieldsMap.put(fieldName.substring(2), fieldValue);
+                    }
+
+                    subdocuments.add(sortedFieldsMap);
                 }
                 FieldListAdapter adapter = new FieldListAdapter(subdocuments);
                 fieldListRecyclerView.setAdapter(adapter);
@@ -60,7 +180,28 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                 // Handle error
             }
         });
+
+
     }
+
+    //DELETE SUBCOLLECTIONLIST DATA STORED
+    public void onDeleteListButtonClick(View view) {
+        // Remove subdocumentIdList from SharedPreferences
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("subdocumentIdList");
+        editor.remove("documentIdList");
+        editor.apply();
+
+        // Clear subdocumentIdList in memory
+        subdocumentIdList.clear();
+        documentIdList.clear();
+
+        // Update the subdocument count TextView
+        subdocumentCountTextView.setText("ITEMS IN THE COMPARISON LIST: "+String.valueOf(subdocumentIdList.size() + "/2"));
+        // Notify the user that the list has been deleted
+        Toast.makeText(this, "List deleted", Toast.LENGTH_SHORT).show();
+    }
+
 
     private static class FieldListAdapter extends RecyclerView.Adapter<FieldViewHolder> {
         private final List<Map<String, Object>> subdocuments;

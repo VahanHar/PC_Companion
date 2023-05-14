@@ -14,5 +14,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subdocument_count_tv"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#37080B"
+        android:layout_marginBottom="150dp"/>
+    <Button
+        android:id="@+id/add_to_list_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD TO COMPARISON LIST"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"/>
+    <Button
+        android:id="@+id/compare_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/compare_button_label"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"/>
+    <Button
+        android:id="@+id/delete_list_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete List"
+        android:layout_alignParentBottom="true"
+        android:onClick="onDeleteListButtonClick" />
+
 
 </RelativeLayout>
