@@ -1,15 +1,17 @@
 package com.example.pcplanner.MainMenu;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pcplanner.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,63 +28,114 @@ import java.util.Map;
 public class MoreDescriptionActivity extends AppCompatActivity {
 
     private FirebaseFirestore firestore;
-    private String collectionpath;
+    private String collectionPath;
     private String subdocumentId;
-    private ListView subdocumentListView;
-    private LinearLayout fieldListLayout;
+    private RecyclerView fieldListRecyclerView;
+    private List<Map<String, Object>> subdocuments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moredescription);
-        firestore = FirebaseFirestore.getInstance();
-        subdocumentListView = findViewById(R.id.subdocument_listview);
-        fieldListLayout = findViewById(R.id.field_list_layout);
 
-        collectionpath = getIntent().getStringExtra("collectionpath");
+        firestore = FirebaseFirestore.getInstance();
+        fieldListRecyclerView = findViewById(R.id.field_list_recyclerview);
+
+        collectionPath = getIntent().getStringExtra("collectionpath");
         subdocumentId = getIntent().getStringExtra("subdocumentId");
 
-        CollectionReference documentRef = firestore.collection(collectionpath).document(subdocumentId).collection("Characteristics");
+        CollectionReference documentRef = firestore.collection(collectionPath).document(subdocumentId).collection("Characteristics");
 
-        documentRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    List<DocumentSnapshot> documents = task.getResult().getDocuments();
-                    List<String> subdocumentList = new ArrayList<>();
-                    for (DocumentSnapshot document : documents) {
-                        subdocumentList.add(document.getId());
-                    }
-                    ArrayAdapter<String> adapter = new ArrayAdapter<>(MoreDescriptionActivity.this, android.R.layout.simple_list_item_1, subdocumentList);
-                    subdocumentListView.setAdapter(adapter);
-
-                    // Set click listener for subdocumentListView
-                    subdocumentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            // Get the clicked subdocument
-                            DocumentSnapshot subdocument = documents.get(position);
-
-                            // Get the fields inside the subdocument
-                            Map<String, Object> fields = subdocument.getData();
-
-                            // Clear existing views from fieldListLayout
-                            fieldListLayout.removeAllViews();
-
-                            // Create and add TextViews for each field to fieldListLayout
-                            for (Map.Entry<String, Object> entry : fields.entrySet()) {
-                                String field = entry.getKey() + ": " + entry.getValue();
-                                TextView textView = new TextView(MoreDescriptionActivity.this);
-                                textView.setText(field);
-                                fieldListLayout.addView(textView);
-                            }
-                        }
-                    });
-                } else {
-                    // Handle error
+        documentRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                subdocuments = new ArrayList<>();
+                for (DocumentSnapshot document : task.getResult().getDocuments()) {
+                    Map<String, Object> fields = document.getData();
+                    subdocuments.add(fields);
                 }
+                FieldListAdapter adapter = new FieldListAdapter(subdocuments);
+                fieldListRecyclerView.setAdapter(adapter);
+                fieldListRecyclerView.setLayoutManager(new LinearLayoutManager(MoreDescriptionActivity.this));
+            } else {
+                // Handle error
             }
         });
+    }
 
+    private static class FieldListAdapter extends RecyclerView.Adapter<FieldViewHolder> {
+        private final List<Map<String, Object>> subdocuments;
+
+        public FieldListAdapter(List<Map<String, Object>> subdocuments) {
+            this.subdocuments = subdocuments;
+        }
+
+        @NonNull
+        @Override
+        public FieldViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.field_item_layout, parent, false);
+            return new FieldViewHolder(itemView);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull FieldViewHolder holder, int position) {
+            Map<String, Object> fields = subdocuments.get(position);
+            holder.bindFields(fields);
+        }
+
+        @Override
+        public int getItemCount() {
+            return subdocuments.size();
+        }
+    }
+
+    private static class FieldViewHolder extends RecyclerView.ViewHolder {
+        private final TextView[] nameTextViews;
+        private final TextView[] valueTextViews;
+
+        public FieldViewHolder(@NonNull View itemView) {
+            super(itemView);
+            nameTextViews = new TextView[]{
+                    itemView.findViewById(R.id.field_name1_textview),
+                    itemView.findViewById(R.id.field_name2_textview),
+                    itemView.findViewById(R.id.field_name3_textview),
+                    itemView.findViewById(R.id.field_name4_textview),
+                    itemView.findViewById(R.id.field_name5_textview),
+                    itemView.findViewById(R.id.field_name6_textview),
+                    itemView.findViewById(R.id.field_name7_textview),
+                    itemView.findViewById(R.id.field_name8_textview),
+                    itemView.findViewById(R.id.field_name9_textview)
+            };
+            valueTextViews = new TextView[]{
+                    itemView.findViewById(R.id.field_value1_textview),
+                    itemView.findViewById(R.id.field_value2_textview),
+                    itemView.findViewById(R.id.field_value3_textview),
+                    itemView.findViewById(R.id.field_value4_textview),
+                    itemView.findViewById(R.id.field_value5_textview),
+                    itemView.findViewById(R.id.field_value6_textview),
+                    itemView.findViewById(R.id.field_value7_textview),
+                    itemView.findViewById(R.id.field_value8_textview),
+                    itemView.findViewById(R.id.field_value9_textview)
+            };
+        }
+
+
+        public void bindFields(Map<String, Object> fields) {
+            int i = 0;
+            for (Map.Entry<String, Object> entry : fields.entrySet()) {
+                if (i >= 9) {
+                    break;
+                }
+                String name = entry.getKey();
+                Object value = entry.getValue();
+                nameTextViews[i].setText(name);
+                valueTextViews[i].setText(String.valueOf(value));
+                i++;
+            }
+            for (; i < 9; i++) {
+                nameTextViews[i].setVisibility(View.GONE);
+                valueTextViews[i].setVisibility(View.GONE);
+            }
+        }
     }
 }
