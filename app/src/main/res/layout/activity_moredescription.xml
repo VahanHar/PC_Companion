@@ -23,28 +23,42 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#37080B"
-        android:layout_marginBottom="150dp"/>
+        android:layout_marginBottom="180dp"/>
     <Button
         android:id="@+id/add_to_list_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ADD TO COMPARISON LIST"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"/>
+        android:layout_marginBottom="125dp"
+        android:textColor="@color/white"
+        android:background="@drawable/btn1"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
     <Button
         android:id="@+id/compare_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/compare_button_label"
+        android:textColor="@color/white"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="65dp"
+        android:background="@drawable/btn1"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
     <Button
         android:id="@+id/delete_list_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Delete List"
         android:layout_alignParentBottom="true"
-        android:onClick="onDeleteListButtonClick" />
+        android:onClick="onDeleteListButtonClick"
+        android:background="@drawable/btn1"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"/>
 
 
 </RelativeLayout>

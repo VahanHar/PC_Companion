@@ -51,8 +51,6 @@ public class MoreDescriptionActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,12 +105,20 @@ public class MoreDescriptionActivity extends AppCompatActivity {
 
                     Toast.makeText(MoreDescriptionActivity.this, "Item added", Toast.LENGTH_SHORT).show();
 
+
                     // Update the subdocument count TextView
                     subdocumentCountTextView.setText("ITEMS IN THE COMPARISON LIST: " + String.valueOf(subdocumentIdList.size() + "/2"));
                 }
                 else{
-                    subdocumentCountTextView.setText("THERE ARE ALREADY " + String.valueOf(subdocumentIdList.size() + "/2 ITEMS TO COMPARE!" + "\n\nCLICK 'DELETE LIST' BUTTON!"));
-
+                    if(documentIdList.size()<2){
+                        subdocumentIdList.clear();
+                        documentIdList.clear();
+                        // Update the subdocument count TextView
+                        subdocumentCountTextView.setText("ITEMS IN THE COMPARISON LIST: " + String.valueOf(subdocumentIdList.size() + "/2"));
+                    }
+                    else{
+                        subdocumentCountTextView.setText("THERE ARE ALREADY " + String.valueOf(subdocumentIdList.size() + "/2 ITEMS TO COMPARE!" + "\n\nCLICK 'DELETE LIST' BUTTON!"));
+                    }
                 }
             }
         });
@@ -120,7 +126,7 @@ public class MoreDescriptionActivity extends AppCompatActivity {
         compareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (subdocumentIdList.size() >= 2 || documentIdList.size()>=2) {
+                if (subdocumentIdList.size() >= 2 && documentIdList.size()>=2) {
                     String subdocumentId1 = subdocumentIdList.get(0);
                     String subdocumentId2 = subdocumentIdList.get(1);
                     String documentId1 = documentIdList.get(0);
@@ -138,8 +144,13 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                     intent.putExtra("collectionPath", collectionPath);
                     startActivity(intent);
                 } else {
-                    // Handle the case where the list has less than 2 elements
-                    // For example, display an error message or disable the compare button
+                    Toast.makeText(MoreDescriptionActivity.this, "At least 2 elements are required for comparison", Toast.LENGTH_SHORT).show();
+                    if(subdocumentIdList.size()<2) {
+                        subdocumentCountTextView.setText("ITEMS IN THE COMPARISON LIST: " + String.valueOf(subdocumentIdList.size() + "/2"));
+                    }
+                    if(documentIdList.size()<2){
+                        subdocumentCountTextView.setText("ITEMS IN THE COMPARISON LIST: " + String.valueOf(documentIdList.size() + "/2"));
+                    }
                 }
             }
         });

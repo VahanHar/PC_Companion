@@ -72,12 +72,12 @@
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/menu/bottom_nav_menu.xml"
     },
     {
-        "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/anim_slide_out_left.xml.flat",
-        "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/anim/slide_out_left.xml"
-    },
-    {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/layout_splash2_screen.xml.flat",
         "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/layout/splash2_screen.xml"
+    },
+    {
+        "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/anim_slide_out_left.xml.flat",
+        "source": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-main-51:/anim/slide_out_left.xml"
     },
     {
         "merged": "/Users/vahanharutyunyan/.gradle/daemon/7.4/com.example.pcplanner.app-merged_res-49:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
