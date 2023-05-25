@@ -51,6 +51,7 @@
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,10 +60,11 @@
     <TextView
         android:id="@+id/user_details"
         android:text=""
+        android:gravity="center"
         android:textColor="#346736"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 

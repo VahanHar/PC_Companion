@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import android.Manifest;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,48 +15,47 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import org.jsoup.nodes.Document;
-
-import com.example.pcplanner.PsuActivity;
 import com.example.pcplanner.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class Cpu3Admin extends AppCompatActivity {
 
-    private TextView mProductTitleTextView;
     private ImageView mLinkImageAmazonImageView;
-    private TextView mDiscountPriceTextView;
     FirebaseFirestore firestore;
-    private TextView itemNameTextView;
+
 
     //INTEL
     private final String FIELD1 = "Processor Number";
     private final String FIELD2 = "Cores";
     private final String FIELD3 = "Threads";
-    private final String FIELD4 = "Max Turbo Frequency"; // WORKING WITH ONLY TURBO BOOST MODELS
+    private final String FIELD4 = "Max Turbo Frequency";
     private final String FIELD5 = "Base Frequency";
     private final String FIELD6 = "TDP"; // WORKING UP TO 11GEN
     private final String FIELD7 = "Launch Date";
@@ -68,8 +70,8 @@ public class Cpu3Admin extends AppCompatActivity {
     private String launchDate;
     private String maxRam;
 
+    private String maxPrice;
 
-    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,19 +81,14 @@ public class Cpu3Admin extends AppCompatActivity {
 
         Button button = findViewById(R.id.button);
 
-        EditText editText = findViewById(R.id.editTextTextPersonName);
 
         EditText editText2 = findViewById(R.id.editText_intel);
 
+        EditText editText3 = findViewById(R.id.editText_Amazon);
+
         firestore = FirebaseFirestore.getInstance();
 
-        //INTEL
-        itemNameTextView = findViewById(R.id.item_name_text_view);
-        //
-
-        mProductTitleTextView = findViewById(R.id.product_title_text_view);
         mLinkImageAmazonImageView = findViewById(R.id.link_image_amazon_image_view);
-        mDiscountPriceTextView = findViewById(R.id.discount_price_text_view);
 
 
 
@@ -100,26 +97,18 @@ public class Cpu3Admin extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                editText.setFocusable(false);
-                editText2.setFocusable(false);
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {
                         String line;
                         String ProductTitle = "";
                         String LinkImageAmazon = "";
-                        String DiscountPrice = "";
-                        String AdvisedPrice = "";
-                        String PriceNormal = "";
-
 
                         //Amazon
 
                         try {
                             // Gets HTML of the page
-                            URL url = new URL(editText.getText().toString());
+                            URL url = new URL(editText3.getText().toString());
                             CookieManager cookieManager = new CookieManager();
                             CookieHandler.setDefault(cookieManager);
                             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -154,114 +143,111 @@ public class Cpu3Admin extends AppCompatActivity {
                                     // ProductTitle = Html.fromHtml(ProductTitle).toString();
                                     ProductTitle = ProductTitle.substring(0, ProductTitle.indexOf("</span>"));
                                 }
-                                if (line.contains("data-a-color=\"base\"><span class=\"a-offscreen\">")) {
-                                    DiscountPrice = line.substring(line.indexOf("data-a-color=\"base\"><span class=\"a-offscreen\">"));
-                                    DiscountPrice = DiscountPrice.replace("data-a-color=\"base\"><span class=\"a-offscreen\">", "");
-                                    DiscountPrice = DiscountPrice.substring(0, DiscountPrice.indexOf("</span>"));
-                                }
-                                if (line.contains("<span class=\"a-price a-text-price a-size-base\" data-a-size=\"b\" data-a-strike=\"true\" data-a-color=\"secondary\"><span class=\"a-offscreen\">")) {
-                                    AdvisedPrice = line.substring(line.indexOf("<span class=\"a-price a-text-price a-size-base\" data-a-size=\"b\" data-a-strike=\"true\" data-a-color=\"secondary\"><span class=\"a-offscreen\">"));
-                                    AdvisedPrice = AdvisedPrice.replace("<span class=\"a-price a-text-price a-size-base\" data-a-size=\"b\" data-a-strike=\"true\" data-a-color=\"secondary\"><span class=\"a-offscreen\">", "");
-                                    AdvisedPrice = AdvisedPrice.substring(0, AdvisedPrice.indexOf("</span>"));
-                                }
-                                if (line.contains("<span class=\"a-size-small a-color-secondary aok-align-center basisPrice\">Prezzo consigliato: <span class=\"a-price a-text-price\" data-a-size=\"s\" data-a-strike=\"true\" data-a-color=\"secondary\"><span class=\"a-offscreen\">")) {
-                                    AdvisedPrice = line.substring(line.indexOf("<span class=\"a-size-small a-color-secondary aok-align-center basisPrice\">Prezzo consigliato: <span class=\"a-price a-text-price\" data-a-size=\"s\" data-a-strike=\"true\" data-a-color=\"secondary\"><span class=\"a-offscreen\">"));
-                                    AdvisedPrice = AdvisedPrice.replace("<span class=\"a-size-small a-color-secondary aok-align-center basisPrice\">Prezzo consigliato: <span class=\"a-price a-text-price\" data-a-size=\"s\" data-a-strike=\"true\" data-a-color=\"secondary\"><span class=\"a-offscreen\">", "");
-                                    AdvisedPrice = AdvisedPrice.substring(0, AdvisedPrice.indexOf("</span>"));
-                                }
-                                if (line.contains("Prezzo precedente:</td><td class=\"a-color-secondary a-size-base\">")) {
-                                    AdvisedPrice = line.substring(line.indexOf("Prezzo precedente:</td><td class=\"a-color-secondary a-size-base\">"));
-                                    AdvisedPrice = AdvisedPrice.replace("Prezzo precedente:</td><td class=\"a-color-secondary a-size-base\">", "");
-                                    AdvisedPrice = AdvisedPrice.substring(0, AdvisedPrice.indexOf("</span>"));
-                                    AdvisedPrice = AdvisedPrice.substring(AdvisedPrice.lastIndexOf("<span class=\"a-offscreen\">"));
-                                    AdvisedPrice = AdvisedPrice.replace("<span class=\"a-offscreen\">", "");
-                                }
-                                if (line.contains("<span class=\"a-size-medium a-color-base price-strikethrough inline-show-experience margin-spacing aok-hidden notranslate\">")) {
-                                    AdvisedPrice = line.substring(line.indexOf("<span class=\"a-size-medium a-color-base price-strikethrough inline-show-experience margin-spacing aok-hidden notranslate\">"));
-                                    AdvisedPrice = AdvisedPrice.replace("<span class=\"a-size-medium a-color-base price-strikethrough inline-show-experience margin-spacing aok-hidden notranslate\">", "");
-                                    AdvisedPrice = AdvisedPrice.substring(0, AdvisedPrice.indexOf("</span>"));
-                                }
-                                if (line.contains("\",\"priceAmount\":")) {
-                                    PriceNormal = line.substring(0, line.indexOf("\",\"priceAmount\":"));
-                                    PriceNormal = PriceNormal.substring(PriceNormal.indexOf("\"displayPrice\":\""));
-                                    PriceNormal = PriceNormal.replace("\"displayPrice\":\"", "");
-                                }
 
                             }
-                        } catch (MalformedURLException e) {
-
                         } catch (IOException e) {
-
-                        }
-
-
-                        //price
-                        int price = 0;
-                        if (!DiscountPrice.isEmpty()) {
-                            int price1 = Integer.parseInt(DiscountPrice.replaceAll("[^\\d]", ""));
-                            price = price1;
-                        }
-                        if (!AdvisedPrice.isEmpty()) {
-                            int price2 = Integer.parseInt(AdvisedPrice.replaceAll("[^\\d]", ""));
-                            if (price2 > price) {
-                                price = price2;
-                            }
-                        }
-                        if (!PriceNormal.isEmpty()) {
-                            int price3 = Integer.parseInt(PriceNormal.replaceAll("[^\\d]", ""));
-                            if (price3 > price) {
-                                price = price3;
-                            }
-                        }
-
-
-                        String priceString = Integer.toString(price);
-                        if (priceString.length() > 2) {
-                            priceString = "$" + priceString.substring(0, priceString.length() - 2) + "." + priceString.substring(priceString.length() - 2);
+                            e.printStackTrace();
                         }
 
 
                         //image
                         String imlink = LinkImageAmazon;
-
-                        //title
-                        String title1;
-                        if (!ProductTitle.isEmpty()) {
-                            title1 = ProductTitle.substring(0, 22);
-                        } else {
-                            title1 = "error";
-                        }
-
-
-                        String finalPriceString = priceString;
-
-
+                        String finalProductTitle = ProductTitle;
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                mProductTitleTextView.setText(title1);
-                                Picasso.get().load(imlink).into(mLinkImageAmazonImageView);
-                                mDiscountPriceTextView.setText(finalPriceString);
+                                try {
+                                    Picasso.get().load(imlink).into(mLinkImageAmazonImageView);
+
+                                    // Get a reference to the Firebase Storage
+                                    FirebaseStorage storage = FirebaseStorage.getInstance();
+
+                                    // Create a storage reference with the desired name for the image
+                                    if(!finalProductTitle.isEmpty()) {
+                                        String imageName = finalProductTitle + ".jpg";
+                                        StorageReference storageRef = storage.getReference().child("INTEL/" + imageName);
+
+                                        // Download the image from the provided URL (imlink)
+                                        Picasso.get()
+                                                .load(imlink)
+                                                .into(new Target() {
+                                                    @Override
+                                                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                                                        // Convert the loaded bitmap to a byte array
+                                                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                                                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                                                        byte[] imageData = baos.toByteArray();
+
+                                                        // Upload the byte array to Firebase Storage
+                                                        UploadTask uploadTask = storageRef.putBytes(imageData);
+                                                        uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                                                    @Override
+                                                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                                                        // Image uploaded successfully
+                                                                        // Get the download URL of the uploaded image
+                                                                        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                                            @Override
+                                                                            public void onSuccess(Uri downloadUri) {
+                                                                                // The download URL of the image
+                                                                                String imageUrl = downloadUri.toString();
+                                                                                // You can use this imageUrl as needed
+                                                                            }
+                                                                        });
+                                                                    }
+                                                                })
+                                                                .addOnFailureListener(new OnFailureListener() {
+                                                                    @Override
+                                                                    public void onFailure(@NonNull Exception e) {
+                                                                        // Image upload failed
+                                                                        e.printStackTrace();
+                                                                    }
+                                                                });
+                                                    }
+
+                                                    @Override
+                                                    public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+                                                        // Failed to load the image from the provided URL
+                                                        e.printStackTrace();
+                                                    }
+
+                                                    @Override
+                                                    public void onPrepareLoad(Drawable placeHolderDrawable) {
+                                                        // Image is being prepared for loading
+                                                    }
+                                                });
+                                    }
+                                    else{
+                                        Toast.makeText(getApplicationContext(), "ERROR ADDING IMAGE, CLICK GET TEXT", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                } catch (Exception e) {
+                                    Toast.makeText(getApplicationContext(), "FILL ALL LINES", Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                }
                             }
                         });
-
                     }
                 });
+
+
+
                 thread.start();
 
                 if (!TextUtils.isEmpty(editText2.getText())) {
                     Cpu3Admin.Intl dw = new Cpu3Admin.Intl();
                     dw.execute();
-                    Log.d("EMPTYCHI","NOa");
                 }
                 else{
-                    Log.d("EMPTYA","Empt");
                 }
+
+                if (!TextUtils.isEmpty(editText3.getText())) {
+                    Cpu3Admin.Amazon dw = new Cpu3Admin.Amazon();
+                    dw.execute();
+                }
+
             }
 
         });
-
-
     }
 
 
@@ -346,14 +332,21 @@ public class Cpu3Admin extends AppCompatActivity {
                     CollectionReference parentCollectionRef = firestore.collection("PC Components");
                     DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
                     CollectionReference intelCollectionRef = cpuDocRef.collection("INTEL");
-                    String[] parts = processorNumber.split("-");
+
+                    String[] parts = new String[0];
+                    if (processorNumber != null) {
+                        parts = processorNumber.split("-");
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Error with intel link", Toast.LENGTH_SHORT).show();
+                    }
+
                     String p1 = parts[0];
                     String p2 = parts[1];
-                    DocumentReference brandDocRef = intelCollectionRef.document("Core "+p1);
+                    DocumentReference brandDocRef = intelCollectionRef.document("Core " + p1);
                     CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
                     DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
                     CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
-                    DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics") ;
+                    DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics");
 
                     //ADDING GENERATION BY LINK
                     brandDocRef.collection("sub").document(p2).set(new HashMap<String, Object>())
@@ -382,14 +375,87 @@ public class Cpu3Admin extends AppCompatActivity {
                         put("8.Maximum RAM", maxRam);
                     }});
 
+                }
+            });
+        }
+    }
 
 
 
+    public class Amazon extends AsyncTask<Void, Void, String> {
+
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            org.jsoup.nodes.Document document = null;
+            EditText editText3 = findViewById(R.id.editText_Amazon);
+            try {
+                String url = editText3.getText().toString().trim();
+                Log.d("Cpu33Admin.Intl", "Starting doInBackground()");
+                Log.d("Cpu33Admin.Intl", "URL: " + url);
+                document = Jsoup.connect(url).get();
+                Log.d("CPU33ADMIN.INTL", String.valueOf(document));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            Element row6 = document.select("span.a-price.aok-align-center.reinventPricePriceToPayMargin.priceToPay").first();
+            Log.d("CPU333ADMIN.INTL", String.valueOf(row6));
+            if (row6 != null) {
+                String priceText = row6.select("span.a-offscreen").first().text();
+                Log.d("CPU333ADMIN.INTL", String.valueOf(priceText));
+                // Further processing if needed
+                maxPrice = priceText;
+                Log.d("CPU333ADMIN.INTL", String.valueOf(maxPrice));
+            }
+
+
+            return processorNumber;
+        }
+
+
+        public void onPostExecute(String result) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    CollectionReference parentCollectionRef = firestore.collection("PC Components");
+                    DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
+                    CollectionReference intelCollectionRef = cpuDocRef.collection("INTEL");
+                    String[] parts = processorNumber.split("-");
+                    String p1 = parts[0];
+                    String p2 = parts[1];
+                    DocumentReference brandDocRef = intelCollectionRef.document("Core "+p1);
+                    CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
+                    DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
+                    CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
+                    DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics") ;
 
 
 
-                    String displayText = "Processor Number: " + processorNumber + "\nNumber of Cores: " + coreNumber + "\nNumber of Threads: " + threadNumber + "\nMaximum Frequency: " + maxFrequency+ "\nBase Frequency: " + baseFrequency+ "\nMaximum Power usage: " + maxPower+ "\nLaunch Date: " + launchDate+ "\nMaximum RAM: " + maxRam;
-                    itemNameTextView.setText(displayText);
+                    String fieldName = "9.Maximum Price";
+                    String fieldValue = maxPrice;
+
+                    Map<String, Object> updateFields = new HashMap<>();
+                    updateFields.put(fieldName, fieldValue);
+
+                    characteristicsDocRef.set(updateFields, SetOptions.merge())
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(getApplicationContext(), "Field added/updated successfully", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getApplicationContext(), "Error adding/updating field", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                 }
             });
         }

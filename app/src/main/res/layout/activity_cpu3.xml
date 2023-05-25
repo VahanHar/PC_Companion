@@ -13,9 +13,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADD LINK"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="#144E16"
+                android:layout_marginBottom="30dp"
+                />
+
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editText_Amazon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10sp"
@@ -40,13 +53,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10sp"
+                android:background="@drawable/btn1"
                 android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="25sp"
                 android:text="Get text" />
 
-            <TextView
-                android:id="@+id/product_title_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <ImageView
                 android:id="@+id/link_image_amazon_image_view"
@@ -55,19 +68,6 @@
 
                 />
 
-            <TextView
-                android:id="@+id/discount_price_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/item_name_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:text="Loading..."
-                android:textSize="24sp" />
         </LinearLayout>
     </ScrollView>
 
