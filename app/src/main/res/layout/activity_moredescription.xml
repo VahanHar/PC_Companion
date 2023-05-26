@@ -7,13 +7,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/subdocument_listview"
+        android:layout_marginBottom="250dp"
         android:padding="8dp" />
 
     <ListView
         android:id="@+id/subdocument_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        />
 
 
     <TextView

@@ -58,8 +58,11 @@ public class Cpu3Admin extends AppCompatActivity {
     private final String FIELD4 = "Max Turbo Frequency";
     private final String FIELD5 = "Base Frequency";
     private final String FIELD6 = "TDP"; // WORKING UP TO 11GEN
+    private final String FIELD66 = "Maximum Turbo Power"; // WORKING FROM 12GEN
     private final String FIELD7 = "Launch Date";
     private final String FIELD8 = "Max Memory Size";
+    private final String FIELD9 = "Memory Types";
+    private final String FIELD10 = "Socket";
 
     private String processorNumber;
     private String coreNumber;
@@ -67,10 +70,14 @@ public class Cpu3Admin extends AppCompatActivity {
     private String maxFrequency;
     private String baseFrequency;
     private String maxPower;
+    private String max2Power;
     private String launchDate;
     private String maxRam;
+    private String MemTypes;
+    private String Socket;
 
     private String maxPrice;
+    private String BenchM;
 
 
     @Override
@@ -85,6 +92,8 @@ public class Cpu3Admin extends AppCompatActivity {
         EditText editText2 = findViewById(R.id.editText_intel);
 
         EditText editText3 = findViewById(R.id.editText_Amazon);
+
+        EditText editText4 = findViewById(R.id.editText_Bench);
 
         firestore = FirebaseFirestore.getInstance();
 
@@ -233,18 +242,21 @@ public class Cpu3Admin extends AppCompatActivity {
 
                 thread.start();
 
-                if (!TextUtils.isEmpty(editText2.getText())) {
+                if (!TextUtils.isEmpty(editText2.getText()) && !TextUtils.isEmpty(editText3.getText())) {
                     Cpu3Admin.Intl dw = new Cpu3Admin.Intl();
                     dw.execute();
+                    Cpu3Admin.Amazon dw2 = new Cpu3Admin.Amazon();
+                    dw2.execute();
                 }
                 else{
+                    Log.e("CPUADMIN","CPU field is empty");
+                    Toast.makeText(getApplicationContext(), "FILL ALL LINES", Toast.LENGTH_SHORT).show();
                 }
 
-                if (!TextUtils.isEmpty(editText3.getText())) {
-                    Cpu3Admin.Amazon dw = new Cpu3Admin.Amazon();
-                    dw.execute();
+                if(!TextUtils.isEmpty(editText4.getText())){
+                    Cpu3Admin.BenchMark dw3 = new Cpu3Admin.BenchMark();
+                    dw3.execute();
                 }
-
             }
 
         });
@@ -309,6 +321,11 @@ public class Cpu3Admin extends AppCompatActivity {
                 row4 = row4.parent();
                 maxPower = row4.select("div.tech-data").first().text();
             }
+            Element row44 = document.select("div.tech-label:contains(" + FIELD66 + ")").first();
+            if (row44 != null) {
+                row44 = row44.parent();
+                max2Power = row44.select("div.tech-data").first().text();
+            }
             Element row5 = document.select("div.tech-label:contains(" + FIELD7 + ")").first();
             if (row5 != null) {
                 row5 = row5.parent();
@@ -318,6 +335,16 @@ public class Cpu3Admin extends AppCompatActivity {
             if (row6 != null) {
                 row6 = row6.parent();
                 maxRam = row6.select("div.tech-data").first().text();
+            }
+            Element row7 = document.select("div.tech-label:contains(" + FIELD9 + ")").first();
+            if (row7 != null) {
+                row7 = row7.parent();
+                MemTypes = row7.select("div.tech-data").first().text();
+            }
+            Element row8 = document.select("div.tech-label:contains(" + FIELD10 + ")").first();
+            if (row8 != null) {
+                row8 = row8.parent();
+                Socket = row8.select("div.tech-data").first().text();
             }
 
             return processorNumber;
@@ -363,6 +390,7 @@ public class Cpu3Admin extends AppCompatActivity {
                                 }
                             });
 
+                    String MemTypes2 = MemTypes.substring(0,20);
                     //ADDING FIELDS OF THAT GENERATION PROCESSOR
                     characteristicsDocRef.set(new HashMap<String, Object>() {{
                         put("1.Processor Number", processorNumber);
@@ -371,8 +399,15 @@ public class Cpu3Admin extends AppCompatActivity {
                         put("4.Number of Threads", threadNumber);
                         put("5.Base Frequency", baseFrequency);
                         put("6.Maximum Frequency", maxFrequency);
-                        put("7.Maximum Power usage", maxPower);
+                        if(!(maxPower==null)) {
+                            put("7.Maximum Power usage", maxPower);
+                        }
+                        else{
+                            put("7.Maximum Power usage", max2Power);
+                        }
                         put("8.Maximum RAM", maxRam);
+                        put("9.Ram Type", MemTypes2);
+                        put("a.Socket", Socket);
                     }});
 
                 }
@@ -394,23 +429,16 @@ public class Cpu3Admin extends AppCompatActivity {
             EditText editText3 = findViewById(R.id.editText_Amazon);
             try {
                 String url = editText3.getText().toString().trim();
-                Log.d("Cpu33Admin.Intl", "Starting doInBackground()");
-                Log.d("Cpu33Admin.Intl", "URL: " + url);
                 document = Jsoup.connect(url).get();
-                Log.d("CPU33ADMIN.INTL", String.valueOf(document));
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
 
             Element row6 = document.select("span.a-price.aok-align-center.reinventPricePriceToPayMargin.priceToPay").first();
-            Log.d("CPU333ADMIN.INTL", String.valueOf(row6));
             if (row6 != null) {
                 String priceText = row6.select("span.a-offscreen").first().text();
-                Log.d("CPU333ADMIN.INTL", String.valueOf(priceText));
-                // Further processing if needed
                 maxPrice = priceText;
-                Log.d("CPU333ADMIN.INTL", String.valueOf(maxPrice));
             }
 
 
@@ -437,11 +465,94 @@ public class Cpu3Admin extends AppCompatActivity {
 
 
 
-                    String fieldName = "9.Maximum Price";
+                    String fieldName = "b.Maximum Price";
                     String fieldValue = maxPrice;
 
                     Map<String, Object> updateFields = new HashMap<>();
                     updateFields.put(fieldName, fieldValue);
+
+                    characteristicsDocRef.set(updateFields, SetOptions.merge())
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(getApplicationContext(), "Field added/updated successfully", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getApplicationContext(), "Error adding/updating field", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+            });
+        }
+    }
+
+
+
+
+
+
+    public class BenchMark extends AsyncTask<Void, Void, String> {
+
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            org.jsoup.nodes.Document document = null;
+            EditText editText4 = findViewById(R.id.editText_Bench);
+            try {
+                String url = editText4.getText().toString().trim();
+                document = Jsoup.connect(url).get();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            Element colElement = document.select("div.col-xs-8").first();
+            if (colElement != null) {
+                String benchText = colElement.select("h2.conclusion").text();
+                String benchValue = benchText.replaceAll("[^0-9.]", "");
+                if (benchValue.length() >= 3) {
+                    benchValue = benchValue.substring(0, 3);
+                }
+                BenchM = benchValue;
+            }
+
+
+
+            return processorNumber;
+        }
+
+
+        public void onPostExecute(String result) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    CollectionReference parentCollectionRef = firestore.collection("PC Components");
+                    DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
+                    CollectionReference intelCollectionRef = cpuDocRef.collection("INTEL");
+                    String[] parts = processorNumber.split("-");
+                    String p1 = parts[0];
+                    String p2 = parts[1];
+                    DocumentReference brandDocRef = intelCollectionRef.document("Core "+p1);
+                    CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
+                    DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
+                    CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
+                    DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics") ;
+
+
+
+                    String fieldName = "c.BenchMark";
+                    int fvalue = Integer.parseInt(BenchM);
+
+
+                    Map<String, Object> updateFields = new HashMap<>();
+                    updateFields.put(fieldName, fvalue);
 
                     characteristicsDocRef.set(updateFields, SetOptions.merge())
                             .addOnSuccessListener(new OnSuccessListener<Void>() {

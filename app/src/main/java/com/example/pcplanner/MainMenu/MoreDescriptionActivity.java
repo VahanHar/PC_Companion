@@ -265,7 +265,10 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                     itemView.findViewById(R.id.field_name6_textview),
                     itemView.findViewById(R.id.field_name7_textview),
                     itemView.findViewById(R.id.field_name8_textview),
-                    itemView.findViewById(R.id.field_name9_textview)
+                    itemView.findViewById(R.id.field_name9_textview),
+                    itemView.findViewById(R.id.field_name10_textview),
+                    itemView.findViewById(R.id.field_name11_textview),
+                    itemView.findViewById(R.id.field_name12_textview)
             };
             valueTextViews = new TextView[]{
                     itemView.findViewById(R.id.field_value1_textview),
@@ -276,7 +279,10 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                     itemView.findViewById(R.id.field_value6_textview),
                     itemView.findViewById(R.id.field_value7_textview),
                     itemView.findViewById(R.id.field_value8_textview),
-                    itemView.findViewById(R.id.field_value9_textview)
+                    itemView.findViewById(R.id.field_value9_textview),
+                    itemView.findViewById(R.id.field_value10_textview),
+                    itemView.findViewById(R.id.field_value11_textview),
+                    itemView.findViewById(R.id.field_value12_textview)
             };
 
             fieldImageView = itemView.findViewById(R.id.field_imageview);
@@ -289,7 +295,7 @@ public class MoreDescriptionActivity extends AppCompatActivity {
 
             for (Map.Entry<String, Object> entry : fields.entrySet()) {
 
-                if (i >= 9) {
+                if (i >= 12) {
                     break;
                 }
                 String name = entry.getKey();
@@ -340,7 +346,7 @@ public class MoreDescriptionActivity extends AppCompatActivity {
 
                 i++;
             }
-            for (; i < 9; i++) {
+            for (; i < 12; i++) {
                 nameTextViews[i].setVisibility(View.GONE);
                 valueTextViews[i].setVisibility(View.GONE);
             }

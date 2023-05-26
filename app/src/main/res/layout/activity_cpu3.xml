@@ -48,6 +48,16 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
 
+            <EditText
+                android:id="@+id/editText_Bench"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:ems="10"
+                android:hint="Link BenchMark"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"

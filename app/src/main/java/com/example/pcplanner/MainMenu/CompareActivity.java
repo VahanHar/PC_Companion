@@ -110,46 +110,6 @@ public class CompareActivity extends AppCompatActivity {
 
                     subdocuments1.add(sortedFieldsMap);
                 }
-//                //COMPARE FIELDS HERE
-//                if (subdocuments1.size() > 0 && subdocuments2.size() > 0) {
-//                    LinkedHashMap<String, Object> fields1 = (LinkedHashMap<String, Object>) subdocuments1.get(0);
-//                    LinkedHashMap<String, Object> fields2 = (LinkedHashMap<String, Object>) subdocuments2.get(0);
-//                    for (String fieldName : fields1.keySet()) {
-//                        Object fieldValue1 = fields1.get(fieldName);
-//                        Object fieldValue2 = fields2.get(fieldName);
-//
-//                        if (fieldValue1 instanceof String && fieldValue2 instanceof String) {
-//                            // Retrieve numerical part of the field values
-//                            String numericalPart1 = ((String) fieldValue1).replaceAll("[^\\d.]", "");
-//                            String numericalPart2 = ((String) fieldValue2).replaceAll("[^\\d.]", "");
-//
-//                            if (!numericalPart1.isEmpty() && !numericalPart2.isEmpty()) {
-//                                // Convert the numerical parts to float for comparison
-//                                float floatFieldValue1 = Float.parseFloat(numericalPart1);
-//
-//                                float floatFieldValue2 = Float.parseFloat(numericalPart2);
-//
-//                                if (floatFieldValue1 < floatFieldValue2) {
-//                                    //// Do something if fieldValue1 is less than fieldValue2 <<<<>
-//
-//
-//                                } else if (floatFieldValue1 > floatFieldValue2) {
-//                                    // Do something if fieldValue1 is greater than fieldValue2 >>>>>
-//
-//                                } else {
-//                                    // Do something if fieldValue1 is equal to fieldValue2  =========
-//
-//                                }
-//                            } else {
-//                                // Do something if the field values cannot be compared XXXXXXXX
-//
-//                            }
-//                        } else {
-//                            // Do something if the field values cannot be compared XXXXXXXX
-//
-//                        }
-//                    }
-//                }
 
 
                 FieldListAdapter adapter = new FieldListAdapter(subdocuments1);
@@ -186,9 +146,55 @@ public class CompareActivity extends AppCompatActivity {
 
                     subdocuments2.add(sortedFieldsMap);
                 }
-                FieldListAdapter adapter = new FieldListAdapter(subdocuments2);
+
+                FieldListAdapter2 adapter = new FieldListAdapter2(subdocuments2);
                 fieldListRecyclerView2.setAdapter(adapter);
                 fieldListRecyclerView2.setLayoutManager(new LinearLayoutManager(CompareActivity.this));
+
+                ////COMPARE FIELDS HERE
+//                if (subdocuments1.size() > 0 && subdocuments2.size() > 0) {
+//                    LinkedHashMap<String, Object> fields1 = (LinkedHashMap<String, Object>) subdocuments1.get(0);
+//                    LinkedHashMap<String, Object> fields2 = (LinkedHashMap<String, Object>) subdocuments2.get(0);
+//                    for (String fieldName : fields1.keySet()) {
+//                        Object fieldValue1 = fields1.get(fieldName);
+//                        Object fieldValue2 = fields2.get(fieldName);
+//
+//                        if (fieldValue1 instanceof String && fieldValue2 instanceof String) {
+//                            // Retrieve numerical part of the field values
+//                            String numericalPart1 = ((String) fieldValue1).replaceAll("[^\\d.]", "");
+//                            String numericalPart2 = ((String) fieldValue2).replaceAll("[^\\d.]", "");
+//
+//                            if (!numericalPart1.isEmpty() && !numericalPart2.isEmpty()) {
+//                                // Convert the numerical parts to float for comparison
+//                                float floatFieldValue1 = Float.parseFloat(numericalPart1);
+//
+//                                float floatFieldValue2 = Float.parseFloat(numericalPart2);
+//
+//                                if (floatFieldValue1 < floatFieldValue2) {
+//                                    //// Do something if fieldValue1 is less than fieldValue2 <<<<<
+//                                    Log.d("COMPARRR","F1<F2");
+//
+//
+//                                } else if (floatFieldValue1 > floatFieldValue2) {
+//                                    // Do something if fieldValue1 is greater than fieldValue2 >>>>>
+//                                    Log.d("COMPARRR","F1>F2");
+//
+//                                } else {
+//                                    // Do something if fieldValue1 is equal to fieldValue2  =========
+//                                    Log.d("COMPARRR","F1=F2");
+//                                }
+//                            } else {
+//                                // Do something if the field values cannot be compared XXXXXXXX
+//
+//                            }
+//                        } else {
+//                            // Do something if the field values cannot be compared XXXXXXXX
+//
+//                        }
+//                    }
+//                }
+
+
             } else {
                 // Handle error
             }
@@ -223,6 +229,37 @@ public class CompareActivity extends AppCompatActivity {
         }
     }
 
+
+    private static class FieldListAdapter2 extends RecyclerView.Adapter<FieldViewHolder2> {
+        private final List<Map<String, Object>> subdocuments2;
+
+
+        public FieldListAdapter2(List<Map<String, Object>> subdocuments2) {
+            this.subdocuments2 = subdocuments2;
+        }
+
+        @NonNull
+        @Override
+        public FieldViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.field_it_layout2_comparison, parent, false);
+            return new FieldViewHolder2(itemView);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull FieldViewHolder2 holder, int position) {
+            Map<String, Object> fields = subdocuments2.get(position);
+            holder.bindFields(fields);
+        }
+
+        @Override
+        public int getItemCount() {
+            return subdocuments2.size();
+        }
+    }
+
+
+
     private static class FieldViewHolder extends RecyclerView.ViewHolder {
         private final TextView[] nameTextViews;
         private final TextView[] valueTextViews;
@@ -241,7 +278,10 @@ public class CompareActivity extends AppCompatActivity {
                     itemView.findViewById(R.id.field_name6_textview),
                     itemView.findViewById(R.id.field_name7_textview),
                     itemView.findViewById(R.id.field_name8_textview),
-                    itemView.findViewById(R.id.field_name9_textview)
+                    itemView.findViewById(R.id.field_name9_textview),
+                    itemView.findViewById(R.id.field_name10_textview),
+                    itemView.findViewById(R.id.field_name11_textview),
+                    itemView.findViewById(R.id.field_name12_textview)
             };
             valueTextViews = new TextView[]{
                     itemView.findViewById(R.id.field_value1_textview),
@@ -252,7 +292,10 @@ public class CompareActivity extends AppCompatActivity {
                     itemView.findViewById(R.id.field_value6_textview),
                     itemView.findViewById(R.id.field_value7_textview),
                     itemView.findViewById(R.id.field_value8_textview),
-                    itemView.findViewById(R.id.field_value9_textview)
+                    itemView.findViewById(R.id.field_value9_textview),
+                    itemView.findViewById(R.id.field_value10_textview),
+                    itemView.findViewById(R.id.field_value11_textview),
+                    itemView.findViewById(R.id.field_value12_textview)
             };
             fieldImageView = itemView.findViewById(R.id.field_imageview);
         }
@@ -262,13 +305,19 @@ public class CompareActivity extends AppCompatActivity {
 
             for (Map.Entry<String, Object> entry : fields.entrySet()) {
 
-                if (i >= 9) {
+                if (i >= 12) {
                     break;
                 }
                 String name = entry.getKey();
                 Object value = entry.getValue();
                 nameTextViews[i].setText(name);
                 valueTextViews[i].setText(String.valueOf(value));
+
+                //COLOR1
+                int aa = 0;
+                if(aa==i){
+                    valueTextViews[i].setTextColor(Color.GREEN);
+                }
 
 
                 String filename = valueTextViews[0].getText().toString();
@@ -311,13 +360,132 @@ public class CompareActivity extends AppCompatActivity {
                     }
                 });
 
+
+
                 i++;
             }
-            for (; i < 9; i++) {
+            for (; i < 12; i++) {
                 nameTextViews[i].setVisibility(View.GONE);
                 valueTextViews[i].setVisibility(View.GONE);
             }
         }
 
     }
+
+
+    private static class FieldViewHolder2 extends RecyclerView.ViewHolder {
+        private final TextView[] nameTextViews;
+        private final TextView[] valueTextViews;
+        private final ImageView fieldImageView;
+
+
+
+        public FieldViewHolder2(@NonNull View itemView) {
+            super(itemView);
+            nameTextViews = new TextView[]{
+                    itemView.findViewById(R.id.field_name1_textview),
+                    itemView.findViewById(R.id.field_name2_textview),
+                    itemView.findViewById(R.id.field_name3_textview),
+                    itemView.findViewById(R.id.field_name4_textview),
+                    itemView.findViewById(R.id.field_name5_textview),
+                    itemView.findViewById(R.id.field_name6_textview),
+                    itemView.findViewById(R.id.field_name7_textview),
+                    itemView.findViewById(R.id.field_name8_textview),
+                    itemView.findViewById(R.id.field_name9_textview),
+                    itemView.findViewById(R.id.field_name10_textview),
+                    itemView.findViewById(R.id.field_name11_textview),
+                    itemView.findViewById(R.id.field_name12_textview)
+            };
+            valueTextViews = new TextView[]{
+                    itemView.findViewById(R.id.field_value1_textview),
+                    itemView.findViewById(R.id.field_value2_textview),
+                    itemView.findViewById(R.id.field_value3_textview),
+                    itemView.findViewById(R.id.field_value4_textview),
+                    itemView.findViewById(R.id.field_value5_textview),
+                    itemView.findViewById(R.id.field_value6_textview),
+                    itemView.findViewById(R.id.field_value7_textview),
+                    itemView.findViewById(R.id.field_value8_textview),
+                    itemView.findViewById(R.id.field_value9_textview),
+                    itemView.findViewById(R.id.field_value10_textview),
+                    itemView.findViewById(R.id.field_value11_textview),
+                    itemView.findViewById(R.id.field_value12_textview)
+            };
+            fieldImageView = itemView.findViewById(R.id.field_imageview);
+        }
+
+        public void bindFields(Map<String, Object> fields) {
+            int i = 0;
+
+            for (Map.Entry<String, Object> entry : fields.entrySet()) {
+
+                if (i >= 12) {
+                    break;
+                }
+                String name = entry.getKey();
+                Object value = entry.getValue();
+                nameTextViews[i].setText(name);
+                valueTextViews[i].setText(String.valueOf(value));
+
+                //COLOR
+
+
+                String filename = valueTextViews[0].getText().toString();
+                String filename1 = filename.substring(filename.indexOf("-") + 1);
+
+
+                // Create a reference to the image file in Firebase Cloud Storage
+                StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("INTEL");
+
+                // List all items (files) in the root folder
+                storageRef.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
+                    @Override
+                    public void onSuccess(ListResult listResult) {
+                        for (StorageReference item : listResult.getItems()) {
+                            String itemPath = item.getPath();
+                            if (itemPath.contains(filename1)) {
+                                // Found a matching file containing the substring
+                                item.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        String imageUrl = uri.toString();
+                                        Picasso.get().load(imageUrl).into(fieldImageView);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        // Handle any errors that occur during URL retrieval
+                                        Log.e("MoreDescriptionActivity", "Failed to retrieve image URL", e);
+                                    }
+                                });
+                                break; // Exit the loop after finding the first matching file
+                            }
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Handle any errors that occur during listing files
+                        Log.e("MoreDescriptionActivity", "Failed to list files", e);
+                    }
+                });
+
+
+
+                i++;
+            }
+            for (; i < 12; i++) {
+                nameTextViews[i].setVisibility(View.GONE);
+                valueTextViews[i].setVisibility(View.GONE);
+            }
+        }
+
+    }
+
 }
+
+
+
+
+
+
+

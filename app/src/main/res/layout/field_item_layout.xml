@@ -234,7 +234,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_marginTop="10dp">
 
         <TextView
@@ -246,6 +246,7 @@
             android:paddingLeft="10dp"
             android:textSize="20sp"
             android:textColor="#0072CE"
+            android:layout_gravity="center"
             />
 
         <TextView
@@ -255,10 +256,91 @@
             android:layout_weight="1"
             android:textSize="20sp"
             android:layout_marginEnd="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/field_name10_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:textSize="20sp"
+            android:textColor="#0072CE"
+            />
+
+        <TextView
+            android:id="@+id/field_value10_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:layout_marginEnd="10dp"
             android:gravity="end"
             android:textStyle="bold"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
 
+        <TextView
+            android:id="@+id/field_name11_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:textSize="20sp"
+            android:textColor="#0072CE"
+            />
+
+        <TextView
+            android:id="@+id/field_value11_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:layout_marginEnd="10dp"
+            android:gravity="end"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/field_name12_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:textSize="20sp"
+            android:textColor="#0072CE"
+            />
+
+        <TextView
+            android:id="@+id/field_value12_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:layout_marginEnd="10dp"
+            android:gravity="end"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
 
 </LinearLayout>
