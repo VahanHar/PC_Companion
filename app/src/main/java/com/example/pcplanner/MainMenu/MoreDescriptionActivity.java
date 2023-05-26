@@ -2,6 +2,7 @@ package com.example.pcplanner.MainMenu;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,12 +22,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pcplanner.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.ListResult;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -244,6 +252,7 @@ public class MoreDescriptionActivity extends AppCompatActivity {
     private static class FieldViewHolder extends RecyclerView.ViewHolder {
         private final TextView[] nameTextViews;
         private final TextView[] valueTextViews;
+        private final ImageView fieldImageView;
 
         public FieldViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -269,12 +278,17 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                     itemView.findViewById(R.id.field_value8_textview),
                     itemView.findViewById(R.id.field_value9_textview)
             };
+
+            fieldImageView = itemView.findViewById(R.id.field_imageview);
+
         }
 
 
         public void bindFields(Map<String, Object> fields) {
             int i = 0;
+
             for (Map.Entry<String, Object> entry : fields.entrySet()) {
+
                 if (i >= 9) {
                     break;
                 }
@@ -282,6 +296,48 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                 Object value = entry.getValue();
                 nameTextViews[i].setText(name);
                 valueTextViews[i].setText(String.valueOf(value));
+
+
+                    String filename = valueTextViews[0].getText().toString();
+                    String filename1 = filename.substring(filename.indexOf("-") + 1);
+
+
+                    // Create a reference to the image file in Firebase Cloud Storage
+                    StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("INTEL");
+
+                // List all items (files) in the root folder
+                storageRef.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
+                    @Override
+                    public void onSuccess(ListResult listResult) {
+                        for (StorageReference item : listResult.getItems()) {
+                            String itemPath = item.getPath();
+                            if (itemPath.contains(filename1)) {
+                                // Found a matching file containing the substring
+                                item.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        String imageUrl = uri.toString();
+                                        Picasso.get().load(imageUrl).into(fieldImageView);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        // Handle any errors that occur during URL retrieval
+                                        Log.e("MoreDescriptionActivity", "Failed to retrieve image URL", e);
+                                    }
+                                });
+                                break; // Exit the loop after finding the first matching file
+                            }
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Handle any errors that occur during listing files
+                        Log.e("MoreDescriptionActivity", "Failed to list files", e);
+                    }
+                });
+
                 i++;
             }
             for (; i < 9; i++) {
@@ -289,5 +345,6 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                 valueTextViews[i].setVisibility(View.GONE);
             }
         }
+
     }
 }

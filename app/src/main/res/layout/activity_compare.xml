@@ -3,7 +3,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/field_list_recyclerview_1"
         android:layout_width="match_parent"
@@ -21,7 +24,7 @@
         android:layout_weight="1"
         />
 
-
+    </LinearLayout>
     <ListView
         android:id="@+id/subdocument_listview"
         android:layout_width="match_parent"
