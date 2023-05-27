@@ -50,7 +50,7 @@ public class IntelActivity extends AppCompatActivity {
                     for (DocumentSnapshot document : documents) {
                         documentIds.add(document.getId());
                     }
-                    ArrayAdapter<String> adapter = new ArrayAdapter<>(IntelActivity.this, android.R.layout.simple_list_item_1, documentIds);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(IntelActivity.this, R.layout.desc_list_item, documentIds);
                     listView.setAdapter(adapter);
 
                     // Add item click listener to open sub-collection documents

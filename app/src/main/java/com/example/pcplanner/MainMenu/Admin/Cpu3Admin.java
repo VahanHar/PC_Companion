@@ -64,6 +64,17 @@ public class Cpu3Admin extends AppCompatActivity {
     private final String FIELD9 = "Memory Types";
     private final String FIELD10 = "Socket";
 
+    //AMD
+    private final String FIELD22 = "# of CPU Cores";
+    private final String FIELD33 = "# of Threads";
+    private final String FIELD44 = "Max. Boost Clock";
+    private final String FIELD55 = "Base Frequency";
+    private final String FIELD67 = "TDP"; // WORKING UP TO 11GEN
+    private final String FIELD77 = "Launch Date";
+    private final String FIELD99 = "Memory Type";
+    private final String FIELD100 = "CPU Socket";
+
+
     private String processorNumber;
     private String coreNumber;
     private String threadNumber;
@@ -75,6 +86,17 @@ public class Cpu3Admin extends AppCompatActivity {
     private String maxRam;
     private String MemTypes;
     private String Socket;
+
+    private String processorNumber1;
+    private String coreNumber1;
+    private String threadNumber1;
+    private String maxFrequency1;
+    private String baseFrequency1;
+    private String maxPower1;
+    private String max2Power1;
+    private String launchDate1;
+    private String MemTypes1;
+    private String Socket1;
 
     private String maxPrice;
     private String BenchM;
@@ -429,7 +451,10 @@ public class Cpu3Admin extends AppCompatActivity {
             EditText editText3 = findViewById(R.id.editText_Amazon);
             try {
                 String url = editText3.getText().toString().trim();
+                Log.d("Cpu3Admin.Amazon", "Starting doInBackground()");
+                Log.d("Cpu3Admin.Amazon", "URL: " + url);
                 document = Jsoup.connect(url).get();
+                Log.d("CPU3ADMIN.Amazon", String.valueOf(document));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -506,7 +531,10 @@ public class Cpu3Admin extends AppCompatActivity {
             EditText editText4 = findViewById(R.id.editText_Bench);
             try {
                 String url = editText4.getText().toString().trim();
+                Log.d("Cpu3Admin.Amazon", "Starting doInBackground()");
+                Log.d("Cpu3Admin.Amazon", "URL: " + url);
                 document = Jsoup.connect(url).get();
+                Log.d("CPU3ADMIN.Amazon", String.valueOf(document));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -571,5 +599,142 @@ public class Cpu3Admin extends AppCompatActivity {
             });
         }
     }
+
+//    public class AMD extends AsyncTask<Void, Void, String> {
+//
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//        }
+//
+//        @Override
+//        protected String doInBackground(Void... voids) {
+//            org.jsoup.nodes.Document document = null;
+//            EditText editText2 = findViewById(R.id.editText_intel);
+//            try {
+//                String url = editText2.getText().toString().trim();
+//                Log.d("Cpu3Admin.AMD", "Starting doInBackground()");
+//                Log.d("Cpu3Admin.AMD", "URL: " + url);
+//                document = Jsoup.connect(url).get();
+//                Log.d("CPU3ADMIN.AMD", String.valueOf(document));
+//                Log.d("DOCUMENTADMINCPU", String.valueOf(document));
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//
+////            coreNumber;
+////            threadNumber;
+////            maxFrequency;
+////            baseFrequency;
+////            maxPower;
+////            launchDate;
+////            maxRam;
+//
+//            Element processorrow = document.select("h2.field.section-title").first();
+//            Log.d("LLLLAAA", String.valueOf(processorrow));
+//            if (processorrow != null) {
+//                processorNumber1 = processorrow.text();
+//                Log.d("AAALLL",processorNumber1);
+//            }
+//            Element corerow = document.select("div.field__label:contains(" + FIELD22 + ")").first();
+//            if (corerow != null) {
+//                corerow = corerow.parent();
+//                coreNumber1 = corerow.select("div.field__item").first().text();
+//            }
+//            Element row1 = document.select("div.field__label:contains(" + FIELD33 + ")").first();
+//            if (row1 != null) {
+//                row1 = row1.parent();
+//                threadNumber1 = row1.select("div.field__item").first().text();
+//            }
+//            Element row2 = document.select("div.field__label:contains(" + FIELD44 + ")").first();
+//            if (row2 != null) {
+//                row2 = row2.parent();
+//                maxFrequency1 = row2.select("div.field__item").first().text();
+//            }
+//            Element row3 = document.select("div.field__label:contains(" + FIELD55 + ")").first();
+//            if (row3 != null) {
+//                row3 = row3.parent();
+//                baseFrequency1 = row3.select("div.field__item").first().text();
+//            }
+//            Element row4 = document.select("div.field__label:contains(" + FIELD67 + ")").first();
+//            if (row4 != null) {
+//                row4 = row4.parent();
+//                maxPower1 = row4.select("div.field__item").first().text();
+//            }
+//            Element row5 = document.select("div.field__label:contains(" + FIELD77 + ")").first();
+//            if (row5 != null) {
+//                row5 = row5.parent();
+//                launchDate1 = row5.select("div.field__item").first().text();
+//            }
+//            Element row7 = document.select("div.field__label:contains(" + FIELD99 + ")").first();
+//            if (row7 != null) {
+//                row7 = row7.parent();
+//                MemTypes1 = row7.select("div.field__item").first().text();
+//            }
+//            Element row8 = document.select("div.field__label:contains(" + FIELD100 + ")").first();
+//            if (row8 != null) {
+//                row8 = row8.parent();
+//                Socket1 = row8.select("div.field__item").first().text();
+//            }
+//
+//            return processorNumber1;
+//        }
+//
+//
+//        public void onPostExecute(String result) {
+//            runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//
+//                    CollectionReference parentCollectionRef = firestore.collection("PC Components");
+//                    DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
+//                    CollectionReference intelCollectionRef = cpuDocRef.collection("AMD");
+//
+//
+//                    String p3 = processorNumber1.replace("™","");
+//                    String p4 = p3.replace("AMD","").trim();
+//
+//                    String[] parts = p4.split(" ");
+//                    String p1 = parts[0] + " " + parts[1];
+//                    String p2 = parts[2];
+//
+//
+//                    DocumentReference brandDocRef = intelCollectionRef.document(p1);
+//                    CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
+//                    DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
+//                    CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
+//                    DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics");
+//
+//                    //ADDING GENERATION BY LINK
+//                    brandDocRef.collection("sub").document(p2).set(new HashMap<String, Object>())
+//                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                @Override
+//                                public void onSuccess(Void aVoid) {
+//                                    Toast.makeText(getApplicationContext(), "generation added successfully", Toast.LENGTH_SHORT).show();
+//                                }
+//                            })
+//                            .addOnFailureListener(new OnFailureListener() {
+//                                @Override
+//                                public void onFailure(@NonNull Exception e) {
+//                                    Toast.makeText(getApplicationContext(), "Error adding generation", Toast.LENGTH_SHORT).show();
+//                                }
+//                            });
+//
+//                    //ADDING FIELDS OF THAT GENERATION PROCESSOR
+//                    characteristicsDocRef.set(new HashMap<String, Object>() {{
+//                        put("1.Processor Number", processorNumber1);
+//                        put("2.Launch Date", launchDate1);
+//                        put("3.Number of Cores", coreNumber1);
+//                        put("4.Number of Threads", threadNumber1);
+//                        put("5.Base Frequency", baseFrequency1);
+//                        put("6.Maximum Frequency", maxFrequency1);
+//                        put("7.Maximum Power usage", maxPower1);
+//                        put("9.Ram Type", MemTypes1);
+//                        put("a.Socket", Socket1);
+//                    }});
+//
+//                }
+//            });
+//        }
+//    }
 
 }

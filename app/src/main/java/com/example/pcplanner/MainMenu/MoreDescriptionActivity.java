@@ -33,6 +33,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
+import com.google.protobuf.StringValue;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -54,6 +55,8 @@ public class MoreDescriptionActivity extends AppCompatActivity {
     private RecyclerView fieldListRecyclerView;
     private TextView subdocumentCountTextView;
     private List<Map<String, Object>> subdocuments;
+
+    private List<String> collectionPathList = new ArrayList<>();
     private List<String> subdocumentIdList = new ArrayList<>();
     private List<String> documentIdList = new ArrayList<>();
 
@@ -78,8 +81,13 @@ public class MoreDescriptionActivity extends AppCompatActivity {
         collectionPath = getIntent().getStringExtra("collectionPath");
 
         // Load subdocumentIdList/documentIdList from shared preferences
+        Set<String> collectionPathSet = sharedPreferences.getStringSet("collectionPathList", null);
         Set<String> subdocumentIdSet = sharedPreferences.getStringSet("subdocumentIdList", null);
         Set<String> documentIdSet = sharedPreferences.getStringSet("documentIdList",null);
+
+        if (collectionPathSet != null) {
+            collectionPathList = new ArrayList<>(collectionPathSet);
+        }
 
         if (subdocumentIdSet != null) {
             subdocumentIdList = new ArrayList<>(subdocumentIdSet);
@@ -102,11 +110,13 @@ public class MoreDescriptionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(subdocumentIdList.size() < 2) {
+                    collectionPathList.add(collectionPath);
                     documentIdList.add(documentId);
                     subdocumentIdList.add(subdocumentId);
 
                     // Save the updated subdocumentIdList to SharedPreferences
                     SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putStringSet("collectionPathList", new HashSet<>(collectionPathList));
                     editor.putStringSet("subdocumentIdList", new HashSet<>(subdocumentIdList));
                     editor.putStringSet("documentIdList", new HashSet<>(documentIdList));
                     editor.apply();
@@ -119,6 +129,7 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                 }
                 else{
                     if(documentIdList.size()<2){
+                        collectionPathList.clear();
                         subdocumentIdList.clear();
                         documentIdList.clear();
                         // Update the subdocument count TextView
@@ -135,6 +146,8 @@ public class MoreDescriptionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (subdocumentIdList.size() >= 2 && documentIdList.size()>=2) {
+                    String collectionPath1 = collectionPathList.get(0);
+                    String collectionPath2 = collectionPathList.get(1);
                     String subdocumentId1 = subdocumentIdList.get(0);
                     String subdocumentId2 = subdocumentIdList.get(1);
                     String documentId1 = documentIdList.get(0);
@@ -144,6 +157,8 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                     Intent intent = new Intent(MoreDescriptionActivity.this, CompareActivity.class);
                     intent.putExtra("subdocumentId", subdocumentId);
                     intent.putExtra("collectionpath", collectionpath);
+                    intent.putExtra("collectionPath1", collectionPath1);
+                    intent.putExtra("collectionPath2", collectionPath2);
                     intent.putExtra("subdocumentId1", subdocumentId1);
                     intent.putExtra("subdocumentId2", subdocumentId2);
                     intent.putExtra("documentId1", documentId1);
@@ -209,11 +224,13 @@ public class MoreDescriptionActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove("subdocumentIdList");
         editor.remove("documentIdList");
+        editor.remove("collectionPathList");
         editor.apply();
 
         // Clear subdocumentIdList in memory
         subdocumentIdList.clear();
         documentIdList.clear();
+        collectionPathList.clear();
 
         // Update the subdocument count TextView
         subdocumentCountTextView.setText("ITEMS IN THE COMPARISON LIST: "+String.valueOf(subdocumentIdList.size() + "/2"));
@@ -303,6 +320,7 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                 nameTextViews[i].setText(name);
                 valueTextViews[i].setText(String.valueOf(value));
 
+                valueTextViews[11].setText(value + "%");
 
                     String filename = valueTextViews[0].getText().toString();
                     String filename1 = filename.substring(filename.indexOf("-") + 1);

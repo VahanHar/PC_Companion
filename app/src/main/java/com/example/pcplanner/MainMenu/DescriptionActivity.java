@@ -56,8 +56,17 @@ public class DescriptionActivity extends AppCompatActivity {
                     for (DocumentSnapshot document : documents) {
                         subdocumentList.add(document.getId());
                     }
-                    ArrayAdapter<String> adapter = new ArrayAdapter<>(DescriptionActivity.this, android.R.layout.simple_list_item_1, subdocumentList);
-                    subdocumentListView.setAdapter(adapter);
+                    if(collectionPath.contains("INTEL")) {
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(DescriptionActivity.this, R.layout.desc_list_item, subdocumentList);
+                        subdocumentListView.setAdapter(adapter);
+                    }
+                    if(collectionPath.contains("AMD")) {
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(DescriptionActivity.this, R.layout.desc_list_item2, subdocumentList);
+                        subdocumentListView.setAdapter(adapter);
+                    }
+
+
+
 
                     // Add item click listener to open sub-collection documents
                     subdocumentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

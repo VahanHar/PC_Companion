@@ -23,7 +23,9 @@ import java.util.Map;
 public class Amd2Admin extends AppCompatActivity {
 
 
-    TextInputEditText brandEditText, modelEditText, characteristicsEditText, detailsEditText, itemNameEditText, CoresEditText;
+    TextInputEditText brandEditText, modelEditText, characteristicsEditText, itemNameEditText, LDateEditText,NCoresEditText,NThreadsEditText
+            ,BFreqEditText,MFreqEditText,MPowerEditText,NRamEditText,RTypeEditText,SocketEditText,MPriceEditText,BenchEditText;
+
     Button modifyItemButton;
     FirebaseFirestore firestore;
 
@@ -46,18 +48,57 @@ public class Amd2Admin extends AppCompatActivity {
         characteristicsEditText.setSingleLine(true);
         characteristicsEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
 
-        detailsEditText = findViewById(R.id.textInput_details);
-        detailsEditText.setSingleLine(true);
-        detailsEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+        ///
 
         itemNameEditText = findViewById(R.id.editText_itemName);
         itemNameEditText.setSingleLine(true);
         itemNameEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
 
-        CoresEditText = findViewById(R.id.editText_cores);
-        CoresEditText.setSingleLine(true);
-        CoresEditText.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        LDateEditText = findViewById(R.id.editText_date);
+        LDateEditText.setSingleLine(true);
+        LDateEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
 
+        NCoresEditText = findViewById(R.id.editText_core);
+        NCoresEditText.setSingleLine(true);
+        NCoresEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        NThreadsEditText = findViewById(R.id.editText_threads);
+        NThreadsEditText.setSingleLine(true);
+        NThreadsEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        BFreqEditText = findViewById(R.id.editText_bfreq);
+        BFreqEditText.setSingleLine(true);
+        BFreqEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        MFreqEditText = findViewById(R.id.editText_nfreq);
+        MFreqEditText.setSingleLine(true);
+        MFreqEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        MPowerEditText = findViewById(R.id.editText_mpower);
+        MPowerEditText.setSingleLine(true);
+        MPowerEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        NRamEditText = findViewById(R.id.editText_nram);
+        NRamEditText.setSingleLine(true);
+        NRamEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        RTypeEditText = findViewById(R.id.editText_rtype);
+        RTypeEditText.setSingleLine(true);
+        RTypeEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        SocketEditText = findViewById(R.id.editText_socket);
+        SocketEditText.setSingleLine(true);
+        SocketEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        MPriceEditText = findViewById(R.id.editText_mprice);
+        MPriceEditText.setSingleLine(true);
+        MPriceEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        BenchEditText = findViewById(R.id.editText_bench);
+        BenchEditText.setSingleLine(true);
+        BenchEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+        ///
         modifyItemButton = findViewById(R.id.button_modfyItem);
 
         modifyItemButton.setOnClickListener(new View.OnClickListener() {
@@ -71,43 +112,58 @@ public class Amd2Admin extends AppCompatActivity {
                 }
 
                 String generation = modelEditText.getText().toString().trim();
-                if (!generation.isEmpty()) {
-                    generation = generation.substring(0, 1).toUpperCase() + generation.substring(1).toLowerCase();
-                }
 
                 String characteristics = characteristicsEditText.getText().toString().trim();
                 if (!characteristics.isEmpty()) {
                     characteristics = characteristics.substring(0, 1).toUpperCase() + characteristics.substring(1).toLowerCase();
                 }
 
-                String details = detailsEditText.getText().toString().trim();
-                if (!details.isEmpty()) {
-                    details = details.substring(0, 1).toUpperCase() + details.substring(1).toLowerCase();
-                }
-
                 String itemName = itemNameEditText.getText().toString().trim();
-                if (!itemName.isEmpty()) {
-                    itemName = itemName.substring(0, 1).toUpperCase() + itemName.substring(1).toLowerCase();
-                }
 
-                String priceStr = CoresEditText.getText().toString().trim();
-                int Cores = 0;
+                String LDate = LDateEditText.getText().toString().trim();
+                String NCores = NCoresEditText.getText().toString().trim();
+                String NThreads = NThreadsEditText.getText().toString().trim();
+                String BFreq = BFreqEditText.getText().toString().trim();
+                String MFreq = MFreqEditText.getText().toString().trim();
+                String Mpower = MPowerEditText.getText().toString().trim();
+                String Nram = NRamEditText.getText().toString().trim();
+                String Rtype = RTypeEditText.getText().toString().trim();
+                String Socket = SocketEditText.getText().toString().trim();
+                String MPrice = MPriceEditText.getText().toString().trim();
 
-                if (!priceStr.isEmpty()) {
-                    Cores = Integer.parseInt(priceStr);
+                String benchM = BenchEditText.getText().toString().trim();
+                int bench = 0;
+
+                if (!benchM.isEmpty()) {
+                    bench = Integer.parseInt(benchM);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Please enter a price", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please enter a BenchMark value", Toast.LENGTH_SHORT).show();
                 }
 
 
 
-                if (brand.isEmpty() || generation.isEmpty() || characteristics.isEmpty() || details.isEmpty() || itemName.isEmpty() || priceStr.isEmpty()) {
+                if (brand.isEmpty() || generation.isEmpty() || characteristics.isEmpty() || itemName.isEmpty() || LDate.isEmpty()
+                        || NCores.isEmpty()|| NThreads.isEmpty()|| BFreq.isEmpty()|| MFreq.isEmpty()|| Mpower.isEmpty()|| Nram.isEmpty()
+                        || Rtype.isEmpty()|| Socket.isEmpty()|| MPrice.isEmpty()
+                ) {
                     Toast.makeText(getApplicationContext(), "Please fill out all fields", Toast.LENGTH_SHORT).show();
-
                 } else {
                     Map<String, Object> item = new HashMap<>();
-                    item.put("name", itemName);
-                    item.put("number of cores: ", Cores);
+                    item.put("1.Processor Number", itemName);
+                    item.put("2.Launch Date", LDate);
+                    item.put("3.Number of Cores", NCores);
+                    item.put("4.Number of Threads", NThreads);
+                    item.put("5.Base Frequency", BFreq);
+                    item.put("6.Maximum Frequency", MFreq);
+                    item.put("7.Maximum Power usage", Mpower);
+                    item.put("8.Maximum RAM", Nram);
+                    item.put("9.Ram Type", Rtype);
+                    item.put("a.Socket", Socket);
+                    item.put("b.Maximum Price", MPrice);
+                    item.put("c.BenchMark", bench);
+
+
+
 
 
                     CollectionReference parentCollectionRef = firestore.collection("PC Components");
@@ -116,7 +172,7 @@ public class Amd2Admin extends AppCompatActivity {
                     DocumentReference brandDocRef = amdCollectionRef.document(brand);
                     CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
                     DocumentReference modelCollectionRef = subsubCollectionRef.document(generation);
-                    CollectionReference detailscoleRef = modelCollectionRef.collection(details);
+                    CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
                     DocumentReference characteristicsDocRef = detailscoleRef.document(characteristics) ;
 
 
@@ -130,9 +186,19 @@ public class Amd2Admin extends AppCompatActivity {
                                     brandEditText.setText("");
                                     modelEditText.setText("");
                                     characteristicsEditText.setText("");
-                                    detailsEditText.setText("");
+
                                     itemNameEditText.setText("");
-                                    CoresEditText.setText("");
+                                    LDateEditText.setText("");
+                                    NCoresEditText.setText("");
+                                    NThreadsEditText.setText("");
+                                    BFreqEditText.setText("");
+                                    MFreqEditText.setText("");
+                                    MPowerEditText.setText("");
+                                    NRamEditText.setText("");
+                                    RTypeEditText.setText("");
+                                    SocketEditText.setText("");
+                                    MPriceEditText.setText("");
+                                    BenchEditText.setText("");
                                 }
 
                             })

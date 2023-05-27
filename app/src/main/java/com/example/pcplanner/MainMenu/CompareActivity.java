@@ -51,6 +51,9 @@ public class CompareActivity extends AppCompatActivity {
     private String subdocumentId1;
     private String subdocumentId2;
 
+    private String collectionPath1;
+    private String collectionPath2;
+
     private String documentId1;
     private String documentId2;
 
@@ -59,7 +62,7 @@ public class CompareActivity extends AppCompatActivity {
     private List<Map<String, Object>> subdocuments1;
     private List<Map<String, Object>> subdocuments2;
 
-
+    public int aa = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,17 +77,23 @@ public class CompareActivity extends AppCompatActivity {
         subdocumentId1 = getIntent().getStringExtra("subdocumentId1");
         subdocumentId2 = getIntent().getStringExtra("subdocumentId2");
 
+        collectionPath1 = getIntent().getStringExtra("collectionPath1");
+        collectionPath2 = getIntent().getStringExtra("collectionPath2");
+
         documentId1 = getIntent().getStringExtra("documentId1");
         documentId2 = getIntent().getStringExtra("documentId2");
 
         documentId = getIntent().getStringExtra("documentId");
         collectionPath = getIntent().getStringExtra("collectionPath");
 
-        firestore.collection("PC Components").document("CPU").collection("INTEL").document(documentId).collection("sub");
+        firestore.collection(collectionPath).document(documentId).collection("sub");
 
-        CollectionReference documentRef1 = firestore.collection(collectionPath).document(documentId1).collection("sub").document(subdocumentId1).collection("Characteristics");
+        CollectionReference documentRef1 = firestore.collection(collectionPath1).document(documentId1).collection("sub").document(subdocumentId1).collection("Characteristics");
 
-        CollectionReference documentRef2 = firestore.collection(collectionPath).document(documentId2).collection("sub").document(subdocumentId2).collection("Characteristics");
+        CollectionReference documentRef2 = firestore.collection(collectionPath2).document(documentId2).collection("sub").document(subdocumentId2).collection("Characteristics");
+
+        Log.d("DDD111", String.valueOf(collectionPath));
+        Log.d("DDD222", String.valueOf(documentRef2));
 
         documentRef1.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -151,7 +160,10 @@ public class CompareActivity extends AppCompatActivity {
                 fieldListRecyclerView2.setAdapter(adapter);
                 fieldListRecyclerView2.setLayoutManager(new LinearLayoutManager(CompareActivity.this));
 
-                ////COMPARE FIELDS HERE
+
+
+
+//                //COMPARE FIELDS HERE
 //                if (subdocuments1.size() > 0 && subdocuments2.size() > 0) {
 //                    LinkedHashMap<String, Object> fields1 = (LinkedHashMap<String, Object>) subdocuments1.get(0);
 //                    LinkedHashMap<String, Object> fields2 = (LinkedHashMap<String, Object>) subdocuments2.get(0);
@@ -173,7 +185,7 @@ public class CompareActivity extends AppCompatActivity {
 //                                if (floatFieldValue1 < floatFieldValue2) {
 //                                    //// Do something if fieldValue1 is less than fieldValue2 <<<<<
 //                                    Log.d("COMPARRR","F1<F2");
-//
+//                                    aa++;
 //
 //                                } else if (floatFieldValue1 > floatFieldValue2) {
 //                                    // Do something if fieldValue1 is greater than fieldValue2 >>>>>
@@ -314,10 +326,9 @@ public class CompareActivity extends AppCompatActivity {
                 valueTextViews[i].setText(String.valueOf(value));
 
                 //COLOR1
-                int aa = 0;
-                if(aa==i){
-                    valueTextViews[i].setTextColor(Color.GREEN);
-                }
+
+
+                valueTextViews[11].setText(value + "%");
 
 
                 String filename = valueTextViews[0].getText().toString();
@@ -427,7 +438,7 @@ public class CompareActivity extends AppCompatActivity {
                 valueTextViews[i].setText(String.valueOf(value));
 
                 //COLOR
-
+                valueTextViews[11].setText(value + "%");
 
                 String filename = valueTextViews[0].getText().toString();
                 String filename1 = filename.substring(filename.indexOf("-") + 1);

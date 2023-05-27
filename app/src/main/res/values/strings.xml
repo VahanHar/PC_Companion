@@ -93,6 +93,15 @@
     <string name="select_document_prompt">select document</string>
     <string name="no_items_message">NO ITEM</string>
     <string name="compare_button_label">COMPARE</string>
+    <string name="number_of_threads">Number of Threads</string>
+    <string name="base_frequency">Base Frequency</string>
+    <string name="benchmark">BenchMark</string>
+    <string name="maximum_price">Maximum Price</string>
+    <string name="socket">Socket</string>
+    <string name="ram_type">Ram Type</string>
+    <string name="maximum_ram">Maximum Ram</string>
+    <string name="maximum_power_usage">Maximum Power Usage</string>
+    <string name="maximum_frequency">Maximum Frequency</string>
 
 
 </resources>

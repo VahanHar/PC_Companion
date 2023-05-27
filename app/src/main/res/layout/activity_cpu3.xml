@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10sp"
                 android:ems="10"
-                android:hint="Link Intel"
+                android:hint="Link CPU"
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
 
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10sp"
                 android:ems="10"
-                android:hint="Link BenchMark"
+                android:hint="Link BenchMark (optional)"
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
 

@@ -50,7 +50,7 @@ public class AmdActivity extends AppCompatActivity {
                     for (DocumentSnapshot document : documents) {
                         documentIds.add(document.getId());
                     }
-                    ArrayAdapter<String> adapter = new ArrayAdapter<>(AmdActivity.this, android.R.layout.simple_list_item_1, documentIds);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(AmdActivity.this, R.layout.desc_list_item2, documentIds);
                     listView.setAdapter(adapter);
 
                     // Add item click listener to open sub-collection documents
