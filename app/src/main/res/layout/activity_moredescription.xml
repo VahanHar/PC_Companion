@@ -10,6 +10,29 @@
         android:layout_marginBottom="250dp"
         android:padding="8dp" />
 
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_back_arrow"
+        android:clickable="true"
+        android:onClick="onBackIconClick"
+        />
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:background="@drawable/btn1"
+        android:text="+"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
     <ListView
         android:id="@+id/subdocument_listview"
         android:layout_width="match_parent"

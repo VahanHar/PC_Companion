@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,6 +27,13 @@ public class CpuActivity extends AppCompatActivity {
             Intel = findViewById(R.id.intel_button);
             Amd = findViewById(R.id.amd_button);
 
+            ImageView imageView = findViewById(R.id.btn_back);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
 
             Intel.setOnClickListener(new View.OnClickListener() {
                 @Override

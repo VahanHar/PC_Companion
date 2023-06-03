@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -46,14 +47,20 @@ public class Login extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
         if (currentUser != null) {
+            if(!mAuth.getCurrentUser().isEmailVerified()){
+                mAuth.signOut();
+            }
+
             progressBar.setVisibility(View.VISIBLE);
-            if (currentUser.getEmail().equals("admin@gmail.com")) {
+            if (currentUser.getEmail().equals("admin@pcplanner.com")) {
                 Intent intent = new Intent(getApplicationContext(), SplashAdmin.class);
                 startActivity(intent);
             } else {
-                Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
-                startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
+                    startActivity(intent);
+                    finish();
             }
             finish();
         }
@@ -72,6 +79,9 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
+
+        editTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
         buttonLogin = findViewById(R.id.btn_login);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.registerNow);
@@ -104,6 +114,34 @@ public class Login extends AppCompatActivity {
             return false;
         });
 
+
+
+        TextView forgotPasswordTextView = findViewById(R.id.forgot_password);
+        forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = String.valueOf(editTextEmail.getText());
+
+                // Check if email is valid
+
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(Login.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                mAuth.sendPasswordResetEmail(email)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(Login.this, "Password reset email sent.", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(Login.this, "Failed to send password reset email.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+            }
+        });
 
 
         Button buttonGuest = findViewById(R.id.btn_guest);
@@ -191,7 +229,7 @@ public class Login extends AppCompatActivity {
 
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     if (user != null) {
-                                        if (user.getEmail().equals("admin@gmail.com")) {
+                                        if (user.getEmail().equals("admin@pcplanner.com")) {
                                             // Redirect the user to the admin activity
                                             // Hide keyboard after login button is clicked
                                             InputMethodManager imm2 = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
@@ -202,14 +240,17 @@ public class Login extends AppCompatActivity {
                                             startActivity(intent);
                                             finish();
                                         } else {
-                                            // Redirect the user to the main activity
-                                            Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
-                                            startActivity(intent);
-                                            finish();
+                                            //TO MAIN ACTIVITY
+                                            if(mAuth.getCurrentUser().isEmailVerified()){
+                                                Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                            else{
+                                                Toast.makeText(getApplicationContext(), "Please confirm your email address", Toast.LENGTH_SHORT).show();
+                                            }
                                         }
                                     }
-                                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-
 
                                 } else {
                                     Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();

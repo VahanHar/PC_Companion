@@ -61,7 +61,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainMenu.ComparisonActivity"
+            android:name=".MainMenu.SuggestPc"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.COMPARISON_ACTIVITY" />

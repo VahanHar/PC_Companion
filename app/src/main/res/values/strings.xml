@@ -102,6 +102,7 @@
     <string name="maximum_ram">Maximum Ram</string>
     <string name="maximum_power_usage">Maximum Power Usage</string>
     <string name="maximum_frequency">Maximum Frequency</string>
+    <string name="repeatpassword">Repeat your password</string>
 
 
 </resources>

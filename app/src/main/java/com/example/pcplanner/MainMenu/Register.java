@@ -2,11 +2,14 @@ package com.example.pcplanner.MainMenu;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.google.firebase.auth.ActionCodeSettings;
+import com.google.firebase.auth.FirebaseAuthActionCodeException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -24,7 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
-    TextInputEditText editTextEmail, editTextPassword;
+    TextInputEditText editTextEmail, editTextPassword1, editTextPassword2;
     Button buttonReg;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
@@ -38,19 +41,6 @@ public class Register extends AppCompatActivity {
         }
     }
 
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -59,10 +49,14 @@ public class Register extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         editTextEmail = findViewById(R.id.email);
-        editTextPassword = findViewById(R.id.password);
+        editTextPassword1 = findViewById(R.id.password1);
+        editTextPassword2 = findViewById(R.id.password2);
         buttonReg = findViewById(R.id.btn_register);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.loginNow);
+
+        editTextPassword1.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        editTextPassword2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,8 +67,9 @@ public class Register extends AppCompatActivity {
                 finish();
             }
         });
-        TextInputEditText editTextPassword = findViewById(R.id.password);
-        editTextPassword.setOnEditorActionListener((v, actionId, event) -> {
+
+        TextInputEditText editTextPassword2 = findViewById(R.id.password2);
+        editTextPassword2.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 new Handler().postDelayed(() -> {
                     Button buttonReg = findViewById(R.id.btn_register);
@@ -95,10 +90,10 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
-                String email,password;
+                String email,password1,password2;
                 email = String.valueOf(editTextEmail.getText());
-                password = String.valueOf(editTextPassword.getText());
-
+                password1 = String.valueOf(editTextPassword1.getText());
+                password2 = String.valueOf(editTextPassword2.getText());
 
 
                 // Check if email is valid
@@ -127,7 +122,7 @@ public class Register extends AppCompatActivity {
 
 
 
-                if(TextUtils.isEmpty(password)){
+                if(TextUtils.isEmpty(password1)){
                     Toast.makeText(Register.this, "Enter password",Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                     // Hide keyboard after login button is clicked
@@ -137,36 +132,64 @@ public class Register extends AppCompatActivity {
                     }
                     return;
                 }
+                if(TextUtils.isEmpty(password2)){
+                    Toast.makeText(Register.this, "Repeat password",Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                    // Hide keyboard after login button is clicked
+                    InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
+                    return;
+                }
+                String password3 = null;
+                if(password1.equals(password2)){
+                    password3 = password1;
+                }
+                else{
+                    Toast.makeText(Register.this, "Your passwords do not match",Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                }
 
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                progressBar.setVisibility(View.GONE);
+                if(password3!=null) {
+                    mAuth.createUserWithEmailAndPassword(email, password3)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                if (task.isSuccessful()) {
+                                    progressBar.setVisibility(View.GONE);
 
-                                    Toast.makeText(Register.this, "Account created.",
-                                            Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), Login.class);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
+                                    if (task.isSuccessful()) {
 
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(Register.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                        mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if(task.isSuccessful()){
+                                                    Toast.makeText(Register.this, "Please verify your email address",
+                                                            Toast.LENGTH_SHORT).show();
+                                                }
+                                                else{
+                                                    Toast.makeText(Register.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
+                                    } else {
 
+                                        // If sign in fails, display a message to the user.
+                                        Toast.makeText(Register.this, "Registration failed.",
+                                                Toast.LENGTH_SHORT).show();
+
+                                    }
+
+                                    // Hide keyboard after login button is clicked
+                                    InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                    if (imm != null) {
+                                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                                    }
                                 }
-
-                                // Hide keyboard after login button is clicked
-                                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                                if (imm != null) {
-                                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                                }
-                            }
-                        });
+                            });
+                }
 
             }
         });

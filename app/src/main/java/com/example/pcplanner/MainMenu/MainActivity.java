@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openComparisonActivity(View view) {
-        Intent intent = new Intent(this, ComparisonActivity.class);
+        Intent intent = new Intent(this, SuggestPc.class);
         startActivity(intent);
     }
 

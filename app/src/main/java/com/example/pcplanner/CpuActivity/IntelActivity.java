@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +20,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -35,11 +38,25 @@ public class IntelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intel);
 
         firestore = FirebaseFirestore.getInstance();
+
+
+
+
         CollectionReference parentCollectionRef = firestore.collection("PC Components");
         DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
         intelCollectionRef = cpuDocRef.collection("INTEL");
 
         listView = findViewById(R.id.listView);
+
+
+        ImageView imageView = findViewById(R.id.btn_back);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
 
         intelCollectionRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override

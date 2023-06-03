@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,6 +56,14 @@ public class ConfigurationActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 // Handle text change
                 return false;
+            }
+        });
+
+        ImageView imageView = findViewById(R.id.btn_back);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 

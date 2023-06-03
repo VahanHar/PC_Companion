@@ -80,6 +80,15 @@ public class MoreDescriptionActivity extends AppCompatActivity {
         documentId = getIntent().getStringExtra("documentId");
         collectionPath = getIntent().getStringExtra("collectionPath");
 
+
+        ImageView imageView = findViewById(R.id.btn_back);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         // Load subdocumentIdList/documentIdList from shared preferences
         Set<String> collectionPathSet = sharedPreferences.getStringSet("collectionPathList", null);
         Set<String> subdocumentIdSet = sharedPreferences.getStringSet("subdocumentIdList", null);
@@ -180,6 +189,7 @@ public class MoreDescriptionActivity extends AppCompatActivity {
 
 
 
+
         CollectionReference documentRef = firestore.collection(collectionPath).document(documentId).collection("sub").document(subdocumentId).collection("Characteristics");
 
         documentRef.get().addOnCompleteListener(task -> {
@@ -212,6 +222,65 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                 fieldListRecyclerView.setLayoutManager(new LinearLayoutManager(MoreDescriptionActivity.this));
             } else {
                 // Handle error
+            }
+        });
+
+        Button addButton = findViewById(R.id.add_button);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get the documentRef path
+                String documentRefPath = collectionPath + "/" + documentId + "/sub/" + subdocumentId;
+
+                // Query the document in the "Characteristics" collection
+                FirebaseFirestore.getInstance().document(documentRefPath).collection("Characteristics")
+                        .document("Characteristics")
+                        .get()
+                        .addOnSuccessListener(documentSnapshot -> {
+                            if (documentSnapshot.exists()) {
+                                // Retrieve the map of fields
+                                Map<String, Object> fields = documentSnapshot.getData();
+                                if (fields != null) {
+                                    String pricee = null;
+
+                                    // Iterate through the fields
+                                    for (Map.Entry<String, Object> entry : fields.entrySet()) {
+                                        String fieldName = entry.getKey();
+                                        Object fieldValue = entry.getValue();
+
+                                        // Check if the field value contains "$"
+                                        if (fieldValue instanceof String && ((String) fieldValue).contains("$")) {
+                                            pricee = (String) fieldValue;
+                                            break;
+                                        }
+                                    }
+
+                                    if (pricee != null) {
+                                        // Pass the documentRef path and pricee to the SuggestPc activity
+                                        Intent intent = new Intent(MoreDescriptionActivity.this, SuggestPc.class);
+                                        intent.putExtra("documentRefPath", documentRefPath);
+                                        intent.putExtra("pricee", pricee);
+                                        Log.d("PPPP",pricee);
+                                        startActivity(intent);
+                                    } else {
+                                        // No field with "$" found
+                                        // Handle the case where no field contains "$"
+                                    }
+                                } else {
+                                    // No fields found
+                                    // Handle the case where no fields are available in the document
+                                }
+                            } else {
+                                // Document does not exist
+                                // Handle the case where the document does not exist
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Handle the failure case
+                            }
+                        });
             }
         });
 
@@ -321,6 +390,9 @@ public class MoreDescriptionActivity extends AppCompatActivity {
                 valueTextViews[i].setText(String.valueOf(value));
 
                 valueTextViews[11].setText(value + "%");
+
+
+                String pricee = String.valueOf(valueTextViews[10]);
 
                     String filename = valueTextViews[0].getText().toString();
                     String filename1 = filename.substring(filename.indexOf("-") + 1);

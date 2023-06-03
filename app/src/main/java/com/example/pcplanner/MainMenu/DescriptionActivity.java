@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +47,14 @@ public class DescriptionActivity extends AppCompatActivity {
 
         CollectionReference documentRef = firestore.collection(collectionPath).document(documentId).collection("sub");
 
+
+        ImageView imageView = findViewById(R.id.btn_back);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         documentRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override

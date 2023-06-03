@@ -95,6 +95,14 @@ public class CompareActivity extends AppCompatActivity {
         Log.d("DDD111", String.valueOf(collectionPath));
         Log.d("DDD222", String.valueOf(documentRef2));
 
+        ImageView imageView = findViewById(R.id.btn_back);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         documentRef1.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 subdocuments1 = new ArrayList<>();

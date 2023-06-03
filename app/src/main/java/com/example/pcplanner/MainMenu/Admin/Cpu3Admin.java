@@ -69,7 +69,7 @@ public class Cpu3Admin extends AppCompatActivity {
     private final String FIELD33 = "# of Threads";
     private final String FIELD44 = "Max. Boost Clock";
     private final String FIELD55 = "Base Frequency";
-    private final String FIELD67 = "TDP"; // WORKING UP TO 11GEN
+    private final String FIELD67 = "TDP";
     private final String FIELD77 = "Launch Date";
     private final String FIELD99 = "Memory Type";
     private final String FIELD100 = "CPU Socket";
@@ -265,10 +265,10 @@ public class Cpu3Admin extends AppCompatActivity {
                 thread.start();
 
                 if (!TextUtils.isEmpty(editText2.getText()) && !TextUtils.isEmpty(editText3.getText())) {
-                    Cpu3Admin.Intl dw = new Cpu3Admin.Intl();
+                    Cpu3Admin.AMD dw = new Cpu3Admin.AMD();
                     dw.execute();
-                    Cpu3Admin.Amazon dw2 = new Cpu3Admin.Amazon();
-                    dw2.execute();
+//                    Cpu3Admin.Amazon dw2 = new Cpu3Admin.Amazon();
+//                    dw2.execute();
                 }
                 else{
                     Log.e("CPUADMIN","CPU field is empty");
@@ -318,6 +318,13 @@ public class Cpu3Admin extends AppCompatActivity {
                 processorrow = processorrow.parent();
                 processorNumber = processorrow.select("div.tech-data").first().text();
             }
+
+            Element processorrow2 = document.select("div.tech-label:contains(" + FIELD1 + ")").first();
+            if (processorrow2 != null) {
+                processorrow2 = processorrow2.parent();
+                processorNumber = processorrow2.select("div.tech-data").first().text();
+            }
+
             Element corerow = document.select("div.tech-label:contains(" + FIELD2 + ")").first();
             if (corerow != null) {
                 corerow = corerow.parent();
@@ -382,56 +389,69 @@ public class Cpu3Admin extends AppCompatActivity {
                     DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
                     CollectionReference intelCollectionRef = cpuDocRef.collection("INTEL");
 
-                    String[] parts = new String[0];
+                    String[] parts = null;
                     if (processorNumber != null) {
                         parts = processorNumber.split("-");
-                    } else {
+                    }
+                    else{
                         Toast.makeText(getApplicationContext(), "Error with intel link", Toast.LENGTH_SHORT).show();
                     }
 
-                    String p1 = parts[0];
-                    String p2 = parts[1];
-                    DocumentReference brandDocRef = intelCollectionRef.document("Core " + p1);
-                    CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
-                    DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
-                    CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
-                    DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics");
+                    String p1 = null;
+                    String p2 = null;
 
-                    //ADDING GENERATION BY LINK
-                    brandDocRef.collection("sub").document(p2).set(new HashMap<String, Object>())
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(getApplicationContext(), "generation added successfully", Toast.LENGTH_SHORT).show();
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(getApplicationContext(), "Error adding generation", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                    if(p1!=null && p2!=null) {
+                        p1 = parts[0];
+                        p2 = parts[1];
 
-                    String MemTypes2 = MemTypes.substring(0,20);
-                    //ADDING FIELDS OF THAT GENERATION PROCESSOR
-                    characteristicsDocRef.set(new HashMap<String, Object>() {{
-                        put("1.Processor Number", processorNumber);
-                        put("2.Launch Date", launchDate);
-                        put("3.Number of Cores", coreNumber);
-                        put("4.Number of Threads", threadNumber);
-                        put("5.Base Frequency", baseFrequency);
-                        put("6.Maximum Frequency", maxFrequency);
-                        if(!(maxPower==null)) {
-                            put("7.Maximum Power usage", maxPower);
+                        DocumentReference brandDocRef = intelCollectionRef.document("Core " + p1);
+                        CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
+                        DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
+                        CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
+                        DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics");
+
+                        //ADDING GENERATION BY LINK
+                        brandDocRef.collection("sub").document(p2).set(new HashMap<String, Object>())
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(getApplicationContext(), "generation added successfully", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(getApplicationContext(), "Error adding generation", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
+                        String MemTypes2;
+                        if (MemTypes.length() <= 20) {
+                            MemTypes2 = MemTypes;
+                        } else {
+                            MemTypes2 = MemTypes.substring(0, 20);
                         }
-                        else{
-                            put("7.Maximum Power usage", max2Power);
-                        }
-                        put("8.Maximum RAM", maxRam);
-                        put("9.Ram Type", MemTypes2);
-                        put("a.Socket", Socket);
-                    }});
 
+
+                        //ADDING FIELDS OF THAT GENERATION PROCESSOR
+                        characteristicsDocRef.set(new HashMap<String, Object>() {{
+                            put("1.Processor Number", processorNumber);
+                            put("2.Launch Date", launchDate);
+                            put("3.Number of Cores", coreNumber);
+                            put("4.Number of Threads", threadNumber);
+                            put("5.Base Frequency", baseFrequency);
+                            put("6.Maximum Frequency", maxFrequency);
+                            if (!(maxPower == null)) {
+                                put("7.Maximum Power usage", maxPower);
+                            } else {
+                                put("7.Maximum Power usage", max2Power);
+                            }
+                            put("8.Maximum RAM", maxRam);
+                            put("9.Ram Type", MemTypes2);
+                            put("a.Socket", Socket);
+                        }});
+
+                    }
                 }
             });
         }
@@ -476,39 +496,47 @@ public class Cpu3Admin extends AppCompatActivity {
                 @Override
                 public void run() {
 
-                    CollectionReference parentCollectionRef = firestore.collection("PC Components");
-                    DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
-                    CollectionReference intelCollectionRef = cpuDocRef.collection("INTEL");
-                    String[] parts = processorNumber.split("-");
-                    String p1 = parts[0];
-                    String p2 = parts[1];
-                    DocumentReference brandDocRef = intelCollectionRef.document("Core "+p1);
-                    CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
-                    DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
-                    CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
-                    DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics") ;
+                    String[] parts = null;
+                    String p1 = null;
+                    String p2 = null;
+
+                    if(processorNumber!=null) {
+                        parts = processorNumber.split("-");
+                    }
+                    if(p1!=null && p2!=null) {
+                        p1 = parts[0];
+                        p2 = parts[1];
+
+                        CollectionReference parentCollectionRef = firestore.collection("PC Components");
+                        DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
+                        CollectionReference intelCollectionRef = cpuDocRef.collection("INTEL");
+                        DocumentReference brandDocRef = intelCollectionRef.document("Core " + p1);
+                        CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
+                        DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
+                        CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
+                        DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics");
 
 
+                        String fieldName = "b.Maximum Price";
+                        String fieldValue = maxPrice;
 
-                    String fieldName = "b.Maximum Price";
-                    String fieldValue = maxPrice;
+                        Map<String, Object> updateFields = new HashMap<>();
+                        updateFields.put(fieldName, fieldValue);
 
-                    Map<String, Object> updateFields = new HashMap<>();
-                    updateFields.put(fieldName, fieldValue);
-
-                    characteristicsDocRef.set(updateFields, SetOptions.merge())
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(getApplicationContext(), "Field added/updated successfully", Toast.LENGTH_SHORT).show();
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(getApplicationContext(), "Error adding/updating field", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                        characteristicsDocRef.set(updateFields, SetOptions.merge())
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(getApplicationContext(), "Field added/updated successfully", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(getApplicationContext(), "Error adding/updating field", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    }
                 }
             });
         }
@@ -600,141 +628,141 @@ public class Cpu3Admin extends AppCompatActivity {
         }
     }
 
-//    public class AMD extends AsyncTask<Void, Void, String> {
-//
-//        protected void onPreExecute() {
-//            super.onPreExecute();
-//        }
-//
-//        @Override
-//        protected String doInBackground(Void... voids) {
-//            org.jsoup.nodes.Document document = null;
-//            EditText editText2 = findViewById(R.id.editText_intel);
-//            try {
-//                String url = editText2.getText().toString().trim();
-//                Log.d("Cpu3Admin.AMD", "Starting doInBackground()");
-//                Log.d("Cpu3Admin.AMD", "URL: " + url);
-//                document = Jsoup.connect(url).get();
-//                Log.d("CPU3ADMIN.AMD", String.valueOf(document));
-//                Log.d("DOCUMENTADMINCPU", String.valueOf(document));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-////            coreNumber;
-////            threadNumber;
-////            maxFrequency;
-////            baseFrequency;
-////            maxPower;
-////            launchDate;
-////            maxRam;
-//
-//            Element processorrow = document.select("h2.field.section-title").first();
-//            Log.d("LLLLAAA", String.valueOf(processorrow));
-//            if (processorrow != null) {
-//                processorNumber1 = processorrow.text();
-//                Log.d("AAALLL",processorNumber1);
-//            }
-//            Element corerow = document.select("div.field__label:contains(" + FIELD22 + ")").first();
-//            if (corerow != null) {
-//                corerow = corerow.parent();
-//                coreNumber1 = corerow.select("div.field__item").first().text();
-//            }
-//            Element row1 = document.select("div.field__label:contains(" + FIELD33 + ")").first();
-//            if (row1 != null) {
-//                row1 = row1.parent();
-//                threadNumber1 = row1.select("div.field__item").first().text();
-//            }
-//            Element row2 = document.select("div.field__label:contains(" + FIELD44 + ")").first();
-//            if (row2 != null) {
-//                row2 = row2.parent();
-//                maxFrequency1 = row2.select("div.field__item").first().text();
-//            }
-//            Element row3 = document.select("div.field__label:contains(" + FIELD55 + ")").first();
-//            if (row3 != null) {
-//                row3 = row3.parent();
-//                baseFrequency1 = row3.select("div.field__item").first().text();
-//            }
-//            Element row4 = document.select("div.field__label:contains(" + FIELD67 + ")").first();
-//            if (row4 != null) {
-//                row4 = row4.parent();
-//                maxPower1 = row4.select("div.field__item").first().text();
-//            }
-//            Element row5 = document.select("div.field__label:contains(" + FIELD77 + ")").first();
-//            if (row5 != null) {
-//                row5 = row5.parent();
-//                launchDate1 = row5.select("div.field__item").first().text();
-//            }
-//            Element row7 = document.select("div.field__label:contains(" + FIELD99 + ")").first();
-//            if (row7 != null) {
-//                row7 = row7.parent();
-//                MemTypes1 = row7.select("div.field__item").first().text();
-//            }
-//            Element row8 = document.select("div.field__label:contains(" + FIELD100 + ")").first();
-//            if (row8 != null) {
-//                row8 = row8.parent();
-//                Socket1 = row8.select("div.field__item").first().text();
-//            }
-//
-//            return processorNumber1;
-//        }
-//
-//
-//        public void onPostExecute(String result) {
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//                    CollectionReference parentCollectionRef = firestore.collection("PC Components");
-//                    DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
-//                    CollectionReference intelCollectionRef = cpuDocRef.collection("AMD");
-//
-//
-//                    String p3 = processorNumber1.replace("™","");
-//                    String p4 = p3.replace("AMD","").trim();
-//
-//                    String[] parts = p4.split(" ");
-//                    String p1 = parts[0] + " " + parts[1];
-//                    String p2 = parts[2];
-//
-//
-//                    DocumentReference brandDocRef = intelCollectionRef.document(p1);
-//                    CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
-//                    DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
-//                    CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
-//                    DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics");
-//
-//                    //ADDING GENERATION BY LINK
-//                    brandDocRef.collection("sub").document(p2).set(new HashMap<String, Object>())
-//                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                @Override
-//                                public void onSuccess(Void aVoid) {
-//                                    Toast.makeText(getApplicationContext(), "generation added successfully", Toast.LENGTH_SHORT).show();
-//                                }
-//                            })
-//                            .addOnFailureListener(new OnFailureListener() {
-//                                @Override
-//                                public void onFailure(@NonNull Exception e) {
-//                                    Toast.makeText(getApplicationContext(), "Error adding generation", Toast.LENGTH_SHORT).show();
-//                                }
-//                            });
-//
-//                    //ADDING FIELDS OF THAT GENERATION PROCESSOR
-//                    characteristicsDocRef.set(new HashMap<String, Object>() {{
-//                        put("1.Processor Number", processorNumber1);
-//                        put("2.Launch Date", launchDate1);
-//                        put("3.Number of Cores", coreNumber1);
-//                        put("4.Number of Threads", threadNumber1);
-//                        put("5.Base Frequency", baseFrequency1);
-//                        put("6.Maximum Frequency", maxFrequency1);
-//                        put("7.Maximum Power usage", maxPower1);
-//                        put("9.Ram Type", MemTypes1);
-//                        put("a.Socket", Socket1);
-//                    }});
-//
-//                }
-//            });
-//        }
-//    }
+    public class AMD extends AsyncTask<Void, Void, String> {
+
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            org.jsoup.nodes.Document document = null;
+            EditText editText2 = findViewById(R.id.editText_intel);
+            try {
+                String url = editText2.getText().toString().trim();
+                Log.d("Cpu3Admin.AMD", "Starting doInBackground()");
+                Log.d("Cpu3Admin.AMD", "URL: " + url);
+                document = Jsoup.connect(url).get();
+                Log.d("CPU3ADMIN.AMD", String.valueOf(document));
+                Log.d("DOCUMENTADMINCPU", String.valueOf(document));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+//            coreNumber;
+//            threadNumber;
+//            maxFrequency;
+//            baseFrequency;
+//            maxPower;
+//            launchDate;
+//            maxRam;
+
+            Element processorrow = document.select("h2.field.section-title").first();
+            Log.d("LLLLAAA", String.valueOf(processorrow));
+            if (processorrow != null) {
+                processorNumber1 = processorrow.text();
+                Log.d("AAALLL",processorNumber1);
+            }
+            Element corerow = document.select("div.field__label:contains(" + FIELD22 + ")").first();
+            if (corerow != null) {
+                corerow = corerow.parent();
+                coreNumber1 = corerow.select("div.field__item").first().text();
+            }
+            Element row1 = document.select("div.field__label:contains(" + FIELD33 + ")").first();
+            if (row1 != null) {
+                row1 = row1.parent();
+                threadNumber1 = row1.select("div.field__item").first().text();
+            }
+            Element row2 = document.select("div.field__label:contains(" + FIELD44 + ")").first();
+            if (row2 != null) {
+                row2 = row2.parent();
+                maxFrequency1 = row2.select("div.field__item").first().text();
+            }
+            Element row3 = document.select("div.field__label:contains(" + FIELD55 + ")").first();
+            if (row3 != null) {
+                row3 = row3.parent();
+                baseFrequency1 = row3.select("div.field__item").first().text();
+            }
+            Element row4 = document.select("div.field__label:contains(" + FIELD67 + ")").first();
+            if (row4 != null) {
+                row4 = row4.parent();
+                maxPower1 = row4.select("div.field__item").first().text();
+            }
+            Element row5 = document.select("div.field__label:contains(" + FIELD77 + ")").first();
+            if (row5 != null) {
+                row5 = row5.parent();
+                launchDate1 = row5.select("div.field__item").first().text();
+            }
+            Element row7 = document.select("div.field__label:contains(" + FIELD99 + ")").first();
+            if (row7 != null) {
+                row7 = row7.parent();
+                MemTypes1 = row7.select("div.field__item").first().text();
+            }
+            Element row8 = document.select("div.field__label:contains(" + FIELD100 + ")").first();
+            if (row8 != null) {
+                row8 = row8.parent();
+                Socket1 = row8.select("div.field__item").first().text();
+            }
+
+            return processorNumber1;
+        }
+
+
+        public void onPostExecute(String result) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    CollectionReference parentCollectionRef = firestore.collection("PC Components");
+                    DocumentReference cpuDocRef = parentCollectionRef.document("CPU");
+                    CollectionReference intelCollectionRef = cpuDocRef.collection("AMD");
+
+
+                    String p3 = processorNumber1.replace("™","");
+                    String p4 = p3.replace("AMD","").trim();
+
+                    String[] parts = p4.split(" ");
+                    String p1 = parts[0] + " " + parts[1];
+                    String p2 = parts[2];
+
+
+                    DocumentReference brandDocRef = intelCollectionRef.document(p1);
+                    CollectionReference subsubCollectionRef = brandDocRef.collection("sub");
+                    DocumentReference modelCollectionRef = subsubCollectionRef.document(p2);
+                    CollectionReference detailscoleRef = modelCollectionRef.collection("Characteristics");
+                    DocumentReference characteristicsDocRef = detailscoleRef.document("Characteristics");
+
+                    //ADDING GENERATION BY LINK
+                    brandDocRef.collection("sub").document(p2).set(new HashMap<String, Object>())
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(getApplicationContext(), "generation added successfully", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getApplicationContext(), "Error adding generation", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                    //ADDING FIELDS OF THAT GENERATION PROCESSOR
+                    characteristicsDocRef.set(new HashMap<String, Object>() {{
+                        put("1.Processor Number", processorNumber1);
+                        put("2.Launch Date", launchDate1);
+                        put("3.Number of Cores", coreNumber1);
+                        put("4.Number of Threads", threadNumber1);
+                        put("5.Base Frequency", baseFrequency1);
+                        put("6.Maximum Frequency", maxFrequency1);
+                        put("7.Maximum Power usage", maxPower1);
+                        put("9.Ram Type", MemTypes1);
+                        put("a.Socket", Socket1);
+                    }});
+
+                }
+            });
+        }
+    }
 
 }

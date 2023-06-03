@@ -7,10 +7,24 @@
         >
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_back_arrow"
+            android:clickable="true"
+            android:onClick="onBackIconClick"
+            />
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         >
+
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
@@ -141,6 +155,7 @@
 
 
 
+    </LinearLayout>
     </LinearLayout>
     </ScrollView>
 

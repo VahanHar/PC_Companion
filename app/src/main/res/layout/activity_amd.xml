@@ -4,6 +4,15 @@
     android:layout_height="match_parent"
     >
 
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_back_arrow"
+        android:clickable="true"
+        android:onClick="onBackIconClick"
+        />
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"

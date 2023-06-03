@@ -90,11 +90,21 @@
 
 
     <TextView
+        android:id="@+id/forgot_password"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="Forgotten password?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
         android:id="@+id/registerNow"
         android:textStyle="bold"
         android:textSize="25sp"
         android:gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="@string/click_to_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

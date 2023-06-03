@@ -46,16 +46,39 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
+            android:id="@+id/password1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_rounded_edittext"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/repeatpassword"
             android:imeOptions="actionDone"
             android:maxLines="1"
             android:singleLine="true"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             />
+
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,17 +89,16 @@
         android:layout_height="wrap_content"
         />
 
-        <Button
-            android:id="@+id/btn_register"
-            android:text="@string/register"
-            android:layout_width="278dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/btn1"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="@color/white"
-            ></Button>
+    <Button
+        android:id="@+id/btn_register"
+        android:text="@string/register"
+        android:layout_width="278dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn1"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/loginNow"
