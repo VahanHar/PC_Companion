@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "8675260260",
+    "firebase_url": "https://pcplanner-56b76-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "pcplanner-56b76",
     "storage_bucket": "pcplanner-56b76.appspot.com"
   },
@@ -10,6 +11,35 @@
         "mobilesdk_app_id": "1:8675260260:android:0a69ede95b421c3f46ac71",
         "android_client_info": {
           "package_name": "com.example.pcplanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8675260260-hon5s3ecsk9f639g9iuv724asq6p0480.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgsFk4h1U5C7m8MWxPDuGVUPbvl6sDkrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8675260260-hon5s3ecsk9f639g9iuv724asq6p0480.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8675260260:android:2e3a9d20063f02d446ac71",
+        "android_client_info": {
+          "package_name": "com.vahanhar.pcplanner"
         }
       },
       "oauth_client": [

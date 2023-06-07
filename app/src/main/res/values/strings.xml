@@ -103,6 +103,10 @@
     <string name="maximum_power_usage">Maximum Power Usage</string>
     <string name="maximum_frequency">Maximum Frequency</string>
     <string name="repeatpassword">Repeat your password</string>
+    <string name="directx">DirectX</string>
+    <string name="memory">Memory</string>
+    <string name="memory_type">Memory type</string>
+    <string name="memory_bus">Memory Bus</string>
 
 
 </resources>

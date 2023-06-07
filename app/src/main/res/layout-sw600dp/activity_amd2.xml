@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/modify_panel_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:gravity="center"
+            android:layout_marginTop="45dp"
+            android:text="MODIFY AMD"
+            android:textSize="60sp"
+            android:textColor="#5DAA60"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Name of Processor"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+        <!-- Collection Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInput_collectionName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:hint="NAME OF PROCESSOR" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Series"
+            android:textSize="40sp"
+            android:textColor="#568C57"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Sub-Collection Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInput_subCollectionName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:hint="SERIES" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Characteristics"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Sub-Document Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInput_subDocumentName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:hint="Characteristics" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Processor Number"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+
+        <!-- Item Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_itemName"
+                android:layout_width="match_parent"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"
+                android:hint="Processor Number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Launch Date"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Launch Date -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:hint="Launch Date" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Number of Cores"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Number of cores -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_core"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:hint="Number of Cores" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/number_of_threads"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Item Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_threads"
+                android:layout_width="match_parent"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/number_of_threads" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/base_frequency"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Item Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_bfreq"
+                android:layout_width="match_parent"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/base_frequency" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/maximum_frequency"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Item Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_nfreq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:hint="@string/maximum_frequency" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/maximum_power_usage"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Item Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_mpower"
+                android:layout_width="match_parent"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/maximum_power_usage" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/maximum_ram"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Item Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_nram"
+                android:layout_width="match_parent"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/maximum_ram" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/ram_type"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Item Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_rtype"
+                android:layout_width="match_parent"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/ram_type" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/socket"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Item Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_socket"
+                android:layout_width="match_parent"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/socket" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/maximum_price"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Item Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_mprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:hint="@string/maximum_price" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/benchmark"
+            android:textSize="40sp"
+            android:textColor="#529A54"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <!-- Item Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_bench"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:hint="@string/benchmark" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button_modfyItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/btn1"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="32dp"
+            android:text="Modify Item" />
+
+    </LinearLayout>
+</ScrollView>

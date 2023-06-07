@@ -11,12 +11,12 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".MainMenu.Register"
+            android:name="com.vahanhar.pcplanner.MainMenu.Register"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false">
             <meta-data
@@ -24,7 +24,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainMenu.Login"
+            android:name="com.vahanhar.pcplanner.MainMenu.Login"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false">
             <meta-data
@@ -33,7 +33,7 @@
         </activity>
 
         <activity
-            android:name=".MainMenu.SplashActivity"
+            android:name="com.vahanhar.pcplanner.MainMenu.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
@@ -47,7 +47,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainMenu.MainActivity"
+            android:name="com.vahanhar.pcplanner.MainMenu.MainActivity"
             android:exported="true">
 
             <intent-filter>
@@ -61,7 +61,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainMenu.SuggestPc"
+            android:name="com.vahanhar.pcplanner.MainMenu.SuggestPc"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.COMPARISON_ACTIVITY" />
@@ -70,7 +70,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.ConfigurationActivity"
+            android:name="com.vahanhar.pcplanner.MainMenu.ConfigurationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.vahanhar.pcplanner.StorageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -79,7 +89,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CoolerActivity"
+            android:name="com.vahanhar.pcplanner.PSU.PsuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -88,7 +98,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StorageActivity"
+            android:name="com.vahanhar.pcplanner.MotherboardActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -97,7 +107,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PsuActivity"
+            android:name="com.vahanhar.pcplanner.Ram.RamActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -106,7 +116,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MotherboardActivity"
+            android:name="com.vahanhar.pcplanner.CpuActivity.CpuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -115,7 +125,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RamActivity"
+            android:name="com.vahanhar.pcplanner.GpuActivity.GpuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -124,7 +134,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CpuActivity.CpuActivity"
+            android:name="com.vahanhar.pcplanner.CpuActivity.IntelActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -133,7 +143,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GpuActivity.GpuActivity"
+            android:name="com.vahanhar.pcplanner.CpuActivity.AmdActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -142,7 +152,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CpuActivity.IntelActivity"
+            android:name="com.vahanhar.pcplanner.GpuActivity.AmdRadeonActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -151,7 +161,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CpuActivity.AmdActivity"
+            android:name="com.vahanhar.pcplanner.GpuActivity.IntelArcActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -160,7 +170,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GpuActivity.AmdRadeonActivity"
+            android:name="com.vahanhar.pcplanner.GpuActivity.NvidiaActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
@@ -169,25 +179,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GpuActivity.IntelArcActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".GpuActivity.NvidiaActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainMenu.Admin.AdminActivity"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.AdminActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait">
@@ -199,7 +191,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.Splash2Activity"
+            android:name="com.vahanhar.pcplanner.MainMenu.Splash2Activity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
@@ -210,7 +202,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.SplashAdmin"
+            android:name="com.vahanhar.pcplanner.MainMenu.SplashAdmin"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
@@ -221,7 +213,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.DescriptionActivity"
+            android:name="com.vahanhar.pcplanner.MainMenu.DescriptionActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
@@ -232,7 +224,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.Admin.ModifyActivity"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.ModifyActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait">
@@ -244,7 +236,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.Admin.AddActivity"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.AddActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait">
@@ -256,7 +248,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.Admin.IntelAdmin"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.IntelAdmin"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait">
@@ -268,7 +260,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.Admin.AmdAdmin"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.AmdAdmin"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
@@ -281,7 +273,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.Admin.CpuAdmin"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.CpuAdmin"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
@@ -294,7 +286,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.Admin.Cpu2Admin"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.Cpu2Admin"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
@@ -307,7 +299,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.Admin.Intel2Admin"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.Intel2Admin"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
@@ -320,7 +312,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.Admin.Amd2Admin"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.Amd2Admin"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
@@ -333,21 +325,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.MoreDescriptionActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:screenOrientation="portrait"
-            >
-
-            <intent-filter>
-                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".MainMenu.Admin.Cpu3Admin"
+            android:name="com.vahanhar.pcplanner.MainMenu.MoreDescriptionActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
@@ -361,7 +339,21 @@
         </activity>
 
         <activity
-            android:name=".MainMenu.Admin.LinkActivity"
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.Cpu3Admin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.LinkActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
@@ -374,7 +366,153 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu.CompareActivity"
+            android:name="com.vahanhar.pcplanner.MainMenu.CompareActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.AmdRadeonAdmin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.GpuAdmin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.IntelArcAdmin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.NvidiaAdmin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.AmdRadeon2Admin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.Nvidia2Admin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.IntelArc2Admin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vahanhar.pcplanner.MainMenu.Admin.Gpu2Admin"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.vahanhar.pcplanner.PSU.cheap"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.vahanhar.pcplanner.PSU.expensive"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+
+            <intent-filter>
+                <action android:name="com.example.pcplanner.CONFIGURATION_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.vahanhar.pcplanner.PSU.medium"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"

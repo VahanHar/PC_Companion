@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vahanhar.pcplanner.MainMenu.Admin.Cpu3Admin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADD LINK"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="60sp"
+                android:textColor="#144E16"
+                android:layout_marginBottom="30dp"
+                />
+
+            <EditText
+                android:id="@+id/editText_Amazon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="50sp"
+                android:ems="10"
+                android:textSize="40sp"
+                android:hint="Link Amazon"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+
+            <EditText
+                android:id="@+id/editText_intel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="50sp"
+                android:ems="10"
+                android:textSize="40sp"
+                android:hint="Link CPU"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/editText_Bench"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="50sp"
+                android:ems="10"
+                android:textSize="40sp"
+                android:hint="Link BenchMark (optional)"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:background="@drawable/btn1"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="55sp"
+                android:text="Get text" />
+
+
+            <ImageView
+                android:id="@+id/link_image_amazon_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

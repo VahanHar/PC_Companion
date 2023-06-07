@@ -1,22 +1,26 @@
 <!-- activity_suggestpc.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.vahanhar.pcplanner.MainMenu.SuggestPc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context="MainMenu.SuggestPc"
-    android:orientation="vertical">
+    >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical">
     <!-- CPU Section -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CPU"
-        android:textSize="18sp"
+        android:text="YOUR SELECTED CPU"
+        android:textSize="28sp"
         android:layout_gravity="center"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="#2E6317"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +32,7 @@
         android:layout_gravity="center"
         android:text="CPU"
         android:layout_marginLeft="30dp"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/black"
         />
@@ -39,12 +43,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginRight="30dp"
-
             android:text="price"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_alignParentEnd="true"
-            android:textColor="@color/black"/>
+            android:textColor="#433A1E"/>
     </RelativeLayout>
 
     <!-- GPU Section -->
@@ -52,33 +55,225 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="GPU"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"
+        android:text="YOUR SELECTED GPU"
+        android:textSize="28sp"
+        android:layout_marginTop="50dp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="#2E6317"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/gpu_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="GPU"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/gpu_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:text="price"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:textColor="#433A1E"/>
+    </RelativeLayout>
+
+
+    <!-- RAM Section -->
     <TextView
-        android:id="@+id/gpu_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="GPU"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp"
+        android:text="YOUR SELECTED RAM"
+        android:textSize="28sp"
+        android:layout_marginTop="50dp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="#2E6317"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/ram_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="RAM"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/ram_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:text="price"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:textColor="#433A1E"/>
+    </RelativeLayout>
+
+    <!-- Motherboard Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="YOUR SELECTED MOTHERBOARD"
+        android:textSize="24sp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textColor="#2E6317"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/motherboard_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="MOTHERBOARD"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/motherboard_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:text="price"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:textColor="#433A1E"/>
+    </RelativeLayout>
+
+    <!-- PSU Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="YOUR SELECTED Power Supply"
+        android:textSize="25sp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textColor="#2E6317"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/psu_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="PSU"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/psu_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:text="price"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:textColor="#433A1E"/>
+    </RelativeLayout>
+
+    <!-- Storage Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="YOUR SELECTED STORAGE"
+        android:textSize="28sp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textColor="#2E6317"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp">
+        <TextView
+            android:id="@+id/storage_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="STORAGE"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/storage_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:text="price"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:textColor="#433A1E"/>
+
+    </RelativeLayout>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="@drawable/btn1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="90dp"
+            android:textSize="15sp"
+            android:text="SELECT TO SHOW FINAL PRICE" />
+
+
+
 
     <TextView
         android:id="@+id/final_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="FinalPrice"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp"
+        android:text="FINAL PRICE"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="#CCA83A"/>
 
 
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

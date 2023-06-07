@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:padding="15sp"
+    tools:context="com.vahanhar.pcplanner.MainMenu.Register">
+    <TextView
+        android:text="@string/register"
+        android:textSize="140sp"
+        android:textColor="#5DAA60"
+        android:textStyle="bold"
+        android:layout_marginBottom="120dp"
+        android:gravity="top|start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_rounded_edittext"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:hint="@string/email"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:textSize="40sp"
+            android:maxLines="1"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_rounded_edittext"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:imeOptions="actionDone"
+            android:textSize="40sp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_rounded_edittext"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/repeatpassword"
+            android:imeOptions="actionDone"
+            android:textSize="40sp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:text="@string/register"
+        android:layout_width="550dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn1"
+        android:textStyle="bold"
+        android:textSize="55sp"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/loginNow"
+        android:textStyle="bold"
+        android:textSize="45sp"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        android:text="@string/click_to_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+/>
+
+
+
+</LinearLayout>

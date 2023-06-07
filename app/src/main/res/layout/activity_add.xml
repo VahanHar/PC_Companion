@@ -5,12 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         >
+
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
@@ -119,23 +123,6 @@
             android:paddingRight="50dp"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <Button
-            android:text="Cooler"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:background="@drawable/btn2"
-            android:id="@+id/cooler_button"
-            android:layout_below="@id/storage_button"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:paddingLeft="50dp"
-            android:paddingRight="50dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:layout_marginBottom="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center" />

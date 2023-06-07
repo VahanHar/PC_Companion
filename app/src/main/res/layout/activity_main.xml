@@ -36,6 +36,8 @@
                 android:id="@+id/configuration_button"
                 android:layout_marginBottom="100dp"
                 android:layout_width="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/my_button_background"
                 android:onClick="openConfigurationActivity"

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.pcplanner'
+    namespace 'com.vahanhar.pcplanner'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.pcplanner"
+        applicationId "com.vahanhar.pcplanner"
         minSdk 24
         targetSdk 33
         versionCode 1

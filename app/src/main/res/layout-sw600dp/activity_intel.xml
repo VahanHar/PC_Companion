@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_back_arrow"
+        android:clickable="true"
+        android:onClick="onBackIconClick"
+        />
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="40dp"
+        android:clipToPadding="false"
+        android:listSelector="@drawable/list_item_selector"
+        android:drawSelectorOnTop="true"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:padding="32dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_centerInParent="true"
+         />
+
+</RelativeLayout>
