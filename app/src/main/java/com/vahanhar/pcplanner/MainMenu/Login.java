@@ -57,10 +57,15 @@ public class Login extends AppCompatActivity {
             if (currentUser.getEmail().equals("admin@pcplanner.com")) {
                 Intent intent = new Intent(getApplicationContext(), SplashAdmin.class);
                 startActivity(intent);
-            } else {
+            } else if(currentUser.isEmailVerified()){
                     Intent intent = new Intent(getApplicationContext(), Splash2Activity.class);
                     startActivity(intent);
                     finish();
+            }
+            else{
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                finish();
             }
             finish();
         }

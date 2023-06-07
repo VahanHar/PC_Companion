@@ -43,13 +43,7 @@ public class ModifyActivity extends AppCompatActivity {
         storageButton = findViewById(R.id.storage_button);
 
 
-        ImageView imageView = findViewById(R.id.btn_back);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+
 
         cpuButton.setOnClickListener(new View.OnClickListener() {
             @Override
